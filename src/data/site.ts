@@ -19,8 +19,13 @@ export type AcronymBlock = Card & {
 export type NamePhilosophy = {
   label: string;
   heading: string;
-  intro: string;
-  support: string;
+  publicStatement: string;
+  meanings: Card[];
+  philosophyStatement: string;
+  somaliWord: string;
+  translatedWord: string;
+  peopleIntro: string;
+  people: string[];
   closing: string;
   acronym: AcronymBlock[];
 };
@@ -79,12 +84,39 @@ export const problemCards: Card[] = [
 export const adigaPhilosophy: NamePhilosophy = {
   label: "THE NAME",
   heading: "Why Afka carries the ADIGA philosophy",
-  intro:
-    'The public name is Afka Digital Institute. Afka means "the language" in Somali, Digital defines the institute\'s focus, and Institute signals the standard of research, evidence, and institutional memory the work requires.',
-  support:
-    'Behind the name sits a founding idea: ADIGA. In Somali, adiga means "you". For Afka, it is a reminder that digital policy and platform accountability must begin with the people affected by these systems.',
+  publicStatement: "Afka Digital Institute is the public name.",
+  meanings: [
+    {
+      title: "Afka",
+      description:
+        'Means "the language" in Somali, grounding the work in language, speech, and lived digital experience.'
+    },
+    {
+      title: "Digital",
+      description:
+        "Defines the institute's field of concern: platforms, AI systems, online harm, and technology policy."
+    },
+    {
+      title: "Institute",
+      description:
+        "Signals method, rigor, and memory: research that is built carefully, documented clearly, and meant to endure."
+    }
+  ],
+  philosophyStatement: "Behind the name sits a founding philosophy: ADIGA.",
+  somaliWord: "adiga",
+  translatedWord: "you",
+  peopleIntro: "It is a reminder that this work must begin with people:",
+  people: [
+    "communities living with digital harm",
+    "creators navigating exclusion",
+    "women facing online abuse",
+    "journalists tracking public life",
+    "researchers producing evidence",
+    "civil society groups pushing for accountability",
+    "policy and platform teams that need a stronger evidence base"
+  ],
   closing:
-    "Afka Digital Institute remains the public name. ADIGA is the philosophy behind the work: evidence built from the ground up, with the people it serves at the center.",
+    "Afka studies the Somali-speaking digital world with the people inside it at the center.",
   acronym: [
     {
       letter: "A",
