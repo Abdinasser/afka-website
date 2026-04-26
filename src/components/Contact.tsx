@@ -154,9 +154,6 @@ export function Contact() {
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--primary)]">
                   Inquiry form
                 </p>
-                <p className="mt-2 text-sm text-slate-500">
-                  First version uses a mailto submission.
-                </p>
               </div>
               <span className="hidden h-10 w-10 items-center justify-center bg-[var(--surface-soft)] text-sm font-semibold text-[var(--primary)] sm:flex">
                 ADI
