@@ -1,3 +1,4 @@
+import { AdigaPhilosophy } from "@/components/AdigaPhilosophy";
 import { Approach } from "@/components/Approach";
 import { Contact } from "@/components/Contact";
 import { Context } from "@/components/Context";
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <Context />
+        <AdigaPhilosophy />
         <ProblemCards />
         <ResearchAreas />
         <Approach />

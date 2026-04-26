@@ -12,6 +12,19 @@ export type Step = Card & {
   step: string;
 };
 
+export type AcronymBlock = Card & {
+  letter: string;
+};
+
+export type NamePhilosophy = {
+  label: string;
+  heading: string;
+  intro: string;
+  support: string;
+  closing: string;
+  acronym: AcronymBlock[];
+};
+
 export type TeamRole = {
   role: string;
   initials: string;
@@ -62,6 +75,49 @@ export const problemCards: Card[] = [
       "AI systems increasingly shape moderation, recommendation, and information access, yet Somali remains underrepresented in the datasets and systems that govern these decisions."
   }
 ];
+
+export const adigaPhilosophy: NamePhilosophy = {
+  label: "THE NAME",
+  heading: "Why Afka carries the ADIGA philosophy",
+  intro:
+    'The public name is Afka Digital Institute. Afka means "the language" in Somali, Digital defines the institute\'s focus, and Institute signals the standard of research, evidence, and institutional memory the work requires.',
+  support:
+    'Behind the name sits a founding idea: ADIGA. In Somali, adiga means "you". For Afka, it is a reminder that digital policy and platform accountability must begin with the people affected by these systems.',
+  closing:
+    "Afka Digital Institute remains the public name. ADIGA is the philosophy behind the work: evidence built from the ground up, with the people it serves at the center.",
+  acronym: [
+    {
+      letter: "A",
+      title: "Afka",
+      description:
+        "The language, speech, and digital life through which the work begins."
+    },
+    {
+      letter: "D",
+      title: "Digital",
+      description:
+        "The platforms, AI systems, online harms, and technology policies shaping public life."
+    },
+    {
+      letter: "I",
+      title: "Institute",
+      description:
+        "The research standard: careful methods, public evidence, and work that can withstand scrutiny."
+    },
+    {
+      letter: "G",
+      title: "Grassroots",
+      description:
+        "The lived realities of Somali-speaking communities, creators, women, journalists, civil society, and young people online."
+    },
+    {
+      letter: "A",
+      title: "Analysis",
+      description:
+        "The process of turning scattered harms into patterns, findings, datasets, and policy insight."
+    }
+  ]
+};
 
 export const researchAreas: Card[] = [
   {
