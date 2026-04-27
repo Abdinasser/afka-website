@@ -16,17 +16,41 @@ export type AcronymBlock = Card & {
   letter: string;
 };
 
+export type NameIcon =
+  | "language"
+  | "digital"
+  | "institute"
+  | "communities"
+  | "creator"
+  | "shield"
+  | "journal"
+  | "research"
+  | "civil"
+  | "policy";
+
+export type NameMeaning = Card & {
+  icon: NameIcon;
+};
+
+export type PeopleGroup = {
+  label: string;
+  icon: NameIcon;
+};
+
 export type NamePhilosophy = {
   label: string;
   heading: string;
   publicStatement: string;
-  meanings: Card[];
   philosophyStatement: string;
-  somaliWord: string;
-  translatedWord: string;
+  meanings: NameMeaning[];
+  centralIntro: string;
+  centralWord: string;
+  centralMeaning: string;
+  centralSuffix: string;
   peopleIntro: string;
-  people: string[];
-  closing: string;
+  people: PeopleGroup[];
+  footerPublicName: string;
+  footerStatement: string;
   acronym: AcronymBlock[];
 };
 
@@ -84,39 +108,55 @@ export const problemCards: Card[] = [
 export const adigaPhilosophy: NamePhilosophy = {
   label: "THE NAME",
   heading: "Why Afka carries the ADIGA philosophy",
-  publicStatement: "Afka Digital Institute is the public name.",
+  publicStatement: "Our public name is Afka Digital Institute.",
+  philosophyStatement:
+    "Behind it sits a people-centered philosophy: ADIGA.",
   meanings: [
     {
+      icon: "language",
       title: "Afka",
       description:
         'Means "the language" in Somali, grounding the work in language, speech, and lived digital experience.'
     },
     {
+      icon: "digital",
       title: "Digital",
       description:
         "Defines the institute's field of concern: platforms, AI systems, online harm, and technology policy."
     },
     {
+      icon: "institute",
       title: "Institute",
       description:
-        "Signals method, rigor, and memory: research that is built carefully, documented clearly, and meant to endure."
+        "Signals rigor, evidence, and institutional memory, so our work is careful, documented, and built to endure."
     }
   ],
-  philosophyStatement: "Behind the name sits a founding philosophy: ADIGA.",
-  somaliWord: "adiga",
-  translatedWord: "you",
-  peopleIntro: "It is a reminder that this work must begin with people:",
+  centralIntro: "In Somali, ADIGA means",
+  centralWord: "ADIGA",
+  centralMeaning: "you",
+  centralSuffix: "in Somali.",
+  peopleIntro: "It is a reminder that this work must begin with people.",
   people: [
-    "communities living with digital harm",
-    "creators navigating exclusion",
-    "women facing online abuse",
-    "journalists tracking public life",
-    "researchers producing evidence",
-    "civil society groups pushing for accountability",
-    "policy and platform teams that need a stronger evidence base"
+    {
+      icon: "communities",
+      label: "Somali-speaking communities affected by digital harm"
+    },
+    { icon: "creator", label: "Creators navigating exclusion" },
+    { icon: "shield", label: "Women facing online abuse" },
+    { icon: "journal", label: "Journalists tracking public life" },
+    { icon: "research", label: "Researchers producing evidence" },
+    {
+      icon: "civil",
+      label: "Civil society groups pushing for accountability"
+    },
+    {
+      icon: "policy",
+      label: "Policy and platform teams needing a stronger evidence base"
+    }
   ],
-  closing:
-    "Afka studies the Somali-speaking digital world with the people inside it at the center.",
+  footerPublicName: "The public name is Afka Digital Institute.",
+  footerStatement:
+    "ADIGA is our internal philosophical layer, centering you in every layer of our research, evidence, and impact.",
   acronym: [
     {
       letter: "A",
@@ -140,13 +180,13 @@ export const adigaPhilosophy: NamePhilosophy = {
       letter: "G",
       title: "Grassroots",
       description:
-        "The lived realities of Somali-speaking communities, creators, women, journalists, civil society, and young people online."
+        "The lived realities of Somali-speaking communities and the people closest to harm."
     },
     {
       letter: "A",
       title: "Analysis",
       description:
-        "The process of turning scattered harms into patterns, findings, datasets, and policy insight."
+        "The process of turning harms into patterns, findings, datasets, and policy insight."
     }
   ]
 };
