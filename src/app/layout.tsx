@@ -5,9 +5,6 @@ export const metadata: Metadata = {
   title: "Afka Digital Institute | Digital Harm Research in the Somali-Speaking World",
   description:
     "Afka Digital Institute documents digital harm, platform accountability failures, AI moderation gaps, and online rights issues affecting Somali-speaking communities.",
-  icons: {
-    icon: "/images/afka-logo-dark-transparent.png"
-  },
   openGraph: {
     title: "Afka Digital Institute | Digital Harm Research in the Somali-Speaking World",
     description:
