@@ -11,11 +11,11 @@ function DigitalEvidencePanel() {
   ];
 
   return (
-    <div className="hero-fade relative overflow-hidden border border-white/16 bg-[rgba(15,23,42,0.58)] p-5 shadow-[0_28px_80px_rgba(0,0,0,0.28)] backdrop-blur-md sm:p-6">
+    <div className="hero-fade relative w-full min-w-0 max-w-full overflow-hidden border border-white/16 bg-[rgba(15,23,42,0.58)] p-5 shadow-[0_28px_80px_rgba(0,0,0,0.28)] backdrop-blur-md sm:p-6">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(200,161,109,0.22),transparent_28%),linear-gradient(to_right,rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:auto,38px_38px,38px_38px]" />
       <div className="relative">
         <div className="flex items-start justify-between gap-5 border-b border-white/12 pb-5">
-          <div>
+          <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sand)]">
               Evidence console
             </p>
@@ -39,15 +39,15 @@ function DigitalEvidencePanel() {
           {signals.map((signal, index) => (
             <div
               key={signal}
-              className="grid grid-cols-[auto_1fr_auto] items-center gap-3 border border-white/12 bg-white/[0.07] p-3"
+              className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] items-center gap-3 border border-white/12 bg-white/[0.07] p-3 sm:grid-cols-[auto_minmax(0,1fr)_auto]"
             >
-              <span className="flex h-9 w-9 items-center justify-center bg-[var(--sand)] text-xs font-bold text-slate-950">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-[var(--sand)] text-xs font-bold text-slate-950">
                 0{index + 1}
               </span>
-              <span className="text-sm font-medium text-slate-100">
+              <span className="min-w-0 text-sm font-medium text-slate-100">
                 {signal}
               </span>
-              <span className="h-2 w-16 bg-white/14">
+              <span className="hidden h-2 w-16 shrink-0 bg-white/14 sm:block">
                 <span
                   className="block h-full bg-[var(--sand)]"
                   style={{ width: `${62 + index * 8}%` }}
@@ -57,7 +57,7 @@ function DigitalEvidencePanel() {
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-4 gap-2">
+        <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
           {reviewStages.map((stage) => (
             <div
               key={stage}
@@ -121,11 +121,11 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.045)_1px,transparent_1px)] bg-[size:72px_72px]" />
 
       <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-12 pt-32 sm:px-8 sm:pt-36 lg:min-h-screen lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-10 lg:pb-16">
-        <div className="hero-fade">
+        <div className="hero-fade min-w-0">
           <p className="mb-6 inline-flex border border-white/18 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-100 backdrop-blur-md">
             Founding Stage · 2026
           </p>
-          <h1 className="font-serif-display max-w-4xl text-5xl leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="font-serif-display max-w-full text-[clamp(2.5rem,11vw,3rem)] leading-[1.02] text-white sm:max-w-4xl sm:text-6xl lg:text-7xl">
             Documenting{" "}
             <span className="italic text-[var(--sand)]">digital harm</span> in
             the Somali-speaking world.

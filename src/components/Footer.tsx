@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { footerLinks } from "@/data/site";
 
 export function Footer() {
   return (
@@ -6,19 +8,30 @@ export function Footer() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:52px_52px]" />
       <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 sm:px-8 lg:px-10">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-        <a
-          href="#top"
-          className="focus-ring inline-flex rounded-sm"
-          aria-label="Afka Digital Institute home"
-        >
-          <Image
-            src="/images/afka-logo-light-transparent.png"
-            alt="Afka Digital Institute"
-            width={280}
-            height={133}
-            className="h-auto w-40"
-          />
-        </a>
+          <Link
+            href="/#top"
+            className="focus-ring inline-flex rounded-sm"
+            aria-label="Afka Digital Institute home"
+          >
+            <Image
+              src="/images/afka-logo-light-transparent.png"
+              alt="Afka Digital Institute"
+              width={280}
+              height={133}
+              className="h-auto w-40"
+            />
+          </Link>
+          <nav aria-label="Footer navigation" className="flex flex-wrap gap-4">
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="focus-ring rounded-sm text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
           <a
             href="#top"
             className="focus-ring inline-flex min-h-11 items-center justify-center border border-white/14 bg-white/[0.06] px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:bg-white/[0.12]"

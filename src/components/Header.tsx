@@ -1,14 +1,15 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { navLinks } from "@/data/site";
 
 function Wordmark() {
   return (
-    <a
-      href="#top"
-      className="focus-ring flex items-center rounded-sm"
+    <Link
+      href="/#top"
+      className="focus-ring flex shrink-0 items-center rounded-sm"
       aria-label="Afka Digital Institute home"
     >
       <Image
@@ -17,9 +18,9 @@ function Wordmark() {
         width={260}
         height={124}
         priority
-        className="h-10 w-auto sm:h-11"
+        className="h-9 w-auto sm:h-11"
       />
-    </a>
+    </Link>
   );
 }
 
@@ -32,32 +33,32 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/12 bg-[rgba(23,35,49,0.86)] text-white shadow-[0_14px_44px_rgba(0,0,0,0.18)] backdrop-blur-xl">
       <nav
         aria-label="Primary navigation"
-        className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 lg:px-10"
+        className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8 lg:px-10"
       >
         <Wordmark />
 
         <div className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="focus-ring rounded-sm text-sm font-medium text-slate-200 transition-colors hover:text-white"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 
-        <a
-          href="#contact"
+        <Link
+          href="/#contact"
           className="focus-ring hidden border border-white/20 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-[var(--sand)] lg:inline-flex"
         >
           Get in Touch
-        </a>
+        </Link>
 
         <button
           type="button"
-          className="focus-ring inline-flex h-11 w-11 items-center justify-center border border-white/20 bg-white/8 text-white lg:hidden"
+          className="focus-ring inline-flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 bg-white/8 text-white lg:hidden"
           aria-label={open ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -78,22 +79,22 @@ export function Header() {
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-2">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={closeMenu}
                 className="focus-ring rounded-sm px-1 py-3 text-base font-medium text-slate-100"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               onClick={closeMenu}
               className="focus-ring mt-3 inline-flex min-h-12 items-center justify-center border border-white bg-white px-5 py-3 text-sm font-semibold text-slate-950"
             >
               Get in Touch
-            </a>
+            </Link>
           </div>
         </div>
       ) : null}

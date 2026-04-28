@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Context() {
   return (
     <section
@@ -51,6 +53,12 @@ export function Context() {
           <p className="font-serif-display text-2xl leading-9 text-[var(--primary)]">
             Afka Digital Institute was created to fill that gap.
           </p>
+          <Link
+            href="/about"
+            className="focus-ring inline-flex min-h-12 items-center justify-center border border-[var(--primary)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+          >
+            Read the full context
+          </Link>
         </div>
       </div>
     </section>

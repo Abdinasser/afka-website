@@ -60,11 +60,12 @@ export type TeamRole = {
 };
 
 export const navLinks = [
-  { label: "Mission", href: "#mission" },
-  { label: "Research", href: "#research" },
-  { label: "Approach", href: "#approach" },
-  { label: "Independence", href: "#independence" },
-  { label: "Contact", href: "#contact" }
+  { label: "Mission", href: "/#mission" },
+  { label: "About", href: "/about" },
+  { label: "Research", href: "/#research" },
+  { label: "Approach", href: "/#approach" },
+  { label: "Independence", href: "/#independence" },
+  { label: "Contact", href: "/#contact" }
 ];
 
 export const heroStats: Stat[] = [
@@ -105,6 +106,39 @@ export const problemCards: Card[] = [
   }
 ];
 
+export const aboutProblemCards: Card[] = [
+  {
+    title: "Platform blind spots",
+    description:
+      "Global platforms often lack the Somali-language capacity, local context, and monitoring systems needed to understand how harm travels across posts, comments, videos, and creator networks."
+  },
+  {
+    title: "Monetized harm",
+    description:
+      "Clan-based abuse, misinformation, harassment, and conflict-driven content can gain visibility and financial reward through engagement systems that were not designed for local accountability."
+  },
+  {
+    title: "Gendered digital harm",
+    description:
+      "Image-based abuse, online intimidation, and technology-facilitated violence affect women and public voices in Somali-speaking communities, but remain seriously under-documented."
+  },
+  {
+    title: "AI and language exclusion",
+    description:
+      "Automated moderation, large language models, and AI-generated content increasingly shape access to information, while Somali remains underrepresented in the systems making those decisions."
+  },
+  {
+    title: "Creator monetization exclusion",
+    description:
+      "Unequal access to monetization, verification, appeals, and platform support shapes creator incentives and can distort the online public culture around Somali-language content."
+  },
+  {
+    title: "Weak evidence base",
+    description:
+      "Civil society, journalists, policy teams, and platforms often lack documented cases, datasets, and language-specific analysis needed to challenge digital harm and demand accountability."
+  }
+];
+
 export const adigaPhilosophy: NamePhilosophy = {
   label: "THE NAME",
   heading: "Why Afka carries the ADIGA philosophy",
@@ -131,7 +165,7 @@ export const adigaPhilosophy: NamePhilosophy = {
         "Signals rigor, evidence, and institutional memory, so our work is careful, documented, and built to endure."
     }
   ],
-  centralIntro: "In Somali, ADIGA means",
+  centralIntro: "The philosophy starts with",
   centralWord: "ADIGA",
   centralMeaning: "you",
   centralSuffix: "in Somali.",
@@ -309,9 +343,7 @@ export const teamRoles: TeamRole[] = [
 ];
 
 export const footerLinks = [
-  ...navLinks,
-  { label: "Privacy Policy", href: "#" },
-  { label: "Research Ethics", href: "#" }
+  ...navLinks
 ];
 
 export const inquiryReasons = [

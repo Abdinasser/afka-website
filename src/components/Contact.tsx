@@ -1,68 +1,34 @@
+"use client";
+
+import type { FormEvent } from "react";
 import { inquiryReasons } from "@/data/site";
 
-const socialLinks = [
-  { label: "LinkedIn", href: "#contact" },
-  { label: "X", href: "#contact" },
-  { label: "Instagram", href: "#contact" },
-  { label: "Facebook", href: "#contact" }
-];
-
-function SocialIcon({ label }: { label: string }) {
-  const className = "h-4 w-4";
-
-  if (label === "LinkedIn") {
-    return (
-      <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M6.8 8.9H3.4V20h3.4V8.9ZM5.1 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 4.9H9.8V20h3.3v-5.7c0-1.5.8-2.5 2-2.5 1.1 0 1.7.8 1.7 2.4V20h3.4v-6.4c0-3.2-1.7-4.9-4.2-4.9-1.5 0-2.5.7-3 1.6V8.9Z"
-        />
-      </svg>
-    );
-  }
-
-  if (label === "X") {
-    return (
-      <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M14 10.8 21.4 2h-1.8l-6.4 7.6L8.1 2H2.2l7.8 11.4L2.2 22h1.9l6.7-7.5 5.4 7.5h5.8L14 10.8Zm-2.4 2.7-.8-1.1L4.5 3.4h2.8l5 7.2.8 1.1 6.6 9.1h-2.8l-5.3-7.3Z"
-        />
-      </svg>
-    );
-  }
-
-  if (label === "Instagram") {
-    return (
-      <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          d="M7.5 3.5h9A4 4 0 0 1 20.5 7.5v9a4 4 0 0 1-4 4h-9a4 4 0 0 1-4-4v-9a4 4 0 0 1 4-4Z"
-        />
-        <path
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          d="M8.8 12a3.2 3.2 0 1 0 6.4 0 3.2 3.2 0 0 0-6.4 0Z"
-        />
-        <path fill="currentColor" d="M16.8 7.2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M14.2 8.2V6.6c0-.8.5-1.2 1.3-1.2h1.6V2.6A22 22 0 0 0 14.8 2c-2.4 0-4 1.4-4 4v2.2H8.1v3.1h2.7V22h3.4V11.3h2.7l.4-3.1h-3.1Z"
-      />
-    </svg>
-  );
-}
+const contactEmail = "hello@afkadigital.org";
 
 export function Contact() {
+  function handleInquirySubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const field = (name: string) => {
+      const value = formData.get(name);
+      return typeof value === "string" ? value.trim() : "";
+    };
+
+    const body = [
+      `Name: ${field("name")}`,
+      `Organization: ${field("organization") || "Not provided"}`,
+      `Email: ${field("email")}`,
+      `Reason: ${field("reason")}`,
+      "",
+      field("message")
+    ].join("\n");
+
+    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(
+      "Afka Digital Institute Inquiry"
+    )}&body=${encodeURIComponent(body)}`;
+  }
+
   return (
     <section
       id="contact"
@@ -92,14 +58,14 @@ export function Contact() {
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 <a
-                  href="mailto:hello@afkadigital.org"
+                  href={`mailto:${contactEmail}`}
                   className="focus-ring border border-white/16 bg-white/[0.08] p-4 transition-colors hover:bg-white/[0.12]"
                 >
                   <span className="block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300">
                     Email
                   </span>
                   <span className="mt-2 block text-sm font-semibold text-white">
-                    hello@afkadigital.org
+                    {contactEmail}
                   </span>
                 </a>
                 <div className="border border-white/16 bg-white/[0.08] p-4">
@@ -109,24 +75,6 @@ export function Contact() {
                   <span className="mt-2 block text-sm font-semibold text-white">
                     Mogadishu · Nairobi
                   </span>
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-300">
-                  Social
-                </p>
-                <div className="mt-3 flex gap-2">
-                  {socialLinks.map((link) => (
-                    <a
-                      key={link.label}
-                      href={link.href}
-                      aria-label={`${link.label} profile`}
-                      className="focus-ring flex h-11 w-11 items-center justify-center border border-white/16 bg-white/[0.08] text-white transition-colors hover:bg-[var(--sand)] hover:text-slate-950"
-                    >
-                      <SocialIcon label={link.label} />
-                    </a>
-                  ))}
                 </div>
               </div>
 
@@ -144,9 +92,7 @@ export function Contact() {
           </div>
 
           <form
-            action="mailto:hello@afkadigital.org"
-            method="post"
-            encType="text/plain"
+            onSubmit={handleInquirySubmit}
             className="border border-slate-200 bg-white p-5 shadow-[0_24px_70px_rgba(23,35,49,0.10)] sm:p-8"
           >
             <div className="mb-7 flex items-center justify-between gap-4 border-b border-slate-200 pb-5">
@@ -224,7 +170,7 @@ export function Contact() {
               type="submit"
               className="focus-ring mt-5 inline-flex min-h-12 w-full items-center justify-center border border-[var(--primary)] bg-[var(--primary)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
             >
-              Send Inquiry
+              Open Email Draft
             </button>
           </form>
         </div>
