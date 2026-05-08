@@ -1,53 +1,90 @@
+import Link from "next/link";
+import type { CSSProperties } from "react";
+
+import {
+  MotionSection,
+  ScrollDepth,
+  Stagger,
+  StaggerItem
+} from "@/components/Motion";
+import { ResearchSurface } from "@/components/ResearchSurface";
+import { SectionHeading } from "@/components/SectionHeading";
+import { SignalField } from "@/components/SignalField";
 import { researchAreas } from "@/data/site";
 
-export function ResearchAreas() {
+type ResearchAreasProps = {
+  showIntroLink?: boolean;
+};
+
+export function ResearchAreas({ showIntroLink = true }: ResearchAreasProps) {
   return (
-    <section
+    <MotionSection
       id="research"
-      className="section-reveal relative overflow-hidden bg-[var(--ink)] text-white"
+      className="section-reveal research-framework-section bg-[var(--deep-ink)] text-[var(--cloud-white)]"
       aria-labelledby="research-heading"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.04)_1px,transparent_1px)] bg-[size:64px_64px]" />
-      <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-        <div className="relative flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-          <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sand)]">
-              Research
-            </p>
-            <h2
+      <div className="halftone-panel mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-10 lg:py-28">
+        <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <ScrollDepth className="lg:sticky lg:top-28" distance={32} fade>
+            <SectionHeading
               id="research-heading"
-              className="font-serif-display max-w-3xl text-4xl leading-tight text-white sm:text-5xl lg:text-6xl"
-            >
-              Our research focus
-            </h2>
-          </div>
-          <p className="max-w-md text-base leading-8 text-slate-300">
-            Six research tracks create a practical evidence base for platforms,
-            policymakers, civil society, and researchers.
-          </p>
-        </div>
+              eyebrow="Research pillars"
+              title="What Afka studies."
+              body="The research agenda begins with three connected fields: information ecosystems, digital rights, and the online economy."
+              tone="dark"
+            />
+            {showIntroLink ? (
+              <Link
+                href="/research"
+                className="focus-ring mt-8 inline-flex rounded-full border border-[rgba(244,248,249,0.14)] bg-[rgba(244,248,249,0.04)] px-5 py-3 text-sm font-semibold text-[rgba(244,248,249,0.78)] transition-colors hover:border-[var(--deep-teal)] hover:text-[var(--cloud-white)]"
+              >
+                Explore Research
+              </Link>
+            ) : null}
+          </ScrollDepth>
 
-        <div className="relative mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {researchAreas.map((area, index) => (
-            <article
-              key={area.title}
-              className="card-lift flex min-h-[300px] flex-col justify-between border border-white/12 bg-white/[0.06] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.18)] backdrop-blur-md sm:p-8"
-            >
-              <div>
-                <p className="mb-8 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sand)]">
-                  0{index + 1}
-                </p>
-                <h3 className="font-serif-display text-2xl leading-tight text-white">
-                  {area.title}
-                </h3>
-                <p className="mt-5 text-base leading-8 text-slate-300">
-                  {area.description}
-                </p>
-              </div>
-            </article>
-          ))}
+          <div className="research-framework-grid grid gap-5 lg:min-h-[58rem] lg:grid-cols-[0.92fr_1.08fr]">
+            <ScrollDepth className="lg:sticky lg:top-28 lg:self-start" distance={22} scale>
+              <SignalField
+                tone="dark"
+                label="Information field"
+                caption="Signals are read as relationships between language, platform surfaces, incentives, and rights."
+              />
+            </ScrollDepth>
+
+            <Stagger className="pillar-card-stack grid gap-5 lg:pt-10">
+              {researchAreas.map((area, index) => (
+                <StaggerItem
+                  key={area.title}
+                  className="pillar-scroll-card"
+                  style={{ "--pillar-index": index } as CSSProperties}
+                >
+                  <ResearchSurface
+                    tone="dark"
+                    className={`p-5 backdrop-blur-sm sm:p-6 ${
+                      index === 1 ? "lg:mr-8" : "lg:ml-8"
+                    }`}
+                  >
+                    <div className="flex items-start gap-5">
+                      <p className="surface-index shrink-0">
+                        0{index + 1}
+                      </p>
+                      <div>
+                        <h3 className="font-serif-display text-[1.55rem] leading-tight text-[var(--cloud-white)]">
+                          {area.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-7 text-[rgba(244,248,249,0.58)]">
+                          {area.description}
+                        </p>
+                      </div>
+                    </div>
+                  </ResearchSurface>
+                </StaggerItem>
+              ))}
+            </Stagger>
+          </div>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }

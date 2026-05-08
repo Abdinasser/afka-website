@@ -1,48 +1,32 @@
-import Image from "next/image";
+import Link from "next/link";
+
+import { MotionSection } from "@/components/Motion";
 
 export function GetInvolved() {
   return (
-    <section
-      className="section-reveal bg-[var(--primary)] text-white"
+    <MotionSection
+      className="section-reveal bg-[var(--deep-ink)] text-[var(--cloud-white)]"
       aria-labelledby="get-involved-heading"
     >
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-10 lg:py-24">
-        <div className="hidden lg:block">
-          <Image
-            src="/images/afka-logo-light-transparent.png"
-            alt="Afka Digital Institute"
-            width={520}
-            height={247}
-            className="w-full max-w-md"
-          />
-        </div>
+      <div className="halftone-panel mx-auto grid max-w-7xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[1fr_auto] md:items-center lg:px-10">
         <div>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sand)]">
-            Get Involved
+          <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+            Get involved
           </p>
           <h2
             id="get-involved-heading"
-            className="font-serif-display text-3xl leading-tight sm:text-4xl lg:text-5xl"
+            className="mt-5 max-w-3xl font-serif-display text-3xl leading-tight text-[var(--cloud-white)] sm:text-4xl"
           >
-            Get Involved
+            Work with Afka on public evidence.
           </h2>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-100 sm:text-lg">
-            We are building our research team, advisory network, and first
-            publications. We welcome researchers, donors, civil society
-            organizations, journalists, and platform policy teams interested in
-            digital harm and technology accountability in the Somali-speaking
-            world.
-          </p>
-          <div className="mt-8">
-            <a
-              href="#contact"
-              className="focus-ring inline-flex min-h-12 items-center justify-center border border-white bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-[var(--sand)]"
-            >
-              Submit Inquiry
-            </a>
-          </div>
         </div>
+        <Link
+          href="/contact"
+          className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-[rgba(244,248,249,0.14)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] transition-colors hover:border-[var(--deep-teal)]"
+        >
+          Contact
+        </Link>
       </div>
-    </section>
+    </MotionSection>
   );
 }

@@ -12,6 +12,16 @@ export type Step = Card & {
   step: string;
 };
 
+export type Insight = Card & {
+  label: string;
+  href: string;
+  status?: string;
+};
+
+export type ResearchOutput = Card & {
+  label: string;
+};
+
 export type AcronymBlock = Card & {
   letter: string;
 };
@@ -54,97 +64,203 @@ export type NamePhilosophy = {
   acronym: AcronymBlock[];
 };
 
-export type TeamRole = {
-  role: string;
-  initials: string;
-};
+export const contactEmail = "hello@afkadigital.org";
+
+export const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/afka.digital?igsh=MWNmMzlkazZsd2xheg=="
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/afka-digital-institute/"
+  },
+  {
+    label: "X",
+    href: "https://x.com/afkadigital?s=21"
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/18QzKjhvu1/?mibextid=wwXIfr"
+  }
+];
 
 export const navLinks = [
-  { label: "Mission", href: "/#mission" },
   { label: "About", href: "/about" },
-  { label: "Research", href: "/#research" },
-  { label: "Approach", href: "/#approach" },
-  { label: "Independence", href: "/#independence" },
-  { label: "Contact", href: "/#contact" }
+  { label: "Founding Brief", href: "/founding-brief" },
+  { label: "Research", href: "/research" },
+  { label: "Insights", href: "/insights" },
+  { label: "Contact", href: "/contact" }
 ];
+
+export const footerLinks = navLinks;
 
 export const heroStats: Stat[] = [
   {
-    value: "25M+",
-    label: "Somali-speaking people across the Horn of Africa and the diaspora"
+    value: "Platform",
+    label: "Accountability in Somali online spaces"
   },
   {
-    value: "10.7M",
-    label: "Internet users in Somalia recorded in 2025"
+    value: "Information",
+    label: "How influence and harm move across networks"
   },
   {
-    value: "0",
-    label: "Dedicated Somali research institutions focused on digital harm"
+    value: "Rights",
+    label: "Digital safety, access, and civic expression"
   }
+];
+
+export const researchAreas: Card[] = [
+  {
+    title: "Information Ecosystems",
+    description:
+      "Tracks how claims, influence, and monetized attention move through Somali-language media and platform spaces."
+  },
+  {
+    title: "Digital Rights",
+    description:
+      "Documents moderation gaps, online abuse, access, and platform accountability affecting Somali-speaking communities."
+  },
+  {
+    title: "Digital Economy",
+    description:
+      "Studies how creator monetization, platform incentives, and language access shape visibility and harm."
+  }
+];
+
+export const featuredInsight: Insight = {
+  label: "Founding Brief",
+  title: "The case for an independent Somali digital research institute.",
+  description:
+    "An institutional brief setting out why Somali digital life needs sustained research infrastructure, public evidence, and institutional memory.",
+  href: "/founding-brief",
+  status: "Founding Brief · 2026"
+};
+
+export const insightItems: Insight[] = [];
+
+export const approachSteps: Step[] = [
+  {
+    step: "01",
+    title: "Document",
+    description: "Collect public cases, platform signals, and language context with clear limits."
+  },
+  {
+    step: "02",
+    title: "Test",
+    description: "Read patterns across platform design, language, incentives, and rights."
+  },
+  {
+    step: "03",
+    title: "Publish",
+    description: "Release concise briefs and notes that institutions can scrutinize and cite."
+  }
+];
+
+export const researchOutputs: ResearchOutput[] = [
+  {
+    label: "Report",
+    title: "Research Reports",
+    description:
+      "Long-form analysis on digital harm, platform power, information ecosystems, AI, and the online economy across Somali-speaking communities."
+  },
+  {
+    label: "Brief",
+    title: "Policy Briefs",
+    description:
+      "Focused recommendations for policymakers, regulators, civil society, journalists, and institutions working on digital governance and rights."
+  },
+  {
+    label: "Analysis",
+    title: "Platform Accountability Analysis",
+    description:
+      "Evidence-led analysis of visibility, moderation, monetization, platform access, and digital inequity affecting Somali users."
+  },
+  {
+    label: "Explainer",
+    title: "Digital Rights Explainers",
+    description:
+      "Clear public-facing explainers on safety, surveillance, online harassment, platform rules, speech, and user rights."
+  },
+  {
+    label: "Field Note",
+    title: "Field Notes",
+    description:
+      "Ground-level observations from Somali-speaking digital life, shaped by lived experience, reporting, interviews, and community knowledge."
+  },
+  {
+    label: "Data Insight",
+    title: "Data-Led Insights",
+    description:
+      "Short analytical pieces using public data, platform signals, media monitoring, and community evidence to track emerging risks and shifts."
+  },
+  {
+    label: "Case Study",
+    title: "Case Studies",
+    description:
+      "Focused studies of specific incidents, platform decisions, online harms, creator barriers, or policy debates."
+  },
+  {
+    label: "Library",
+    title: "Resource Libraries",
+    description:
+      "Curated reading lists, glossaries, datasets, and public knowledge resources for people studying Somali digital spaces."
+  },
+  {
+    label: "Future Tools",
+    title: "Future Tools & Knowledge Products",
+    description:
+      "Over time, Afka may develop public-interest tools such as research databases, platform issue trackers, Somali digital glossaries, media monitoring tools, digital harm reporting resources, and lightweight interactive explainers."
+  }
+];
+
+export const outputCategories: Card[] = researchOutputs;
+
+export const independencePrinciples: Card[] = [
+  {
+    title: "Independent",
+    description: "Research is kept separate from political and commercial direction."
+  },
+  {
+    title: "Evidence-led",
+    description: "Findings are grounded in documented cases, methods, and public reasoning."
+  },
+  {
+    title: "Public-interest",
+    description: "Focused on rights, safety, and accountability across Somali online spaces."
+  }
+];
+
+export const inquiryReasons = [
+  "Research inquiry",
+  "Media request",
+  "Institutional partnership",
+  "Platform engagement",
+  "General contact"
 ];
 
 export const problemCards: Card[] = [
   {
-    title: "Platform Blind Spots",
-    description:
-      "Global platforms often lack the language capacity, local context, and monitoring systems needed to understand Somali-language content and harm."
+    title: "Language context",
+    description: "Somali-language moderation and discovery systems often miss local meaning and public context."
   },
   {
-    title: "Monetized Harm",
-    description:
-      "Clan-based abuse, misinformation, harassment, and conflict-driven content can gain visibility and financial reward through platform engagement systems."
+    title: "Rights and safety",
+    description: "Harassment, image-based abuse, access, and takedown decisions need clearer evidence."
   },
   {
-    title: "Gendered Digital Harm",
-    description:
-      "Image-based abuse, online intimidation, and technology-facilitated violence are serious harms in Somali communities, but they remain under-documented."
-  },
-  {
-    title: "AI and Language Exclusion",
-    description:
-      "AI systems increasingly shape moderation, recommendation, and information access, yet Somali remains underrepresented in the datasets and systems that govern these decisions."
+    title: "Platform incentives",
+    description: "Monetization and recommendation systems shape what becomes visible and what is rewarded."
   }
 ];
 
-export const aboutProblemCards: Card[] = [
-  {
-    title: "Platform blind spots",
-    description:
-      "Global platforms often lack the Somali-language capacity, local context, and monitoring systems needed to understand how harm travels across posts, comments, videos, and creator networks."
-  },
-  {
-    title: "Monetized harm",
-    description:
-      "Clan-based abuse, misinformation, harassment, and conflict-driven content can gain visibility and financial reward through engagement systems that were not designed for local accountability."
-  },
-  {
-    title: "Gendered digital harm",
-    description:
-      "Image-based abuse, online intimidation, and technology-facilitated violence affect women and public voices in Somali-speaking communities, but remain seriously under-documented."
-  },
-  {
-    title: "AI and language exclusion",
-    description:
-      "Automated moderation, large language models, and AI-generated content increasingly shape access to information, while Somali remains underrepresented in the systems making those decisions."
-  },
-  {
-    title: "Creator monetization exclusion",
-    description:
-      "Unequal access to monetization, verification, appeals, and platform support shapes creator incentives and can distort the online public culture around Somali-language content."
-  },
-  {
-    title: "Weak evidence base",
-    description:
-      "Civil society, journalists, policy teams, and platforms often lack documented cases, datasets, and language-specific analysis needed to challenge digital harm and demand accountability."
-  }
-];
+export const aboutProblemCards = problemCards;
 
 export const adigaPhilosophy: NamePhilosophy = {
-  label: "THE NAME",
+  label: "The Name",
   heading: "Why Afka carries the ADIGA philosophy",
   publicStatement: "Our public name is Afka Digital Institute.",
-  philosophyStatement:
-    "Behind it sits a people-centered philosophy: ADIGA.",
+  philosophyStatement: "Behind it sits a people-centered philosophy: ADIGA.",
   meanings: [
     {
       icon: "language",
@@ -156,13 +272,13 @@ export const adigaPhilosophy: NamePhilosophy = {
       icon: "digital",
       title: "Digital",
       description:
-        "Defines the institute's field of concern: platforms, AI systems, online harm, and technology policy."
+        "Defines the institute's field of concern: platforms, online harm, and technology policy."
     },
     {
       icon: "institute",
       title: "Institute",
       description:
-        "Signals rigor, evidence, and institutional memory, so our work is careful, documented, and built to endure."
+        "Signals rigor, evidence, and institutional memory."
     }
   ],
   centralIntro: "The philosophy starts with",
@@ -175,181 +291,39 @@ export const adigaPhilosophy: NamePhilosophy = {
       icon: "communities",
       label: "Somali-speaking communities affected by digital harm"
     },
-    { icon: "creator", label: "Creators navigating exclusion" },
     { icon: "shield", label: "Women facing online abuse" },
     { icon: "journal", label: "Journalists tracking public life" },
     { icon: "research", label: "Researchers producing evidence" },
-    {
-      icon: "civil",
-      label: "Civil society groups pushing for accountability"
-    },
-    {
-      icon: "policy",
-      label: "Policy and platform teams needing a stronger evidence base"
-    }
+    { icon: "policy", label: "Policy staff needing a stronger evidence base" }
   ],
   footerPublicName: "The public name is Afka Digital Institute.",
   footerStatement:
-    "ADIGA is our internal philosophical layer, centering you in every layer of our research, evidence, and impact.",
+    "ADIGA is our internal philosophical layer, centering you in every layer of our research and evidence.",
   acronym: [
     {
       letter: "A",
       title: "Afka",
-      description:
-        "The language, speech, and digital life through which the work begins."
+      description: "The language, speech, and digital life where the work begins."
     },
     {
       letter: "D",
       title: "Digital",
-      description:
-        "The platforms, AI systems, online harms, and technology policies shaping public life."
+      description: "The platforms, AI systems, and online harms shaping public life."
     },
     {
       letter: "I",
       title: "Institute",
-      description:
-        "The research standard: careful methods, public evidence, and work that can withstand scrutiny."
+      description: "The research standard: careful methods and public evidence."
     },
     {
       letter: "G",
       title: "Grassroots",
-      description:
-        "The lived realities of Somali-speaking communities and the people closest to harm."
+      description: "The lived realities of Somali-speaking communities."
     },
     {
       letter: "A",
       title: "Analysis",
-      description:
-        "The process of turning harms into patterns, findings, datasets, and policy insight."
+      description: "The process of turning harms into patterns and insight."
     }
   ]
 };
-
-export const researchAreas: Card[] = [
-  {
-    title: "Platform Accountability",
-    description:
-      "Researching how major platforms moderate, monetize, recommend, and protect Somali-speaking users."
-  },
-  {
-    title: "Somali-Language Content Moderation",
-    description:
-      "Testing whether harmful content in Somali is detected, reviewed, and acted on fairly and consistently."
-  },
-  {
-    title: "Digital Harm and Safety",
-    description:
-      "Documenting online abuse, harassment, image-based abuse, disinformation, and coordinated manipulation."
-  },
-  {
-    title: "AI Governance",
-    description:
-      "Studying how automated moderation, large language models, and AI-generated content affect Somali-language information spaces."
-  },
-  {
-    title: "Creator Monetization and Platform Access",
-    description:
-      "Examining how unequal access to platform monetization shapes creator incentives and online public culture."
-  },
-  {
-    title: "Language Justice",
-    description:
-      "Advocating for better treatment of under-resourced languages in technology systems, content moderation, search, and digital policy."
-  }
-];
-
-export const approachSteps: Step[] = [
-  {
-    step: "01",
-    title: "Document",
-    description:
-      "Collect evidence through interviews, monitoring, case studies, platform tests, and open-source research."
-  },
-  {
-    step: "02",
-    title: "Analyze",
-    description:
-      "Turn scattered incidents into patterns, findings, datasets, and policy insight."
-  },
-  {
-    step: "03",
-    title: "Publish",
-    description:
-      "Produce research reports, policy briefs, explainers, platform accountability notes, and public-interest analysis."
-  },
-  {
-    step: "04",
-    title: "Engage",
-    description:
-      "Work with civil society, researchers, journalists, platform policy teams, donors, and policymakers."
-  }
-];
-
-export const outputCategories: Card[] = [
-  {
-    title: "Research Reports",
-    description:
-      "Long-form evidence-based studies on Somali-language digital harm and platform accountability."
-  },
-  {
-    title: "Policy Briefs",
-    description:
-      "Targeted analysis for policymakers, platforms, donors, researchers, and civil society."
-  },
-  {
-    title: "Digital Harm Monitor",
-    description:
-      "Ongoing documentation of harmful trends, platform failures, and emerging risks."
-  },
-  {
-    title: "Platform Accountability Notes",
-    description:
-      "Focused findings on moderation, monetization, recommendation, and language access."
-  },
-  {
-    title: "AI and Somali Language Briefings",
-    description:
-      "Analysis of how AI systems affect Somali-language users and information ecosystems."
-  },
-  {
-    title: "Commentary",
-    description:
-      "Editorial analysis and public-interest writing from Afka researchers and contributors."
-  }
-];
-
-export const independencePrinciples: Card[] = [
-  {
-    title: "Research Integrity",
-    description: "Evidence-based methods, careful documentation, and clear sourcing."
-  },
-  {
-    title: "Institutional Independence",
-    description:
-      "Nonpartisan structure and protection from political or commercial interference."
-  },
-  {
-    title: "Public Interest",
-    description:
-      "Focused on the rights, safety, and dignity of Somali-speaking communities online."
-  }
-];
-
-export const teamRoles: TeamRole[] = [
-  { role: "Founder / Managing Director", initials: "FM" },
-  { role: "Research Director", initials: "RD" },
-  { role: "Advisory Board", initials: "AB" },
-  { role: "Research Fellows", initials: "RF" }
-];
-
-export const footerLinks = [
-  ...navLinks
-];
-
-export const inquiryReasons = [
-  "Research partnerships",
-  "Media requests",
-  "Platform engagement",
-  "Donor conversations",
-  "Civil society collaboration"
-];

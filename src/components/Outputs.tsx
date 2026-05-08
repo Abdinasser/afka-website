@@ -1,38 +1,40 @@
-import { outputCategories } from "@/data/site";
+import Link from "next/link";
+
+import { MotionSection, ScrollDepth } from "@/components/Motion";
+import { OutputArchiveRail } from "@/components/OutputArchiveRail";
 import { SectionHeading } from "@/components/SectionHeading";
+import { featuredInsight, researchOutputs } from "@/data/site";
 
 export function Outputs() {
   return (
-    <section
-      className="section-reveal bg-white"
+    <MotionSection
+      id="outputs"
+      className="section-reveal archive-scroll-section grain-layer bg-[var(--cloud-white)]"
       aria-labelledby="outputs-heading"
     >
-      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-20">
-        <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <SectionHeading
-            id="outputs-heading"
-            title="What Afka will publish"
-          />
-          <a
-            href="#contact"
-            className="focus-ring inline-flex min-h-11 w-full items-center justify-center border border-[var(--primary)] bg-[var(--primary)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-700 sm:w-auto"
-          >
-            Submit a research inquiry
-          </a>
-        </div>
-
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {outputCategories.map((category) => (
-            <div
-              key={category.title}
-              data-content-type="publication-category"
-              className="card-lift flex min-h-14 items-center justify-center border border-slate-200 bg-[var(--surface-soft)] px-4 py-4 text-center text-sm font-semibold text-[var(--primary)] shadow-[0_10px_24px_rgba(23,35,49,0.05)]"
+      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-10 lg:py-28">
+        <div className="grid gap-10 lg:grid-cols-[0.58fr_1.42fr] lg:items-start">
+          <ScrollDepth className="lg:sticky lg:top-28 lg:self-start" distance={30} fade>
+            <SectionHeading
+              id="outputs-heading"
+              eyebrow="Outputs"
+              title="What Afka will produce."
+              body="Afka will translate lived experience, platform behavior, and field evidence into research and policy work for public use."
+            />
+            <Link
+              href={featuredInsight.href}
+              className="focus-ring mt-8 inline-flex rounded-full border border-[var(--line)] bg-[rgba(200,232,237,0.32)] px-5 py-3 text-sm font-semibold text-[var(--deep-ink)] transition-colors hover:border-[var(--deep-teal)] hover:text-[var(--deep-teal)]"
             >
-              {category.title}
-            </div>
-          ))}
+              {featuredInsight.label}
+            </Link>
+            <p className="mt-4 max-w-sm text-xs leading-6 text-[var(--muted)]">
+              {featuredInsight.status}
+            </p>
+          </ScrollDepth>
+
+          <OutputArchiveRail items={researchOutputs} />
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }

@@ -1,50 +1,78 @@
 import Image from "next/image";
 import Link from "next/link";
-import { footerLinks } from "@/data/site";
+
+import { MotionFooter } from "@/components/Motion";
+import { SocialLinks } from "@/components/SocialLinks";
+import { contactEmail, footerLinks } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[var(--ink)] text-white">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:52px_52px]" />
-      <div className="relative mx-auto flex max-w-7xl flex-col gap-8 px-5 py-10 sm:px-8 lg:px-10">
-        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <Link
-            href="/#top"
-            className="focus-ring inline-flex rounded-sm"
-            aria-label="Afka Digital Institute home"
-          >
-            <Image
-              src="/images/afka-logo-light-transparent.png"
-              alt="Afka Digital Institute"
-              width={280}
-              height={133}
-              className="h-auto w-40"
-            />
-          </Link>
-          <nav aria-label="Footer navigation" className="flex flex-wrap gap-4">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="focus-ring rounded-sm text-sm font-medium text-slate-300 transition-colors hover:text-white"
+    <MotionFooter
+      id="site-footer"
+      className="footer-architecture relative overflow-hidden border-t border-[rgba(244,248,249,0.1)] bg-[var(--deep-ink)] text-[var(--cloud-white)]"
+    >
+      <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-16">
+        <div className="grid gap-12 border-b border-[rgba(244,248,249,0.1)] pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div className="max-w-2xl">
+            <Link
+              href="/"
+              className="focus-ring inline-flex rounded-sm"
+              aria-label="Afka Digital Institute home"
+            >
+              <Image
+                src="/images/afka-wordmark-light.png"
+                alt="Afka"
+                width={816}
+                height={324}
+                className="h-auto w-36 sm:w-44"
+              />
+            </Link>
+            <p className="mt-8 max-w-xl font-serif-display text-2xl leading-tight text-[rgba(244,248,249,0.86)] sm:text-[2rem]">
+              Evidence for Somali digital futures.
+            </p>
+          </div>
+
+          <div className="grid gap-10 sm:grid-cols-2 lg:justify-items-end">
+            <nav
+              aria-label="Footer navigation"
+              className="grid gap-4"
+            >
+              <p className="text-xs font-semibold uppercase text-[rgba(244,248,249,0.38)]">
+                Navigate
+              </p>
+              {footerLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="focus-ring rounded-sm text-sm font-medium text-[rgba(244,248,249,0.68)] transition-colors hover:text-[var(--cloud-white)]"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <div className="space-y-5 sm:text-right">
+              <p className="text-xs font-semibold uppercase text-[rgba(244,248,249,0.38)]">
+                Contact
+              </p>
+              <a
+                href={`mailto:${contactEmail}`}
+                className="focus-ring inline-flex rounded-full border border-[rgba(244,248,249,0.14)] bg-[rgba(244,248,249,0.04)] px-5 py-3 text-sm font-medium text-[rgba(244,248,249,0.76)] transition-colors hover:border-[var(--deep-teal)] hover:text-[var(--cloud-white)]"
               >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-          <a
-            href="#top"
-            className="focus-ring inline-flex min-h-11 items-center justify-center border border-white/14 bg-white/[0.06] px-4 py-2 text-sm font-semibold text-slate-100 transition-colors hover:bg-white/[0.12]"
-          >
-            Back to top
-          </a>
+                {contactEmail}
+              </a>
+              <div className="flex sm:justify-end">
+                <SocialLinks tone="dark" compact />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col justify-between gap-3 border-t border-white/10 pt-5 text-sm text-slate-300 md:flex-row md:items-center">
-          <p>Evidence for the Somali digital world.</p>
-          <p>© 2026 · AFKA DIGITAL INSTITUTE</p>
+        <div className="grid gap-4 pt-6 text-sm text-[rgba(244,248,249,0.42)] sm:grid-cols-[1fr_auto] sm:items-center">
+          <p>Afka Digital Institute</p>
+          <p>© 2026</p>
         </div>
       </div>
-    </footer>
+    </MotionFooter>
   );
 }

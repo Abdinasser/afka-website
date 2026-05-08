@@ -1,44 +1,28 @@
-import Image from "next/image";
+import { MotionSection, Reveal } from "@/components/Motion";
 
 export function WhyNow() {
   return (
-    <section
-      className="section-reveal relative overflow-hidden bg-[var(--ink)] text-white"
+    <MotionSection
+      className="section-reveal cinematic-field min-h-[34rem] text-[var(--cloud-white)]"
       aria-labelledby="why-now-heading"
     >
-      <Image
-        src="/images/horn-of-africa-map-clean.png"
-        alt=""
-        fill
-        sizes="100vw"
-        aria-hidden="true"
-        className="object-cover opacity-30"
-      />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,35,49,0.95),rgba(23,35,49,0.72))]" />
-      <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-28">
-        <div className="max-w-4xl border-l-2 border-[var(--sand)] pl-6 sm:pl-10">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-slate-200">
-            Why Now
+      <div className="relative mx-auto flex min-h-[34rem] max-w-7xl items-center px-5 py-24 sm:px-8 lg:px-10">
+        <Reveal className="max-w-3xl" kind="text">
+          <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+            Why now
           </p>
           <h2
             id="why-now-heading"
-            className="font-serif-display text-3xl leading-tight sm:text-4xl lg:text-5xl"
+            className="mt-6 font-serif-display text-3xl leading-tight text-[var(--cloud-white)] sm:text-4xl"
           >
-            Why this work matters now
+            Digital life is moving faster than the evidence around it.
           </h2>
-          <p className="mt-6 text-base leading-8 text-slate-100 sm:text-lg">
-            The Somali-speaking world is entering a major digital and AI
-            transition without the institutions needed to study, document, or
-            challenge the harms emerging inside it. A credible evidence base on
-            Somali-language platform performance, digital harm, and AI
-            moderation failure can shape donor priorities, platform
-            accountability, public policy, and civil society response.
+          <p className="mt-7 max-w-2xl text-base leading-8 text-[rgba(244,248,249,0.62)] sm:text-lg">
+            Afka exists to slow that picture down, document what is happening,
+            and make the systems visible enough to question.
           </p>
-          <p className="mt-8 font-serif-display text-2xl leading-9 text-white">
-            Afka exists to build that evidence base.
-          </p>
-        </div>
+        </Reveal>
       </div>
-    </section>
+    </MotionSection>
   );
 }

@@ -2,102 +2,125 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+
 import { navLinks } from "@/data/site";
+import { linkHover, mobileMenuReveal, navReveal } from "@/lib/motion";
 
 function Wordmark() {
   return (
     <Link
-      href="/#top"
-      className="focus-ring flex shrink-0 items-center rounded-sm"
+      href="/"
+      className="focus-ring inline-flex shrink-0 items-center rounded-full"
       aria-label="Afka Digital Institute home"
     >
       <Image
-        src="/images/afka-logo-light-transparent.png"
-        alt="Afka Digital Institute"
-        width={260}
-        height={124}
+        src="/images/afka-wordmark-light.png"
+        alt="Afka"
+        width={816}
+        height={324}
         priority
-        className="h-9 w-auto sm:h-11"
+        className="h-7 w-auto sm:h-8"
       />
     </Link>
   );
 }
 
 export function Header() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
-  const closeMenu = () => setOpen(false);
+  const reducedMotion = useReducedMotion();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/12 bg-[rgba(23,35,49,0.86)] text-white shadow-[0_14px_44px_rgba(0,0,0,0.18)] backdrop-blur-xl">
+    <motion.header
+      animate="visible"
+      className="fixed inset-x-0 top-4 z-50 px-4 text-[var(--cloud-white)] sm:top-5"
+      initial={reducedMotion ? false : "hidden"}
+      variants={navReveal}
+    >
       <nav
         aria-label="Primary navigation"
-        className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-5 py-3 sm:px-8 lg:px-10"
+        className="mx-auto flex w-full max-w-fit items-center justify-center"
       >
-        <Wordmark />
+        <div className="flex min-h-14 items-center gap-2 rounded-full border border-[rgba(244,248,249,0.12)] bg-[rgba(13,31,34,0.72)] px-3 py-2 shadow-[0_22px_70px_rgba(13,31,34,0.22)] backdrop-blur-2xl sm:gap-4 sm:px-4">
+          <Wordmark />
 
-        <div className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="focus-ring rounded-sm text-sm font-medium text-slate-200 transition-colors hover:text-white"
-            >
-              {link.label}
-            </Link>
-          ))}
+          <div className="hidden items-center gap-1 md:flex">
+            {navLinks.map((link) => {
+              const active = pathname === link.href;
+
+              return (
+                <motion.div
+                  key={link.href}
+                  whileHover={reducedMotion ? undefined : linkHover}
+                >
+                  <Link
+                    href={link.href}
+                    className={`focus-ring block rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                      active
+                        ? "bg-[rgba(244,248,249,0.1)] text-[var(--cloud-white)]"
+                        : "text-[rgba(244,248,249,0.68)] hover:bg-[rgba(244,248,249,0.08)] hover:text-[var(--cloud-white)]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            className="focus-ring inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(244,248,249,0.12)] bg-[rgba(244,248,249,0.06)] text-[var(--cloud-white)] md:hidden"
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="flex w-4 flex-col gap-1.5" aria-hidden="true">
+              <span className="h-px w-full bg-current" />
+              <span className="h-px w-full bg-current" />
+              <span className="h-px w-full bg-current" />
+            </span>
+          </button>
         </div>
-
-        <Link
-          href="/#contact"
-          className="focus-ring hidden border border-white/20 bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-[var(--sand)] lg:inline-flex"
-        >
-          Get in Touch
-        </Link>
-
-        <button
-          type="button"
-          className="focus-ring inline-flex h-11 w-11 shrink-0 items-center justify-center border border-white/20 bg-white/8 text-white lg:hidden"
-          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
-            <span className="h-px w-full bg-current" />
-            <span className="h-px w-full bg-current" />
-            <span className="h-px w-full bg-current" />
-          </span>
-        </button>
       </nav>
 
-      {open ? (
-        <div
-          id="mobile-menu"
-          className="border-t border-white/12 bg-[var(--ink)] px-5 py-5 shadow-sm lg:hidden"
-        >
-          <div className="mx-auto flex max-w-7xl flex-col gap-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className="focus-ring rounded-sm px-1 py-3 text-base font-medium text-slate-100"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              href="/#contact"
-              onClick={closeMenu}
-              className="focus-ring mt-3 inline-flex min-h-12 items-center justify-center border border-white bg-white px-5 py-3 text-sm font-semibold text-slate-950"
-            >
-              Get in Touch
-            </Link>
-          </div>
-        </div>
-      ) : null}
-    </header>
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            animate="visible"
+            className="mx-auto mt-3 max-w-[19rem] rounded-[1.75rem] border border-[rgba(244,248,249,0.12)] bg-[rgba(13,31,34,0.9)] p-3 shadow-[0_22px_70px_rgba(13,31,34,0.28)] backdrop-blur-2xl md:hidden"
+            exit="exit"
+            id="mobile-menu"
+            initial={reducedMotion ? false : "hidden"}
+            variants={mobileMenuReveal}
+          >
+            <div className="grid gap-1">
+              {navLinks.map((link) => {
+                const active = pathname === link.href;
+
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`focus-ring rounded-full px-4 py-3 text-sm font-medium ${
+                      active
+                        ? "bg-[rgba(244,248,249,0.1)] text-[var(--cloud-white)]"
+                        : "text-[rgba(244,248,249,0.7)] hover:bg-[rgba(244,248,249,0.08)] hover:text-[var(--cloud-white)]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
+    </motion.header>
   );
 }

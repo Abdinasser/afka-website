@@ -3,17 +3,14 @@ import type { Metadata } from "next";
 import { AboutContext } from "@/components/AboutContext";
 import { AboutCTA } from "@/components/AboutCTA";
 import { AboutHero } from "@/components/AboutHero";
-import { AboutProblem } from "@/components/AboutProblem";
 import { AboutStandard } from "@/components/AboutStandard";
-import { AdigaPhilosophy } from "@/components/AdigaPhilosophy";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
 export const metadata: Metadata = {
-  title:
-    "About Afka Digital Institute | Digital Harm Research in the Somali-Speaking World",
+  title: "About Afka Digital Institute | Somali Digital Research",
   description:
-    "Learn why Afka Digital Institute documents digital harm, platform accountability failures, AI moderation gaps, and online rights issues affecting Somali-speaking communities."
+    "Learn why Afka Digital Institute studies information ecosystems, digital rights, and platform harm across Somali online spaces."
 };
 
 export default function AboutPage() {
@@ -23,8 +20,6 @@ export default function AboutPage() {
       <main>
         <AboutHero />
         <AboutContext />
-        <AboutProblem />
-        <AdigaPhilosophy />
         <AboutStandard />
         <AboutCTA />
       </main>
