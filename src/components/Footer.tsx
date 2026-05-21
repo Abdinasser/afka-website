@@ -12,8 +12,8 @@ export function Footer() {
       className="footer-architecture relative overflow-hidden border-t border-[rgba(244,248,249,0.1)] bg-[var(--deep-ink)] text-[var(--cloud-white)]"
     >
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-16">
-        <div className="grid gap-12 border-b border-[rgba(244,248,249,0.1)] pb-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-          <div className="max-w-2xl">
+        <div className="grid gap-12 pb-12 lg:grid-cols-[1.22fr_0.55fr_1fr] lg:items-start lg:gap-16">
+          <div className="max-w-xl">
             <Link
               href="/"
               className="focus-ring inline-flex rounded-sm"
@@ -27,48 +27,54 @@ export function Footer() {
                 className="h-auto w-36 sm:w-44"
               />
             </Link>
-            <p className="mt-8 max-w-xl font-serif-display text-2xl leading-tight text-[rgba(244,248,249,0.86)] sm:text-[2rem]">
+            <p className="mt-8 max-w-md font-serif-display text-2xl leading-tight text-[rgba(244,248,249,0.9)] sm:text-[2rem]">
               Evidence for Somali digital futures.
+            </p>
+            <p className="mt-5 max-w-md text-sm leading-7 text-[rgba(244,248,249,0.68)]">
+              Independent research on platform accountability, Somali-language
+              digital rights, and public-interest technology policy.
             </p>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-2 lg:justify-items-end">
-            <nav
-              aria-label="Footer navigation"
-              className="grid gap-4"
-            >
-              <p className="text-xs font-semibold uppercase text-[rgba(244,248,249,0.38)]">
-                Navigate
-              </p>
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="focus-ring rounded-sm text-sm font-medium text-[rgba(244,248,249,0.68)] transition-colors hover:text-[var(--cloud-white)]"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="space-y-5 sm:text-right">
-              <p className="text-xs font-semibold uppercase text-[rgba(244,248,249,0.38)]">
-                Contact
-              </p>
-              <a
-                href={`mailto:${contactEmail}`}
-                className="focus-ring inline-flex rounded-full border border-[rgba(244,248,249,0.14)] bg-[rgba(244,248,249,0.04)] px-5 py-3 text-sm font-medium text-[rgba(244,248,249,0.76)] transition-colors hover:border-[var(--deep-teal)] hover:text-[var(--cloud-white)]"
+          <nav
+            aria-label="Footer navigation"
+            className="grid content-start gap-4"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[rgba(244,248,249,0.48)]">
+              Navigate
+            </p>
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="focus-ring w-fit rounded-sm text-sm font-medium text-[rgba(244,248,249,0.76)] transition-colors hover:text-[var(--cloud-white)]"
               >
-                {contactEmail}
-              </a>
-              <div className="flex sm:justify-end">
-                <SocialLinks tone="dark" compact />
-              </div>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="space-y-5 lg:justify-self-end lg:text-right">
+            <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[rgba(244,248,249,0.48)]">
+              Research inquiries
+            </p>
+            <p className="max-w-sm text-sm leading-7 text-[rgba(244,248,249,0.68)] lg:ml-auto">
+              For collaboration, case referrals, media inquiries, and policy
+              conversations.
+            </p>
+            <a
+              href={`mailto:${contactEmail}`}
+              className="focus-ring cta-text-light inline-flex min-h-11 items-center justify-center rounded-full border border-[rgba(244,248,249,0.18)] bg-[rgba(244,248,249,0.05)] px-5 py-3 text-sm font-semibold shadow-[0_16px_42px_rgba(0,0,0,0.16)] transition-colors hover:border-[rgba(200,232,237,0.48)] hover:bg-[rgba(200,232,237,0.08)]"
+            >
+              {contactEmail}
+            </a>
+            <div className="flex lg:justify-end">
+              <SocialLinks tone="dark" compact />
             </div>
           </div>
         </div>
 
-        <div className="grid gap-4 pt-6 text-sm text-[rgba(244,248,249,0.42)] sm:grid-cols-[1fr_auto] sm:items-center">
+        <div className="grid gap-4 border-t border-[rgba(244,248,249,0.12)] pt-6 text-sm text-[rgba(244,248,249,0.52)] sm:grid-cols-[1fr_auto] sm:items-center">
           <p>Afka Digital Institute</p>
           <p>© 2026</p>
         </div>
