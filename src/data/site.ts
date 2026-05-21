@@ -158,7 +158,7 @@ export const approachSteps: Step[] = [
   {
     step: "03",
     title: "Publish",
-    description: "Release concise briefs and notes that institutions can scrutinize and cite."
+    description: "Release concise briefs and notes that institutions can scrutinise and cite."
   }
 ];
 
@@ -200,12 +200,12 @@ export const independencePrinciples: Card[] = [
   {
     title: "Evidence-led",
     description:
-      "Afka builds research from documented cases, community context, platform behaviour, and publicly reasoned analysis."
+      "Research is built from documented cases, community context, platform behaviour, and publicly reasoned analysis."
   },
   {
     title: "Public-interest",
     description:
-      "Afka's work is designed for researchers, journalists, civil society, policymakers, and Somali-speaking communities affected by digital systems."
+      "The work is designed for researchers, journalists, civil society, policymakers, and Somali-speaking communities affected by digital systems."
   }
 ];
 

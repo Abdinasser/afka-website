@@ -66,6 +66,14 @@ textarea {
   outline-color: var(--deep-teal);
 }
 
+.cta-text-dark {
+  color: var(--deep-ink);
+}
+
+.cta-text-light {
+  color: var(--cloud-white);
+}
+
 .brief-hero {
   background:
     radial-gradient(ellipse at 84% 12%, rgba(10, 92, 107, 0.14), transparent 32rem),
@@ -552,73 +560,15 @@ textarea {
   background: rgba(13, 31, 34, 0.12);
 }
 
-.about-statement-surface {
-  min-height: 23rem;
+.about-pull-panel {
+  min-height: 16rem;
 }
 
-.about-signal-system {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  border: 1px solid rgba(10, 92, 107, 0.18);
-  background:
-    linear-gradient(145deg, rgba(244, 248, 249, 0.82), rgba(200, 232, 237, 0.62)),
-    radial-gradient(ellipse at 84% 18%, rgba(10, 92, 107, 0.14), transparent 18rem),
-    rgba(244, 248, 249, 0.82);
-  box-shadow:
-    0 26px 78px rgba(13, 31, 34, 0.1),
-    inset 0 1px 0 rgba(244, 248, 249, 0.62);
-  backdrop-filter: blur(18px);
-}
-
-.about-signal-system::before,
-.about-signal-system::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.about-signal-system::before {
-  background:
-    repeating-linear-gradient(90deg, rgba(13, 31, 34, 0.06) 0 1px, transparent 1px 34px),
-    repeating-linear-gradient(0deg, rgba(10, 92, 107, 0.055) 0 1px, transparent 1px 42px);
-  opacity: 0.42;
-  -webkit-mask-image: linear-gradient(120deg, rgba(13, 31, 34, 0.9), transparent 78%);
-  mask-image: linear-gradient(120deg, rgba(13, 31, 34, 0.9), transparent 78%);
-}
-
-.about-signal-system::after {
-  background:
-    linear-gradient(112deg, transparent 0 22%, rgba(244, 248, 249, 0.36) 42%, transparent 60%),
-    radial-gradient(ellipse at 10% 88%, rgba(10, 92, 107, 0.18), transparent 18rem);
-  opacity: 0.58;
-  mix-blend-mode: multiply;
-}
-
-.about-signal-row {
-  --row-index: 0;
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  align-items: center;
-  gap: 1rem;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.about-signal-row span:last-child {
-  display: block;
-  height: 1px;
-  transform-origin: left center;
-  background: linear-gradient(90deg, rgba(10, 92, 107, 0.58), rgba(13, 31, 34, 0.08), transparent);
-}
-
-.about-insight-card {
-  min-height: 12rem;
+.approach-card,
+.about-logic-card,
+.method-card,
+.method-layer-panel {
+  min-height: 12.5rem;
 }
 
 .research-focus-card,
@@ -662,6 +612,22 @@ textarea {
 }
 
 @media (min-width: 1024px) {
+  .approach-card {
+    min-height: 11.75rem;
+  }
+
+  .about-logic-card {
+    min-height: 15rem;
+  }
+
+  .method-card {
+    min-height: 11.5rem;
+  }
+
+  .method-layer-panel {
+    min-height: 22rem;
+  }
+
   .research-focus-card {
     min-height: 17.5rem;
   }
@@ -703,14 +669,6 @@ textarea {
 
   .founding-brief-surface::before {
     animation: founding-signal-drift 72s ease-in-out infinite alternate;
-  }
-
-  .about-signal-system::before {
-    animation: signal-drift 64s ease-in-out infinite alternate;
-  }
-
-  .about-signal-system::after {
-    animation: scan-pass 54s ease-in-out infinite alternate;
   }
 
   .regional-map-texture img {

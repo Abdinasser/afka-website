@@ -1,14 +1,10 @@
 import Link from "next/link";
-import type { CSSProperties } from "react";
 
 import {
   MotionSection,
-  ScrollDepth,
-  SoftParallax,
   Stagger,
   StaggerItem
 } from "@/components/Motion";
-import { RegionalSignalMap } from "@/components/RegionalSignalMap";
 import { ResearchSurface } from "@/components/ResearchSurface";
 import { SectionHeading } from "@/components/SectionHeading";
 import { independencePrinciples } from "@/data/site";
@@ -21,61 +17,49 @@ export function Context() {
       aria-labelledby="approach-heading"
     >
       <div className="mx-auto max-w-7xl px-5 pb-24 pt-32 sm:px-8 lg:px-10 lg:pb-28 lg:pt-36">
-        <div className="grid gap-10 lg:grid-cols-[0.68fr_1.32fr] lg:items-start">
-          <ScrollDepth distance={28} fade>
+        <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div>
             <SectionHeading
               id="approach-heading"
-              eyebrow="Approach"
+              eyebrow="APPROACH"
               title="Independent public-interest research."
               body="Afka documents digital harm through Somali-language context, careful evidence, and public reasoning."
             />
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/about"
-                className="focus-ring rounded-full border border-[var(--deep-ink)] px-5 py-3 text-sm font-semibold text-[var(--deep-ink)] transition-colors hover:border-[var(--deep-teal)] hover:text-[var(--deep-teal)]"
+                className="focus-ring cta-text-light inline-flex min-h-11 items-center justify-center rounded-full border border-[rgba(13,31,34,0.68)] bg-[var(--deep-ink)] px-5 py-3 text-sm font-semibold shadow-[0_12px_30px_rgba(13,31,34,0.1)] transition-colors hover:border-[var(--deep-teal)] hover:bg-[var(--deep-teal)]"
               >
                 About Afka
               </Link>
               <Link
                 href="/research"
-                className="focus-ring rounded-full border border-[var(--line)] bg-[rgba(200,232,237,0.28)] px-5 py-3 text-sm font-semibold text-[var(--deep-ink)] transition-colors hover:border-[var(--deep-teal)] hover:text-[var(--deep-teal)]"
+                className="focus-ring cta-text-dark inline-flex min-h-11 items-center justify-center rounded-full border border-[rgba(10,92,107,0.36)] bg-[rgba(200,232,237,0.38)] px-5 py-3 text-sm font-semibold transition-colors hover:border-[var(--deep-teal)] hover:bg-[rgba(200,232,237,0.58)]"
               >
                 Explore Research
               </Link>
             </div>
-          </ScrollDepth>
-
-          <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-            <Stagger className="narrative-stack grid gap-4 self-center lg:translate-y-6">
-              {independencePrinciples.map((principle, index) => (
-                <StaggerItem
-                  key={principle.title}
-                  className="narrative-stack-card"
-                  style={{ "--stack-index": index } as CSSProperties}
-                >
-                  <ResearchSurface
-                    className={`p-5 sm:p-6 ${
-                      index === 1 ? "lg:ml-8" : ""
-                    }`}
-                  >
-                    <p className="surface-index">
-                      0{index + 1}
-                    </p>
-                    <h3 className="mt-5 font-serif-display text-[1.45rem] leading-tight text-[var(--deep-ink)]">
-                      {principle.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-                      {principle.description}
-                    </p>
-                  </ResearchSurface>
-                </StaggerItem>
-              ))}
-            </Stagger>
-
-            <SoftParallax className="lg:-translate-y-8" distance={26}>
-              <RegionalSignalMap tone="light" label="Context signals" />
-            </SoftParallax>
           </div>
+
+          <Stagger className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            {independencePrinciples.map((principle, index) => (
+              <StaggerItem key={principle.title} className="h-full">
+                <ResearchSurface
+                  className="approach-card flex h-full flex-col p-5 sm:p-6"
+                >
+                  <p className="surface-index">
+                    0{index + 1}
+                  </p>
+                  <h3 className="mt-6 font-serif-display text-[1.45rem] leading-tight text-[var(--deep-ink)]">
+                    {principle.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
+                    {principle.description}
+                  </p>
+                </ResearchSurface>
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
       </div>
     </MotionSection>

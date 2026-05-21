@@ -62,22 +62,25 @@ export function Hero() {
           >
             Building evidence on digital harm in Somali-speaking spaces.
           </h1>
-          <p className="mx-auto mt-10 max-w-[19rem] text-base leading-8 text-[rgba(244,248,249,0.62)] sm:max-w-3xl sm:text-lg">
-            Afka Digital Institute is a founding-stage research and policy
-            initiative documenting platform accountability, Somali-language
-            moderation, information ecosystems, AI governance, digital exclusion,
-            and digital rights across Somali online spaces.
+          <p className="mx-auto mt-10 max-w-[19rem] text-base leading-8 text-[rgba(244,248,249,0.66)] sm:hidden">
+            Researching platform power, Somali-language moderation, information
+            integrity, and digital rights across Somali online spaces.
+          </p>
+          <p className="mx-auto mt-10 hidden max-w-3xl text-lg leading-8 text-[rgba(244,248,249,0.66)] sm:block">
+            Afka Digital Institute documents platform accountability,
+            Somali-language moderation, information integrity, AI governance,
+            digital exclusion, and digital rights across Somali online spaces.
           </p>
           <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/research"
-              className="focus-ring inline-flex min-h-12 w-full max-w-[18rem] items-center justify-center rounded-full border border-[rgba(244,248,249,0.22)] bg-[rgba(244,248,249,0.9)] px-6 py-3 text-sm font-semibold text-[var(--deep-ink)] shadow-[0_18px_54px_rgba(13,31,34,0.28)] backdrop-blur-xl transition-colors hover:border-[rgba(200,232,237,0.44)] hover:bg-[var(--mist-blue)] sm:w-auto sm:max-w-none"
+              className="focus-ring cta-text-dark inline-flex min-h-12 w-full max-w-[18rem] items-center justify-center rounded-full border border-[rgba(244,248,249,0.76)] bg-[var(--mist-blue)] px-7 py-3 text-sm font-bold shadow-[0_18px_54px_rgba(13,31,34,0.32)] backdrop-blur-xl transition-colors hover:border-[var(--cloud-white)] hover:bg-[var(--cloud-white)] sm:w-auto sm:max-w-none"
             >
-              Explore Research Focus
+              Explore Research
             </Link>
             <Link
               href="/contact"
-              className="focus-ring inline-flex min-h-12 w-full max-w-[18rem] items-center justify-center rounded-full border border-[rgba(244,248,249,0.22)] bg-[rgba(13,31,34,0.42)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] shadow-[0_18px_54px_rgba(13,31,34,0.18)] backdrop-blur-xl transition-colors hover:border-[rgba(200,232,237,0.44)] hover:bg-[rgba(10,92,107,0.26)] sm:w-auto sm:max-w-none"
+              className="focus-ring cta-text-light inline-flex min-h-12 w-full max-w-[18rem] items-center justify-center rounded-full border border-[rgba(244,248,249,0.34)] bg-[rgba(13,31,34,0.5)] px-7 py-3 text-sm font-semibold shadow-[0_18px_54px_rgba(13,31,34,0.18)] backdrop-blur-xl transition-colors hover:border-[rgba(200,232,237,0.72)] hover:bg-[rgba(10,92,107,0.28)] sm:w-auto sm:max-w-none"
             >
               Contact Afka
             </Link>
