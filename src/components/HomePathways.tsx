@@ -17,7 +17,7 @@ const pathways = [
   {
     label: "Read Insights",
     href: "/insights",
-    note: "Reports, briefs, notes"
+    note: "Forthcoming public outputs"
   },
   {
     label: "About Afka",
@@ -38,7 +38,7 @@ export function HomePathways() {
       className="section-reveal pathway-transition relative z-10 -mt-20 bg-transparent"
       aria-labelledby="pathways-heading"
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <ScrollDepth
           className="pathway-shell signal-field border border-[rgba(244,248,249,0.14)] p-4 shadow-[0_28px_90px_rgba(13,31,34,0.16)] backdrop-blur-xl sm:p-5"
           distance={24}

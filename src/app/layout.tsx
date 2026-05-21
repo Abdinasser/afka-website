@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Afka Digital Institute | Digital Harm Research in the Somali-Speaking World",
   description:
-    "Afka Digital Institute studies platform accountability, information ecosystems, and digital rights across Somali online spaces.",
+    "Afka Digital Institute documents platform accountability, Somali-language moderation, information ecosystems, AI governance, digital exclusion, and digital rights across Somali online spaces.",
   openGraph: {
     title: "Afka Digital Institute | Digital Harm Research in the Somali-Speaking World",
     description:
-      "Afka Digital Institute studies platform accountability, information ecosystems, and digital rights across Somali online spaces.",
+      "Afka Digital Institute documents platform accountability, Somali-language moderation, information ecosystems, AI governance, digital exclusion, and digital rights across Somali online spaces.",
     type: "website"
   }
 };

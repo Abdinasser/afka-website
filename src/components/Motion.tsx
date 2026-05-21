@@ -12,7 +12,6 @@ import {
 } from "motion/react";
 
 import {
-  archiveCardReveal,
   cardReveal,
   heroTextReveal,
   motionViewport,
@@ -147,18 +146,6 @@ export function StaggerItem({
 }: HTMLMotionProps<"div"> & { children: ReactNode }) {
   return (
     <motion.div className={className} variants={cardReveal} {...props}>
-      {children}
-    </motion.div>
-  );
-}
-
-export function ArchiveItem({
-  children,
-  className = "",
-  ...props
-}: HTMLMotionProps<"div"> & { children: ReactNode }) {
-  return (
-    <motion.div className={className} variants={archiveCardReveal} {...props}>
       {children}
     </motion.div>
   );

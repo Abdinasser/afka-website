@@ -13,7 +13,7 @@ import { approachSteps } from "@/data/site";
 export const metadata: Metadata = {
   title: "Research | Afka Digital Institute",
   description:
-    "Afka Digital Institute researches information ecosystems, digital rights, and digital economy questions across Somali online spaces."
+    "Afka Digital Institute researches platform accountability, Somali-language moderation, information integrity, AI governance, digital exclusion, and digital rights across Somali online spaces."
 };
 
 export default function ResearchPage() {
@@ -23,8 +23,8 @@ export default function ResearchPage() {
       <main>
         <PageHero
           eyebrow="Research"
-          title="Platform systems, rights, and information flows."
-          body="Afka studies digital harm through Somali-language context, platform behavior, and public accountability."
+          title="Platform systems, language, and public harm."
+          body="Afka studies digital harm through Somali-language context, platform behaviour, information integrity, and public accountability."
         />
         <ResearchAreas showIntroLink={false} />
 

@@ -52,30 +52,34 @@ export function Hero() {
         style={veilStyle}
       />
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center justify-center px-5 pb-36 pt-48 text-center sm:px-8 lg:px-10">
-        <motion.div className="hero-copy-enter max-w-5xl" style={copyStyle}>
+        <motion.div className="hero-copy-enter w-full max-w-5xl" style={copyStyle}>
           <p className="mx-auto mb-10 w-fit rounded-full border border-[rgba(244,248,249,0.12)] bg-[rgba(244,248,249,0.06)] px-4 py-2 text-xs font-semibold uppercase text-[rgba(244,248,249,0.68)] backdrop-blur-xl">
             Afka Digital Institute
           </p>
           <h1
             id="hero-heading"
-            className="mx-auto max-w-[21rem] text-balance font-serif-display text-[1.95rem] leading-[1.05] text-[var(--cloud-white)] sm:max-w-[54rem] sm:text-[3.72rem] lg:text-[4.32rem]"
+            className="mx-auto max-w-[19rem] text-balance font-serif-display text-[1.95rem] leading-[1.05] text-[var(--cloud-white)] sm:max-w-[58rem] sm:text-[3.64rem] lg:text-[4.2rem]"
           >
-            <span className="block sm:inline">Researching</span>{" "}
-            <span className="block sm:inline">digital harm</span>{" "}
-            <span className="block sm:inline">in the</span>{" "}
-            <span className="block sm:inline">Somali-speaking</span>{" "}
-            <span className="block sm:inline">world.</span>
+            Building evidence on digital harm in Somali-speaking spaces.
           </h1>
-          <p className="mx-auto mt-10 max-w-[19rem] text-base leading-8 text-[rgba(244,248,249,0.62)] sm:max-w-2xl sm:text-lg">
-            Afka Digital Institute studies platform accountability, information
-            ecosystems, and digital rights across Somali online spaces.
+          <p className="mx-auto mt-10 max-w-[19rem] text-base leading-8 text-[rgba(244,248,249,0.62)] sm:max-w-3xl sm:text-lg">
+            Afka Digital Institute is a founding-stage research and policy
+            initiative documenting platform accountability, Somali-language
+            moderation, information ecosystems, AI governance, digital exclusion,
+            and digital rights across Somali online spaces.
           </p>
-          <div className="mt-12 flex justify-center">
+          <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="/insights#brief"
-              className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full border border-[rgba(244,248,249,0.22)] bg-[rgba(13,31,34,0.42)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] shadow-[0_18px_54px_rgba(13,31,34,0.28)] backdrop-blur-xl transition-colors hover:border-[rgba(200,232,237,0.44)] hover:bg-[rgba(10,92,107,0.26)]"
+              href="/research"
+              className="focus-ring inline-flex min-h-12 w-full max-w-[18rem] items-center justify-center rounded-full border border-[rgba(244,248,249,0.22)] bg-[rgba(244,248,249,0.9)] px-6 py-3 text-sm font-semibold text-[var(--deep-ink)] shadow-[0_18px_54px_rgba(13,31,34,0.28)] backdrop-blur-xl transition-colors hover:border-[rgba(200,232,237,0.44)] hover:bg-[var(--mist-blue)] sm:w-auto sm:max-w-none"
             >
-              Read the Brief
+              Explore Research Focus
+            </Link>
+            <Link
+              href="/contact"
+              className="focus-ring inline-flex min-h-12 w-full max-w-[18rem] items-center justify-center rounded-full border border-[rgba(244,248,249,0.22)] bg-[rgba(13,31,34,0.42)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] shadow-[0_18px_54px_rgba(13,31,34,0.18)] backdrop-blur-xl transition-colors hover:border-[rgba(200,232,237,0.44)] hover:bg-[rgba(10,92,107,0.26)] sm:w-auto sm:max-w-none"
+            >
+              Contact Afka
             </Link>
           </div>
         </motion.div>

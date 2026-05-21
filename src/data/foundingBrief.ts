@@ -13,7 +13,7 @@ export const foundingBrief = {
   year: "2026",
   framing:
     "Somali public life is already digital. The work of understanding it is still catching up.",
-  downloadHref: "/downloads/afka-founding-brief.pdf",
+  downloadHref: "/drafts/afka-founding-brief.pdf",
   quickRead: [
     "Somali public life is already shaped by platforms, but continuous Somali research infrastructure is weak.",
     "The correct unit of analysis is not only the Somali state, but the Somali language sphere across the Horn and diaspora.",

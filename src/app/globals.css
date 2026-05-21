@@ -439,7 +439,7 @@ textarea {
 .pathway-transition::before,
 .scroll-cinema-section::before,
 .research-framework-section::before,
-.archive-scroll-section::before {
+.outputs-section::before {
   content: "";
   pointer-events: none;
   position: absolute;
@@ -454,14 +454,14 @@ textarea {
 
 .scroll-cinema-section,
 .research-framework-section,
-.archive-scroll-section {
+.outputs-section {
   position: relative;
   isolation: isolate;
   overflow: clip;
 }
 
 .scroll-cinema-section::after,
-.archive-scroll-section::after {
+.outputs-section::after {
   content: "";
   pointer-events: none;
   position: absolute;
@@ -509,13 +509,6 @@ textarea {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-}
-
-@media (min-width: 1024px) {
-  .module-sticky {
-    position: sticky;
-    top: 7rem;
-  }
 }
 
 .grain-layer {
@@ -628,68 +621,16 @@ textarea {
   min-height: 12rem;
 }
 
-.output-feature-card::before {
-  opacity: 0.7;
+.research-focus-card,
+.output-grid-card {
+  min-height: 16rem;
 }
 
-.output-feature-card {
-  min-height: 24rem;
-}
-
-.output-sideways-stage {
-  min-width: 0;
-}
-
-.output-sideways-sticky {
-  min-width: 0;
-}
-
-.output-sideways-viewport {
-  min-width: 0;
-  overflow-x: auto;
-  overflow-y: visible;
-  padding: 0.5rem 0 1.2rem;
-  scrollbar-color: rgba(10, 92, 107, 0.38) transparent;
-  scrollbar-width: thin;
-}
-
-.output-sideways-viewport::-webkit-scrollbar {
-  height: 0.35rem;
-}
-
-.output-sideways-viewport::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.output-sideways-viewport::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(10, 92, 107, 0.34);
-}
-
-.output-sideways-track {
-  display: flex;
-  width: max-content;
-  gap: 1rem;
-  padding-right: 1.25rem;
-  transform-style: preserve-3d;
-}
-
-.output-sideways-card {
-  width: min(82vw, 22rem);
-  min-height: 25rem;
-  flex: 0 0 auto;
-  perspective: 1100px;
-}
-
-.output-publication-card {
-  min-height: 25rem;
-}
-
-.output-publication-card::before {
+.output-grid-card::before {
   opacity: 0.62;
 }
 
-.output-publication-card::after {
+.output-grid-card::after {
   background-image:
     linear-gradient(108deg, transparent 0 18%, rgba(244, 248, 249, 0.26) 42%, transparent 58%),
     radial-gradient(circle, rgba(13, 31, 34, 0.12) 0 0.72px, transparent 1px),
@@ -721,81 +662,12 @@ textarea {
 }
 
 @media (min-width: 1024px) {
-  .narrative-stack-card,
-  .pillar-scroll-card {
-    position: sticky;
-    transform-origin: center top;
+  .research-focus-card {
+    min-height: 17.5rem;
   }
 
-  .narrative-stack-card:nth-child(1) {
-    top: 8.5rem;
-    z-index: 1;
-  }
-
-  .narrative-stack-card:nth-child(2) {
-    top: 11rem;
-    z-index: 2;
-  }
-
-  .narrative-stack-card:nth-child(3) {
-    top: 13.5rem;
-    z-index: 3;
-  }
-
-  .pillar-scroll-card:nth-child(1) {
-    top: 8rem;
-    z-index: 1;
-  }
-
-  .pillar-scroll-card:nth-child(2) {
-    top: 11rem;
-    z-index: 2;
-  }
-
-  .pillar-scroll-card:nth-child(3) {
-    top: 14rem;
-    z-index: 3;
-  }
-
-  .pillar-scroll-card .research-surface {
-    min-height: 13rem;
-  }
-
-  .output-sideways-stage {
-    min-height: 165vh;
-  }
-
-  .output-sideways-sticky {
-    position: sticky;
-    top: 8.25rem;
-  }
-
-  .output-sideways-viewport {
-    overflow: hidden;
-    padding: 0.8rem 0 1.4rem;
-  }
-
-  .output-sideways-track {
-    gap: 1.25rem;
-    padding-right: 40vw;
-    will-change: transform;
-  }
-
-  .output-sideways-card {
-    width: clamp(25rem, 33vw, 32rem);
-    min-height: 31rem;
-  }
-
-  .output-publication-card {
-    min-height: 31rem;
-  }
-
-  .output-sideways-card:nth-child(even) {
-    padding-top: 2.5rem;
-  }
-
-  .output-sideways-card:nth-child(3n) {
-    padding-top: 1.1rem;
+  .output-grid-card {
+    min-height: 20rem;
   }
 }
 
@@ -817,7 +689,7 @@ textarea {
   }
 
   .scroll-cinema-section::after,
-  .archive-scroll-section::after {
+  .outputs-section::after {
     animation: section-light-sweep 34s ease-in-out infinite alternate;
   }
 
@@ -874,23 +746,9 @@ textarea {
     transform: none !important;
   }
 
-  .narrative-stack-card,
-  .pillar-scroll-card,
-  .output-sideways-sticky {
-    position: static !important;
-  }
-
-  .output-sideways-stage {
-    min-height: auto;
-  }
-
-  .output-sideways-viewport {
-    overflow-x: auto;
-  }
-
-  .output-sideways-track {
+  .research-focus-card,
+  .output-grid-card {
     transform: none !important;
-    will-change: auto;
   }
 }
 

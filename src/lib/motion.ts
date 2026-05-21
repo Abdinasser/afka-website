@@ -89,27 +89,6 @@ export const cardReveal: Variants = {
   }
 };
 
-export const archiveCardReveal: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 54,
-    x: 18,
-    rotate: -1.4,
-    filter: "blur(8px)"
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    x: 0,
-    rotate: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 1.08,
-      ease: motionEase
-    }
-  }
-};
-
 export const navReveal: Variants = {
   hidden: {
     opacity: 0,

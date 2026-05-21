@@ -87,7 +87,6 @@ export const socialLinks = [
 
 export const navLinks = [
   { label: "About", href: "/about" },
-  { label: "Founding Brief", href: "/founding-brief" },
   { label: "Research", href: "/research" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" }
@@ -112,30 +111,36 @@ export const heroStats: Stat[] = [
 
 export const researchAreas: Card[] = [
   {
-    title: "Information Ecosystems",
+    title: "Platform Accountability",
     description:
-      "Tracks how claims, influence, and monetized attention move through Somali-language media and platform spaces."
+      "Examines how major platforms respond to Somali-language harms, enforcement gaps, visibility decisions, takedowns, monetization rules, and appeals."
   },
   {
-    title: "Digital Rights",
+    title: "Somali-Language Moderation",
     description:
-      "Documents moderation gaps, online abuse, access, and platform accountability affecting Somali-speaking communities."
+      "Tracks how Somali language, dialect, slang, political speech, and coded abuse are handled by automated and human moderation systems."
   },
   {
-    title: "Digital Economy",
+    title: "Information Integrity",
     description:
-      "Studies how creator monetization, platform incentives, and language access shape visibility and harm."
+      "Studies how false claims, influence networks, political narratives, monetized attention, and crisis information move across Somali digital spaces."
+  },
+  {
+    title: "Online Gendered Harm",
+    description:
+      "Documents abuse, harassment, intimidation, image-based threats, and silencing patterns affecting Somali women, journalists, activists, and public figures online."
+  },
+  {
+    title: "AI Governance and Language Justice",
+    description:
+      "Looks at how Somali language is represented, excluded, distorted, or under-supported in AI systems, automated tools, and platform safety infrastructure."
+  },
+  {
+    title: "Digital Exclusion and Platform Access",
+    description:
+      "Studies who is left out of digital opportunity, including creators, small media actors, civil society groups, and Somali-language users facing payment, verification, reach, or access barriers."
   }
 ];
-
-export const featuredInsight: Insight = {
-  label: "Founding Brief",
-  title: "The case for an independent Somali digital research institute.",
-  description:
-    "An institutional brief setting out why Somali digital life needs sustained research infrastructure, public evidence, and institutional memory.",
-  href: "/founding-brief",
-  status: "Founding Brief · 2026"
-};
 
 export const insightItems: Insight[] = [];
 
@@ -159,58 +164,28 @@ export const approachSteps: Step[] = [
 
 export const researchOutputs: ResearchOutput[] = [
   {
-    label: "Report",
+    label: "Forthcoming",
     title: "Research Reports",
     description:
-      "Long-form analysis on digital harm, platform power, information ecosystems, AI, and the online economy across Somali-speaking communities."
+      "Long-form analysis on platform power, digital harm, Somali-language moderation, AI governance, and the online economy."
   },
   {
-    label: "Brief",
+    label: "Briefs",
     title: "Policy Briefs",
     description:
-      "Focused recommendations for policymakers, regulators, civil society, journalists, and institutions working on digital governance and rights."
+      "Concise recommendations for policymakers, regulators, platforms, journalists, and civil society."
   },
   {
-    label: "Analysis",
-    title: "Platform Accountability Analysis",
+    label: "Notes",
+    title: "Working Notes",
     description:
-      "Evidence-led analysis of visibility, moderation, monetization, platform access, and digital inequity affecting Somali users."
+      "Short research notes, early observations, and explainers from Afka's developing evidence base."
   },
   {
-    label: "Explainer",
-    title: "Digital Rights Explainers",
+    label: "Resources",
+    title: "Public Resources",
     description:
-      "Clear public-facing explainers on safety, surveillance, online harassment, platform rules, speech, and user rights."
-  },
-  {
-    label: "Field Note",
-    title: "Field Notes",
-    description:
-      "Ground-level observations from Somali-speaking digital life, shaped by lived experience, reporting, interviews, and community knowledge."
-  },
-  {
-    label: "Data Insight",
-    title: "Data-Led Insights",
-    description:
-      "Short analytical pieces using public data, platform signals, media monitoring, and community evidence to track emerging risks and shifts."
-  },
-  {
-    label: "Case Study",
-    title: "Case Studies",
-    description:
-      "Focused studies of specific incidents, platform decisions, online harms, creator barriers, or policy debates."
-  },
-  {
-    label: "Library",
-    title: "Resource Libraries",
-    description:
-      "Curated reading lists, glossaries, datasets, and public knowledge resources for people studying Somali digital spaces."
-  },
-  {
-    label: "Future Tools",
-    title: "Future Tools & Knowledge Products",
-    description:
-      "Over time, Afka may develop public-interest tools such as research databases, platform issue trackers, Somali digital glossaries, media monitoring tools, digital harm reporting resources, and lightweight interactive explainers."
+      "Future glossaries, explainers, and practical resources on Somali digital rights, safety, and platform accountability."
   }
 ];
 
@@ -219,15 +194,18 @@ export const outputCategories: Card[] = researchOutputs;
 export const independencePrinciples: Card[] = [
   {
     title: "Independent",
-    description: "Research is kept separate from political and commercial direction."
+    description:
+      "Afka is non-partisan and not directed by platforms, state actors, political groups, or commercial interests."
   },
   {
     title: "Evidence-led",
-    description: "Findings are grounded in documented cases, methods, and public reasoning."
+    description:
+      "Afka builds research from documented cases, community context, platform behaviour, and publicly reasoned analysis."
   },
   {
     title: "Public-interest",
-    description: "Focused on rights, safety, and accountability across Somali online spaces."
+    description:
+      "Afka's work is designed for researchers, journalists, civil society, policymakers, and Somali-speaking communities affected by digital systems."
   }
 ];
 
