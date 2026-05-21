@@ -18,7 +18,7 @@ function Wordmark() {
     >
       <Image
         src="/images/afka-wordmark-light.png"
-        alt="Afka"
+        alt="Afka Digital Institute"
         width={816}
         height={324}
         priority
@@ -36,7 +36,7 @@ export function Header() {
   return (
     <motion.header
       animate="visible"
-      className="fixed inset-x-0 top-4 z-50 px-4 text-[var(--cloud-white)] sm:top-5"
+      className="fixed inset-x-0 top-4 z-[80] px-4 text-[var(--cloud-white)] sm:top-5"
       initial={reducedMotion ? false : "hidden"}
       variants={navReveal}
     >

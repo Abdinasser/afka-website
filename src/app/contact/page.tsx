@@ -4,12 +4,9 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PageHero } from "@/components/PageHero";
+import { getPageMetadata } from "@/data/site";
 
-export const metadata: Metadata = {
-  title: "Contact | Afka Digital Institute",
-  description:
-    "Contact Afka Digital Institute for research partnerships, media requests, institutional inquiries, and platform engagement."
-};
+export const metadata: Metadata = getPageMetadata("contact");
 
 export default function ContactPage() {
   return (

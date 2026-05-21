@@ -27,7 +27,7 @@ export function AboutContext() {
       className="section-reveal grain-layer bg-[var(--cloud-white)]"
       aria-labelledby="about-context-heading"
     >
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 pt-36 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:pb-28 lg:pt-40">
         <Reveal kind="text">
           <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
             INSTITUTION
@@ -45,15 +45,14 @@ export function AboutContext() {
               own terms.
             </p>
             <p>
-              Moderation systems, monetisation rules, recommendation feeds, AI
-              tools, and verification policies affect visibility, income, safety,
-              trust, and speech. In Somali spaces, these effects are often
-              misunderstood because language, dialect, diaspora context, and
-              political meaning are poorly read by global systems.
+              Moderation systems, monetisation rules, recommendation feeds and
+              AI tools affect visibility, income, safety, trust and speech.
+              Global systems often misread language, dialect, diaspora context
+              and political meaning in Somali spaces.
             </p>
             <p>
               Afka turns that gap into a research agenda: documenting cases,
-              analysing platform behaviour, and translating lived digital
+              analysing platform behaviour and translating lived digital
               realities into public-interest knowledge.
             </p>
           </div>
@@ -64,7 +63,7 @@ export function AboutContext() {
             <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
               Public-interest frame
             </p>
-            <p className="mt-8 font-serif-display text-[1.75rem] leading-tight text-[var(--deep-ink)]">
+            <p className="mt-7 font-serif-display text-[1.75rem] leading-tight text-[var(--deep-ink)]">
               Digital harm is not only a technology issue. It is a question of
               language, trust, safety, livelihoods, and public knowledge.
             </p>

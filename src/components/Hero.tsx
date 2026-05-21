@@ -35,11 +35,10 @@ export function Hero() {
       <motion.div className="absolute inset-0 z-0" style={imageStyle}>
         <Image
           src="/images/afka-hero-code-field.jpg"
-          alt=""
+          alt="Abstract digital code field representing Somali online spaces"
           fill
           priority
           sizes="100vw"
-          aria-hidden="true"
           className="hero-image-base object-cover object-center"
         />
       </motion.div>
@@ -62,9 +61,9 @@ export function Hero() {
           >
             Building evidence on digital harm in Somali-speaking spaces.
           </h1>
-          <p className="mx-auto mt-10 max-w-[19rem] text-base leading-8 text-[rgba(244,248,249,0.66)] sm:hidden">
+          <p className="mx-auto mt-10 max-w-[18rem] text-base leading-8 text-[rgba(244,248,249,0.72)] sm:hidden">
             Researching platform power, Somali-language moderation, information
-            integrity, and digital rights across Somali online spaces.
+            integrity and digital rights across Somali online spaces.
           </p>
           <p className="mx-auto mt-10 hidden max-w-3xl text-lg leading-8 text-[rgba(244,248,249,0.66)] sm:block">
             Afka Digital Institute documents platform accountability,
@@ -74,7 +73,7 @@ export function Hero() {
           <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/research"
-              className="focus-ring cta-text-dark inline-flex min-h-12 w-full max-w-[18rem] items-center justify-center rounded-full border border-[rgba(244,248,249,0.76)] bg-[var(--mist-blue)] px-7 py-3 text-sm font-bold shadow-[0_18px_54px_rgba(13,31,34,0.32)] backdrop-blur-xl transition-colors hover:border-[var(--cloud-white)] hover:bg-[var(--cloud-white)] sm:w-auto sm:max-w-none"
+              className="focus-ring cta-text-dark inline-flex min-h-[3.25rem] w-full max-w-[18.5rem] items-center justify-center rounded-full border border-[rgba(244,248,249,0.94)] bg-[var(--cloud-white)] px-8 py-3.5 text-sm font-bold shadow-[0_20px_62px_rgba(0,0,0,0.34)] backdrop-blur-xl transition-colors hover:border-[var(--mist-blue)] hover:bg-[var(--mist-blue)] sm:w-auto sm:max-w-none"
             >
               Explore Research
             </Link>

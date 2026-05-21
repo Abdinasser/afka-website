@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 export type Stat = {
   value: string;
   label: string;
@@ -64,6 +66,13 @@ export type NamePhilosophy = {
   acronym: AcronymBlock[];
 };
 
+export const siteUrl = "https://afkadigital.org";
+export const siteName = "Afka Digital Institute";
+export const siteDescription =
+  "Independent research on platform accountability, Somali-language moderation, information integrity, AI governance, digital exclusion, and digital rights.";
+export const siteLogo = `${siteUrl}/images/afka-wordmark-black.png`;
+export const siteOgImage = `${siteUrl}/images/afka-hero-code-field.jpg`;
+
 export const contactEmail = "hello@afkadigital.org";
 
 export const socialLinks = [
@@ -93,6 +102,108 @@ export const navLinks = [
 ];
 
 export const footerLinks = navLinks;
+
+export const publicRoutes = [
+  { path: "/", priority: 1 },
+  { path: "/about", priority: 0.8 },
+  { path: "/research", priority: 0.9 },
+  { path: "/insights", priority: 0.7 },
+  { path: "/contact", priority: 0.7 }
+];
+
+export const pageSeo = {
+  home: {
+    path: "/",
+    title: "Afka Digital Institute - Research on Digital Harm in Somali-Speaking Spaces",
+    description:
+      "Independent research on platform accountability, Somali-language moderation, information integrity, AI governance, digital exclusion, and digital rights."
+  },
+  about: {
+    path: "/about",
+    title: "About Afka Digital Institute",
+    description:
+      "Why Afka exists and how it pursues independent, evidence-led, public-interest research on digital harm."
+  },
+  research: {
+    path: "/research",
+    title: "Afka Research - Platform Power, Language, and Public Harm",
+    description:
+      "Afka's research agenda covers platform accountability, Somali-language moderation, information integrity, AI governance, digital exclusion, and digital rights."
+  },
+  insights: {
+    path: "/insights",
+    title: "Afka Insights - Research Outputs and Resources",
+    description:
+      "Forthcoming Afka research reports, policy briefs, working notes, and public resources on Somali digital rights and platform accountability."
+  },
+  contact: {
+    path: "/contact",
+    title: "Contact Afka Digital Institute",
+    description:
+      "Contact Afka Digital Institute for research inquiries, media requests, case referrals, and policy conversations."
+  }
+} as const;
+
+export type PageSeoKey = keyof typeof pageSeo;
+
+export function getPageMetadata(page: PageSeoKey): Metadata {
+  const seo = pageSeo[page];
+  const canonicalUrl = new URL(seo.path, siteUrl).toString();
+
+  return {
+    metadataBase: new URL(siteUrl),
+    title: seo.title,
+    description: seo.description,
+    alternates: {
+      canonical: seo.path
+    },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      url: canonicalUrl,
+      siteName,
+      type: "website",
+      images: [
+        {
+          url: siteOgImage,
+          width: 1200,
+          height: 630,
+          alt: "Afka Digital Institute digital research field"
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.title,
+      description: seo.description,
+      images: [siteOgImage]
+    }
+  };
+}
+
+export const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@id": `${siteUrl}/#organization`,
+  "@type": "Organization",
+  name: siteName,
+  description: siteDescription,
+  url: siteUrl,
+  logo: siteLogo,
+  email: `mailto:${contactEmail}`,
+  sameAs: socialLinks.map((link) => link.href)
+};
+
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@id": `${siteUrl}/#website`,
+  "@type": "WebSite",
+  name: siteName,
+  description: siteDescription,
+  url: siteUrl,
+  publisher: {
+    "@id": `${siteUrl}/#organization`
+  }
+};
 
 export const heroStats: Stat[] = [
   {

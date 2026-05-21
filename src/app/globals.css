@@ -27,6 +27,15 @@ html {
   scroll-padding-top: 112px;
 }
 
+main > section,
+#site-footer {
+  scroll-margin-top: 7.5rem;
+}
+
+#top {
+  scroll-margin-top: 0;
+}
+
 body {
   margin: 0;
   background: var(--background);
@@ -625,7 +634,7 @@ textarea {
   }
 
   .method-layer-panel {
-    min-height: 22rem;
+    min-height: 18rem;
   }
 
   .research-focus-card {
@@ -634,6 +643,29 @@ textarea {
 
   .output-grid-card {
     min-height: 20rem;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 96px;
+  }
+
+  main > section,
+  #site-footer {
+    scroll-margin-top: 6.5rem;
+  }
+
+  .halftone-panel::before {
+    opacity: 0.32;
+  }
+
+  .research-surface::before {
+    opacity: 0.44;
+  }
+
+  .research-surface[data-tone="dark"]::before {
+    opacity: 0.4;
   }
 }
 

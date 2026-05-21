@@ -16,7 +16,7 @@ export function PageHero({
   return (
     <section className="cinematic-field page-atmosphere-field min-h-[72vh] text-[var(--cloud-white)]">
       <div
-        className={`relative mx-auto flex min-h-[72vh] max-w-7xl items-center px-5 pb-20 pt-32 sm:px-8 lg:px-10 ${
+        className={`relative mx-auto flex min-h-[72vh] max-w-7xl items-center px-5 pb-20 pt-40 sm:px-8 sm:pt-44 lg:px-10 ${
           align === "center" ? "justify-center text-center" : ""
         }`}
       >

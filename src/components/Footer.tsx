@@ -21,7 +21,7 @@ export function Footer() {
             >
               <Image
                 src="/images/afka-wordmark-light.png"
-                alt="Afka"
+                alt="Afka Digital Institute"
                 width={816}
                 height={324}
                 className="h-auto w-36 sm:w-44"
@@ -64,7 +64,7 @@ export function Footer() {
             </p>
             <a
               href={`mailto:${contactEmail}`}
-              className="focus-ring cta-text-light inline-flex min-h-11 items-center justify-center rounded-full border border-[rgba(244,248,249,0.18)] bg-[rgba(244,248,249,0.05)] px-5 py-3 text-sm font-semibold shadow-[0_16px_42px_rgba(0,0,0,0.16)] transition-colors hover:border-[rgba(200,232,237,0.48)] hover:bg-[rgba(200,232,237,0.08)]"
+              className="focus-ring cta-text-light inline-flex min-h-11 items-center justify-center rounded-full border border-[rgba(244,248,249,0.34)] bg-[rgba(244,248,249,0.09)] px-5 py-3 text-sm font-semibold shadow-[0_16px_42px_rgba(0,0,0,0.2)] transition-colors hover:border-[rgba(200,232,237,0.68)] hover:bg-[rgba(200,232,237,0.12)]"
             >
               {contactEmail}
             </a>

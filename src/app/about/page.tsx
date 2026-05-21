@@ -6,12 +6,9 @@ import { AboutHero } from "@/components/AboutHero";
 import { AboutStandard } from "@/components/AboutStandard";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { getPageMetadata } from "@/data/site";
 
-export const metadata: Metadata = {
-  title: "About Afka Digital Institute | Somali Digital Research",
-  description:
-    "Learn why Afka Digital Institute studies information ecosystems, digital rights, and platform harm across Somali online spaces."
-};
+export const metadata: Metadata = getPageMetadata("about");
 
 export default function AboutPage() {
   return (

@@ -37,7 +37,7 @@ export function Contact() {
       className="section-reveal bg-[var(--cloud-white)]"
       aria-labelledby="contact-heading"
     >
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:px-10 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 pt-36 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:px-10 lg:pb-28 lg:pt-40">
         <Reveal kind="text">
           <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
             Contact
@@ -130,7 +130,7 @@ export function Contact() {
               type="submit"
               className="focus-ring mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--deep-teal)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] transition-colors hover:bg-[var(--deep-ink)]"
             >
-              Open email draft
+              Email Afka
             </button>
           </form>
         </ResearchSurface>

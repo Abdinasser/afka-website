@@ -21,14 +21,14 @@ export function ResearchAreas({ showIntroLink = true }: ResearchAreasProps) {
       className="section-reveal research-framework-section bg-[var(--deep-ink)] text-[var(--cloud-white)]"
       aria-labelledby="research-heading"
     >
-      <div className="halftone-panel mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-10 lg:py-28">
+      <div className="halftone-panel mx-auto max-w-7xl px-5 pb-24 pt-36 sm:px-8 lg:px-10 lg:pb-28 lg:pt-40">
         <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <ScrollDepth distance={32} fade>
             <SectionHeading
               id="research-heading"
               eyebrow="Research focus"
               title="What Afka studies."
-              body="The research agenda is organized around platform systems, Somali-language context, public harm, AI governance, and access."
+              body="The research agenda is organised around platform systems, Somali-language context, public harm, AI governance and access."
               tone="dark"
             />
             {showIntroLink ? (

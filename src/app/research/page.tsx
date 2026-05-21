@@ -7,13 +7,9 @@ import { MotionSection, Stagger, StaggerItem } from "@/components/Motion";
 import { PageHero } from "@/components/PageHero";
 import { ResearchAreas } from "@/components/ResearchAreas";
 import { ResearchSurface } from "@/components/ResearchSurface";
-import { approachSteps } from "@/data/site";
+import { approachSteps, getPageMetadata } from "@/data/site";
 
-export const metadata: Metadata = {
-  title: "Research | Afka Digital Institute",
-  description:
-    "Afka Digital Institute researches platform accountability, Somali-language moderation, information integrity, AI governance, digital exclusion, and digital rights across Somali online spaces."
-};
+export const metadata: Metadata = getPageMetadata("research");
 
 export default function ResearchPage() {
   return (
@@ -32,7 +28,7 @@ export default function ResearchPage() {
           className="section-reveal grain-layer bg-[var(--cloud-white)]"
           aria-labelledby="method-heading"
         >
-          <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.66fr_0.72fr_0.62fr] lg:gap-6 lg:px-10 lg:py-28">
+          <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 pt-36 sm:px-8 lg:grid-cols-[0.66fr_0.72fr_0.62fr] lg:gap-6 lg:px-10 lg:pb-28 lg:pt-40">
             <div>
               <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
                 METHOD
@@ -52,8 +48,8 @@ export default function ResearchPage() {
 
             <Stagger className="grid gap-4">
               {approachSteps.map((step) => (
-                <StaggerItem key={step.step}>
-                  <ResearchSurface className="method-card p-5">
+                <StaggerItem key={step.step} className="h-full">
+                  <ResearchSurface className="method-card flex h-full flex-col p-5">
                     <p className="surface-index">
                       {step.step}
                     </p>
@@ -76,6 +72,20 @@ export default function ResearchPage() {
                 The method connects observation, case evidence, platform
                 behaviour, and institutional interpretation.
               </p>
+              <div className="mt-8 grid gap-2 text-xs font-semibold uppercase text-[var(--deep-teal)]">
+                <span className="border-t border-[var(--line)] pt-3">
+                  Observation
+                </span>
+                <span className="border-t border-[var(--line)] pt-3">
+                  Case evidence
+                </span>
+                <span className="border-t border-[var(--line)] pt-3">
+                  Platform behaviour
+                </span>
+                <span className="border-t border-[var(--line)] pt-3">
+                  Interpretation
+                </span>
+              </div>
             </ResearchSurface>
           </div>
         </MotionSection>

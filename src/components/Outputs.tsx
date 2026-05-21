@@ -10,7 +10,7 @@ export function Outputs() {
       className="section-reveal outputs-section grain-layer bg-[var(--cloud-white)]"
       aria-labelledby="outputs-heading"
     >
-      <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-10 lg:py-28">
+      <div className="mx-auto max-w-7xl px-5 pb-24 pt-36 sm:px-8 lg:px-10 lg:pb-28 lg:pt-40">
         <div className="grid gap-12 lg:grid-cols-[0.58fr_1.42fr] lg:items-start">
           <div>
             <SectionHeading

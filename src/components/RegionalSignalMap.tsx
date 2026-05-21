@@ -21,13 +21,12 @@ export function RegionalSignalMap({
     >
       <Image
         src="/images/horn-of-africa-map-clean.png"
-        alt=""
+        alt="Abstract Horn of Africa regional texture for Somali digital context"
         fill
         sizes="(min-width: 1024px) 42vw, 100vw"
         className={`object-cover object-center ${
           isDark ? "opacity-[0.16] mix-blend-screen" : "opacity-[0.12] mix-blend-multiply"
         }`}
-        aria-hidden="true"
       />
       <div
         className={`absolute inset-0 ${
