@@ -132,9 +132,9 @@ export const mobileMenuReveal: Variants = {
 };
 
 export const surfaceHover = {
-  y: -3,
+  y: -2,
   transition: {
-    duration: 0.28,
+    duration: 0.22,
     ease: motionEase
   }
 };

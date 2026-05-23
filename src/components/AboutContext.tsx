@@ -30,7 +30,7 @@ export function AboutContext() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 pt-36 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:pb-28 lg:pt-40">
         <Reveal kind="text">
           <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
-            INSTITUTION
+            Institution
           </p>
           <h2
             id="about-context-heading"
@@ -38,7 +38,7 @@ export function AboutContext() {
           >
             Why Afka exists
           </h2>
-          <div className="mt-8 max-w-2xl space-y-5 text-base leading-8 text-[var(--muted)]">
+          <div className="mt-8 max-w-2xl space-y-5 text-[var(--t-body-sm)] leading-8 text-[var(--muted)]">
             <p className="text-lg leading-8 text-[var(--deep-ink)]">
               Afka Digital Institute exists because Somali-speaking communities
               are deeply shaped by digital platforms, but rarely studied on their

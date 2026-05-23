@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Research surface card</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); font-family: var(--sans); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .surface {
+    position: relative; isolation: isolate; overflow: hidden;
+    border: 1px solid var(--line);
+    background:
+      linear-gradient(145deg, rgba(244,248,249,0.9), rgba(200,232,237,0.7)),
+      radial-gradient(circle at 80% 12%, rgba(10,92,107,0.07), transparent 18rem),
+      rgba(244,248,249,0.78);
+    box-shadow: 0 20px 62px rgba(13,31,34,0.08), inset 0 1px 0 rgba(244,248,249,0.44);
+    backdrop-filter: blur(16px);
+    padding: 22px;
+    min-height: 170px;
+  }
+  .surface::before {
+    content:""; position:absolute; inset:-1px; z-index:-2;
+    background:
+      repeating-linear-gradient(90deg, rgba(13,31,34,0.055) 0 1px, transparent 1px 22px),
+      repeating-linear-gradient(0deg, rgba(13,31,34,0.035) 0 1px, transparent 1px 28px);
+    opacity:.58;
+  }
+  .surface[data-accent="true"] {
+    border-color: rgba(10,92,107,0.42);
+    background:
+      linear-gradient(145deg, rgba(244,248,249,0.92), rgba(10,92,107,0.1)),
+      rgba(244,248,249,0.82);
+  }
+  .index { display:inline-flex; min-width: 2.6rem; align-items:center; justify-content:center; border-bottom: 1px solid var(--accent); padding-bottom: 6px; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  h3 { font-family: var(--serif); font-weight: 500; font-size: 19px; line-height: 1.18; color: var(--fg); margin: 18px 0 0; }
+  p { font-size: 13px; line-height: 1.65; color: var(--fg-muted); margin: 10px 0 0; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="surface">
+      <span class="index">01</span>
+      <h3>Platform Accountability</h3>
+      <p>Examines how major platforms respond to Somali‑language harms, enforcement gaps, and appeals.</p>
+    </div>
+    <div class="surface" data-accent="true">
+      <span class="index">02</span>
+      <h3>Somali‑Language Moderation</h3>
+      <p>Tracks how dialect, slang, and coded abuse are handled by automated and human moderation.</p>
+    </div>
+  </div>
+</body>
+</html>

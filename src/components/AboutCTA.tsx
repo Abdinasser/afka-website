@@ -18,7 +18,7 @@ export function AboutCTA() {
           </h2>
           <Link
             href="/contact"
-            className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--deep-teal)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] transition-colors hover:bg-[var(--deep-ink)]"
+            className="focus-ring inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--afka-deep-teal)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] transition-colors hover:bg-[var(--afka-deep-teal-hover)] active:bg-[var(--afka-deep-teal-press)]"
           >
             Contact
           </Link>

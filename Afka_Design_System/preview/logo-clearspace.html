@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Logo clear space</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 32px; background: var(--afka-deep-teal); display: flex; align-items: center; justify-content: center; min-height: 240px; font-family: var(--sans); }
+  .frame { position: relative; padding: 44px; }
+  .frame::before { content:""; position:absolute; inset:0; border: 1px dashed rgba(244,248,249,0.5); }
+  .frame::after  { content:""; position:absolute; inset:-28px; border: 1px dashed rgba(244,248,249,0.22); }
+  .logo { width: 240px; height: auto; display: block; }
+  .tick { position: absolute; width: 12px; height: 12px; }
+  .tick.tl { top: -6px; left: -6px; border-top: 1px solid var(--afka-mist-blue); border-left: 1px solid var(--afka-mist-blue); }
+  .tick.tr { top: -6px; right: -6px; border-top: 1px solid var(--afka-mist-blue); border-right: 1px solid var(--afka-mist-blue); }
+  .tick.bl { bottom: -6px; left: -6px; border-bottom: 1px solid var(--afka-mist-blue); border-left: 1px solid var(--afka-mist-blue); }
+  .tick.br { bottom: -6px; right: -6px; border-bottom: 1px solid var(--afka-mist-blue); border-right: 1px solid var(--afka-mist-blue); }
+  .tag { position: absolute; right: -134px; top: 50%; transform: translateY(-50%); font-family: var(--mono); font-size: 11px; color: var(--afka-mist-blue); letter-spacing: 0.05em; text-transform: uppercase; width: 116px; line-height: 1.5; }
+  .tag .x { display: inline-block; padding: 1px 6px; border: 1px solid var(--afka-mist-blue); margin: 0 2px; font-weight: 600; }
+  .min-tag { position: absolute; left: -130px; bottom: 4px; font-family: var(--mono); font-size: 10px; color: rgba(244,248,249,0.62); letter-spacing: 0.04em; text-transform: uppercase; text-align: right; width: 116px; line-height: 1.4; }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+    <img class="logo" src="../assets/afka-wordmark-light.png" alt="Afka logo" />
+    <span class="tag">Clearspace<br />= <span class="x">x</span> all sides</span>
+    <span class="min-tag">Minimum<br />size 40px</span>
+  </div>
+</body>
+</html>

@@ -11,25 +11,12 @@ function SocialIcon({ label }: { label: string }) {
   if (label === "Instagram") {
     return (
       <svg className={common} viewBox="0 0 24 24" aria-hidden="true">
-        <rect
-          x="4"
-          y="4"
-          width="16"
-          height="16"
-          rx="4"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M7.8 3h8.4A4.8 4.8 0 0 1 21 7.8v8.4a4.8 4.8 0 0 1-4.8 4.8H7.8A4.8 4.8 0 0 1 3 16.2V7.8A4.8 4.8 0 0 1 7.8 3Zm0 1.8a3 3 0 0 0-3 3v8.4a3 3 0 0 0 3 3h8.4a3 3 0 0 0 3-3V7.8a3 3 0 0 0-3-3H7.8ZM12 7.9a4.1 4.1 0 1 1 0 8.2 4.1 4.1 0 0 1 0-8.2Zm0 1.8a2.3 2.3 0 1 0 0 4.6 2.3 2.3 0 0 0 0-4.6Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"
+          fill="currentColor"
         />
-        <circle
-          cx="12"
-          cy="12"
-          r="3.4"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.8"
-        />
-        <circle cx="16.7" cy="7.3" r="1" fill="currentColor" />
       </svg>
     );
   }
@@ -49,12 +36,8 @@ function SocialIcon({ label }: { label: string }) {
     return (
       <svg className={common} viewBox="0 0 24 24" aria-hidden="true">
         <path
-          d="m5 5 10.8 14h3.2L8.2 5zm0 14 6.2-6.2M13.1 11 19 5"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="1.9"
+          d="M17.53 3h3.1l-6.77 7.73L22 21h-6.24l-4.88-6.39L5.18 21H2.07l7.24-8.27L2 3h6.39l4.4 5.82L17.53 3Zm-1.09 16.1h1.72L7.7 4.8H5.86l10.58 14.3Z"
+          fill="currentColor"
         />
       </svg>
     );

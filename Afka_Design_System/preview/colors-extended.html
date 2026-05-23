@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Extended neutrals</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+  .sw { position: relative; aspect-ratio: 1.05 / 1; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); }
+  .name { font-family: var(--sans); font-size: 12.5px; font-weight: 600; }
+  .hex { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; opacity: 0.78; }
+  .tok { font-family: var(--mono); font-size: 9.5px; opacity: 0.55; }
+  .light { color: var(--afka-deep-ink); }
+  .dark  { color: var(--afka-cloud-white); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw light" style="background: var(--afka-paper);">
+      <span class="tok">--afka-paper</span>
+      <div><div class="name">Paper</div><div class="hex">#FBFCFC</div></div>
+    </div>
+    <div class="sw light" style="background: var(--afka-fog);">
+      <span class="tok">--afka-fog</span>
+      <div><div class="name">Fog</div><div class="hex">#E8EEEF</div></div>
+    </div>
+    <div class="sw light" style="background: var(--afka-stone);">
+      <span class="tok">--afka-stone</span>
+      <div><div class="name">Stone</div><div class="hex">#B8C4C7</div></div>
+    </div>
+    <div class="sw dark" style="background: var(--afka-graphite);">
+      <span class="tok">--afka-graphite</span>
+      <div><div class="name">Graphite</div><div class="hex">#4A5A5E</div></div>
+    </div>
+    <div class="sw dark" style="background: var(--afka-signal);">
+      <span class="tok">--afka-signal</span>
+      <div><div class="name">Signal</div><div class="hex">#C2410C</div></div>
+    </div>
+  </div>
+</body>
+</html>

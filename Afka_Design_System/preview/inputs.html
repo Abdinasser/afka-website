@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px 28px; background: var(--bg); font-family: var(--sans); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label { display: grid; gap: 8px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-muted); }
+  .input { min-height: 44px; padding: 11px 14px; font-size: 14px; font-family: var(--sans); border: 1px solid var(--line); background: transparent; color: var(--fg); border-radius: 0; outline: none; }
+  .input:focus { border-color: var(--accent); }
+  select.input { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--accent) 50%), linear-gradient(135deg, var(--accent) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 32px; }
+  textarea.input { min-height: 60px; resize: vertical; font: inherit; line-height: 1.55; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <label>Name<input class="input" type="text" value="" placeholder="Full name" /></label>
+    <label>Organization<input class="input" type="text" value="" placeholder="Affiliation" /></label>
+    <label>Email<input class="input" type="email" placeholder="you@org.org" /></label>
+    <label>Reason<select class="input"><option>Research inquiry</option><option>Media request</option></select></label>
+  </div>
+</body>
+</html>

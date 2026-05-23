@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Buttons on dark</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 28px; background: var(--bg-dark); font-family: var(--sans); position: relative; overflow: hidden; }
+  body::before { content:""; position:absolute; inset:0; background-image: radial-gradient(circle, rgba(10,92,107,0.62) 0 1.35px, transparent 1.65px), radial-gradient(circle, rgba(244,248,249,0.18) 0 1px, transparent 1.4px); background-position: 0 0, 9px 9px; background-size: 18px 18px; opacity: .5; pointer-events:none; }
+  .row { position: relative; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .row + .row { margin-top: 14px; }
+  .label { font-family: var(--mono); font-size: 10.5px; color: rgba(244,248,249,0.5); letter-spacing: 0.04em; text-transform: uppercase; min-width: 90px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 22px; font-size: 13px; font-weight: 600; border-radius: 9999px; border: 1px solid transparent; cursor: pointer; }
+  .light { background: var(--fg-inverse); color: var(--fg); box-shadow: 0 20px 62px rgba(0,0,0,0.34); border-color: rgba(244,248,249,0.94); }
+  .glass { background: rgba(13,31,34,0.5); color: var(--fg-inverse); border-color: rgba(244,248,249,0.34); backdrop-filter: blur(20px); }
+</style>
+</head>
+<body>
+  <div class="row"><span class="label">CTA primary</span><button class="btn light">Explore Research</button></div>
+  <div class="row"><span class="label">CTA glass</span><button class="btn glass">Contact Afka</button></div>
+</body>
+</html>

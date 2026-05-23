@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Shadows</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 40px 24px 32px; background: var(--bg); font-family: var(--sans); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .box { width: 80px; height: 80px; background: var(--afka-paper); border: 1px solid var(--line); }
+  .tok { font-family: var(--mono); font-size: 11px; color: var(--fg); }
+  .role { font-family: var(--sans); font-size: 10.5px; color: var(--fg-muted); text-align: center; max-width: 14ch; line-height: 1.4; }
+  .b1 { box-shadow: 0 1px 0 rgba(13,31,34,0.04); }
+  .b2 { box-shadow: 0 20px 62px rgba(13,31,34,0.08); }
+  .b3 { box-shadow: 0 26px 78px rgba(13,31,34,0.12); }
+  .b4 { box-shadow: 0 22px 70px rgba(13,31,34,0.22); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box b1"></div><div class="tok">--sh-quiet</div><div class="role">Thin top edge</div></div>
+    <div class="item"><div class="box b2"></div><div class="tok">--sh-card</div><div class="role">Card rest</div></div>
+    <div class="item"><div class="box b3"></div><div class="tok">--sh-card-hover</div><div class="role">Card hover</div></div>
+    <div class="item"><div class="box b4"></div><div class="tok">--sh-float</div><div class="role">Floating nav</div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Policy brief cover (light)</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; background: var(--bg); }
+  .page { position: relative; width: 100%; aspect-ratio: 3/4; padding: 56px 56px 44px; box-sizing: border-box; background: var(--afka-cloud-white); display: flex; flex-direction: column; overflow: hidden; }
+  .page::before {
+    content:""; position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(circle at 92% 8%, rgba(10,92,107,0.10), transparent 22rem),
+      repeating-linear-gradient(90deg, rgba(13,31,34,0.045) 0 1px, transparent 1px 64px),
+      repeating-linear-gradient(0deg, rgba(13,31,34,0.03) 0 1px, transparent 1px 58px);
+  }
+  .page > * { position: relative; z-index: 1; }
+
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+  .wordmark { height: 92px; width: auto; display: block; }
+  .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-quiet); }
+
+  .series { margin-top: 64px; display: inline-flex; gap: 10px; align-items: center; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+  .series .dash { width: 32px; height: 1px; background: var(--accent); }
+
+  .title { margin-top: 22px; font-family: var(--display); font-weight: 500; font-size: 56px; line-height: 1.02; letter-spacing: -0.028em; text-wrap: balance; max-width: 22ch; color: var(--fg); font-variation-settings: "opsz" 96; }
+  .sub   { margin-top: 22px; font-size: 17px; line-height: 1.55; color: var(--fg-muted); max-width: 46ch; }
+
+  .toc { margin-top: 36px; display: grid; gap: 10px; max-width: 36rem; }
+  .toc .row { display: grid; grid-template-columns: 44px 1fr auto; gap: 14px; align-items: baseline; padding-bottom: 8px; border-bottom: 1px solid var(--line-soft); font-size: 13px; }
+  .toc .num { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.06em; }
+  .toc .ttl { color: var(--fg); font-weight: 500; }
+  .toc .pg  { font-family: var(--mono); font-size: 11px; color: var(--fg-quiet); }
+
+  .spacer { flex: 1; }
+
+  .foot { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; padding-top: 18px; border-top: 1px solid var(--line-soft); font-size: 12px; line-height: 1.6; color: var(--fg-muted); }
+  .foot .lbl { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="top">
+      <img class="wordmark" src="../assets/afka-wordmark-black.png" alt="Afka Digital Institute" />
+      <span class="meta">Policy Brief · 2026‑02</span>
+    </div>
+
+    <div class="series"><span class="dash"></span><span>Policy Brief 02</span></div>
+    <h1 class="title">Appeals in a language the platform skips.</h1>
+    <p class="sub">A short note for platform policy staff, regulators, and Somali‑language civil society on how appeals are failing in practice.</p>
+
+    <div class="toc">
+      <div class="row"><span class="num">01</span><span class="ttl">What we observed</span><span class="pg">p. 2</span></div>
+      <div class="row"><span class="num">02</span><span class="ttl">Where appeals break</span><span class="pg">p. 4</span></div>
+      <div class="row"><span class="num">03</span><span class="ttl">What can be changed</span><span class="pg">p. 6</span></div>
+      <div class="row"><span class="num">04</span><span class="ttl">Method &amp; limits</span><span class="pg">p. 8</span></div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="foot">
+      <div><span class="lbl">Authors</span>Afka Research Collective</div>
+      <div><span class="lbl">Series</span>Platform Accountability · 02</div>
+      <div><span class="lbl">Identifier</span><span class="mono">afka.policy.2026.002</span></div>
+    </div>
+  </div>
+</body>
+</html>

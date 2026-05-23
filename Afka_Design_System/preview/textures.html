@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Textures</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 14px; background: var(--bg); font-family: var(--sans); }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .panel { position: relative; aspect-ratio: 1.05 / 1; overflow: hidden; border: 1px solid var(--line); background: var(--afka-paper); }
+  .label { position: absolute; left: 8px; bottom: 7px; font-family: var(--mono); font-size: 9px; color: var(--fg); background: rgba(244,248,249,0.86); padding: 2px 6px; letter-spacing: 0.04em; }
+
+  /* 1 — Halftone dots, even grid */
+  .halftone { background:
+    radial-gradient(circle, rgba(10,92,107,0.34) 0 1.4px, transparent 1.7px) var(--afka-paper);
+    background-size: 17px 17px;
+  }
+  /* 2 — Pinstripe grid lines */
+  .grid-lines { background:
+    repeating-linear-gradient(90deg, rgba(13,31,34,0.06) 0 1px, transparent 1px 56px),
+    repeating-linear-gradient(0deg, rgba(13,31,34,0.045) 0 1px, transparent 1px 50px),
+    var(--afka-paper);
+  }
+  /* 3 — Signal field — combined */
+  .signal { background:
+    radial-gradient(circle at 22% 28%, rgba(10,92,107,0.12), transparent 38%),
+    radial-gradient(circle at 76% 44%, rgba(13,31,34,0.16), transparent 42%),
+    repeating-linear-gradient(90deg, rgba(10,92,107,0.18) 0 1px, transparent 1px 18px),
+    repeating-linear-gradient(0deg, rgba(13,31,34,0.08) 0 1px, transparent 1px 22px),
+    var(--afka-paper);
+  }
+  /* 4 — Dotted halo arc, anchored top-right (logo motif as texture) */
+  .halo { background: var(--afka-paper); }
+  .halo::before {
+    content:""; position:absolute; inset:0;
+    background-image: radial-gradient(circle, rgba(10,92,107,0.42) 0 3.5px, transparent 4.8px);
+    background-size: 26px 26px;
+    -webkit-mask-image: radial-gradient(circle at 100% 0%, black 0%, black 32%, transparent 70%);
+            mask-image: radial-gradient(circle at 100% 0%, black 0%, black 32%, transparent 70%);
+    opacity: 0.85;
+  }
+  /* 5 — Diagonal sheen, research-surface light */
+  .sheen { background:
+    linear-gradient(105deg, transparent 0 18%, rgba(244,248,249,0.55) 32%, transparent 48%),
+    radial-gradient(circle, rgba(13,31,34,0.12) 0 0.75px, transparent 1px),
+    linear-gradient(145deg, rgba(244,248,249,0.92), rgba(200,232,237,0.6));
+    background-size: auto, 18px 18px, auto;
+  }
+  /* 6 — Scanline (CRT / transmission feel, from campaign posters) */
+  .scanline { background:
+    repeating-linear-gradient(0deg, rgba(10,92,107,0.10) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, rgba(200,232,237,0.32), rgba(244,248,249,0));
+  }
+  /* 7 — Constellation — scattered dot pattern, soft */
+  .constellation { background:
+    radial-gradient(circle at 12% 18%, rgba(10,92,107,0.55) 0 1.4px, transparent 1.8px),
+    radial-gradient(circle at 36% 8%,  rgba(10,92,107,0.42) 0 1.0px, transparent 1.5px),
+    radial-gradient(circle at 62% 32%, rgba(10,92,107,0.62) 0 1.8px, transparent 2.2px),
+    radial-gradient(circle at 84% 14%, rgba(10,92,107,0.38) 0 1.0px, transparent 1.4px),
+    radial-gradient(circle at 22% 58%, rgba(10,92,107,0.42) 0 1.2px, transparent 1.6px),
+    radial-gradient(circle at 48% 72%, rgba(10,92,107,0.55) 0 1.4px, transparent 1.8px),
+    radial-gradient(circle at 78% 64%, rgba(10,92,107,0.34) 0 1.0px, transparent 1.4px),
+    radial-gradient(circle at 14% 88%, rgba(10,92,107,0.42) 0 1.2px, transparent 1.6px),
+    radial-gradient(circle at 88% 86%, rgba(10,92,107,0.55) 0 1.4px, transparent 1.8px),
+    radial-gradient(circle at 56% 50%, rgba(10,92,107,0.28) 0 0.8px, transparent 1.2px),
+    var(--afka-paper);
+  }
+  /* 8 — Document graph paper — fine grid, ruled */
+  .graph { background:
+    repeating-linear-gradient(90deg, rgba(13,31,34,0.05) 0 1px, transparent 1px 16px),
+    repeating-linear-gradient(0deg, rgba(13,31,34,0.05) 0 1px, transparent 1px 16px),
+    repeating-linear-gradient(0deg, rgba(10,92,107,0.18) 0 1px, transparent 1px 80px),
+    var(--afka-paper);
+  }
+  /* 9 — Radial wash — soft teal glow center, fades out */
+  .radial { background:
+    radial-gradient(ellipse at center, rgba(200,232,237,0.55), rgba(244,248,249,1) 70%),
+    var(--afka-paper);
+  }
+  /* 10 — Cinematic dark — deep ink with halftone (footer/hero ground) */
+  .cinematic { background: var(--afka-deep-ink); }
+  .cinematic::before {
+    content:""; position:absolute; inset:0;
+    background-image: radial-gradient(circle, rgba(10,92,107,0.62) 0 1.35px, transparent 1.65px),
+                      radial-gradient(circle, rgba(244,248,249,0.28) 0 1px, transparent 1.4px);
+    background-position: 0 0, 9px 9px;
+    background-size: 18px 18px;
+    opacity: 0.7;
+  }
+  .cinematic .label { background: rgba(13,31,34,0.78); color: var(--fg-inverse); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="panel halftone"><span class="label">.halftone</span></div>
+    <div class="panel grid-lines"><span class="label">.grid-lines</span></div>
+    <div class="panel signal"><span class="label">.signal-field</span></div>
+    <div class="panel halo"><span class="label">.halo-arc</span></div>
+    <div class="panel sheen"><span class="label">.sheen</span></div>
+    <div class="panel scanline"><span class="label">.scanline</span></div>
+    <div class="panel constellation"><span class="label">.constellation</span></div>
+    <div class="panel graph"><span class="label">.graph-paper</span></div>
+    <div class="panel radial"><span class="label">.radial-wash</span></div>
+    <div class="panel cinematic"><span class="label">.cinematic</span></div>
+  </div>
+</body>
+</html>

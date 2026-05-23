@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Quote block</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px 28px; background: var(--bg); font-family: var(--sans); }
+  .quote { display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; }
+  .rule { width: 2px; background: var(--accent); align-self: stretch; }
+  blockquote { margin: 0; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 22px; line-height: 1.3; color: var(--fg); max-width: 48ch; }
+  .attr { margin-top: 16px; display: flex; gap: 12px; align-items: center; font-size: 11.5px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-quiet); }
+  .attr strong { color: var(--fg); font-weight: 600; font-family: var(--sans); font-style: normal; }
+  .dot { width: 4px; height: 4px; background: var(--fg-quiet); border-radius: 50%; display:inline-block; }
+</style>
+</head>
+<body>
+  <div class="quote">
+    <div class="rule"></div>
+    <div>
+      <blockquote>“Moderation decisions are made about us, in our language, by systems that have not learned our language.”</blockquote>
+      <div class="attr"><strong>A Somali journalist</strong><span class="dot"></span><span>Founding Brief · 2026</span></div>
+    </div>
+  </div>
+</body>
+</html>

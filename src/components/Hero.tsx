@@ -61,9 +61,10 @@ export function Hero() {
           >
             Building evidence on digital harm in Somali-speaking spaces.
           </h1>
-          <p className="mx-auto mt-10 max-w-[18rem] text-base leading-8 text-[rgba(244,248,249,0.72)] sm:hidden">
-            Researching platform power, Somali-language moderation, information
-            integrity and digital rights across Somali online spaces.
+          <p className="mx-auto mt-10 max-w-[20rem] text-base leading-8 text-[rgba(244,248,249,0.72)] sm:hidden">
+            Afka Digital Institute documents platform accountability,
+            Somali-language moderation, information integrity, AI governance,
+            digital exclusion, and digital rights across Somali online spaces.
           </p>
           <p className="mx-auto mt-10 hidden max-w-3xl text-lg leading-8 text-[rgba(244,248,249,0.66)] sm:block">
             Afka Digital Institute documents platform accountability,

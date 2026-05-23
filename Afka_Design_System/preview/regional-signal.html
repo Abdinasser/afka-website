@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Regional signal panel</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 16px; background: var(--bg); font-family: var(--sans); }
+  .panel { position: relative; aspect-ratio: 2.2 / 1; overflow: hidden; border: 1px solid rgba(244,248,249,0.12); background: var(--afka-deep-ink); }
+  .panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.18; mix-blend-mode: screen; }
+  .veil { position: absolute; inset: 0; background: linear-gradient(140deg, rgba(13,31,34,0.6), rgba(13,31,34,0.85)); }
+  .grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, rgba(244,248,249,0.04) 0 1px, transparent 1px 18px); }
+  .body { position: absolute; left: 20px; right: 20px; bottom: 16px; border-top: 1px solid rgba(244,248,249,0.14); padding-top: 12px; color: var(--fg-inverse); }
+  .eyebrow { font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--afka-mist-blue); }
+  .text { margin-top: 6px; font-size: 12.5px; line-height: 1.55; color: rgba(244,248,249,0.7); max-width: 36ch; }
+</style>
+</head>
+<body>
+  <div class="panel">
+    <img src="../assets/horn-of-africa-map-clean.png" alt="" />
+    <div class="veil"></div>
+    <div class="grid"></div>
+    <div class="body">
+      <div class="eyebrow">Regional signal map</div>
+      <div class="text">Language, platform, rights, and economic signals are read together rather than as separate incidents.</div>
+    </div>
+  </div>
+</body>
+</html>

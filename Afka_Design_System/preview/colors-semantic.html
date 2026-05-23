@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Semantic tokens</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); font-family: var(--sans); }
+  .table { display: grid; grid-template-columns: 22px 1fr auto; row-gap: 8px; column-gap: 14px; align-items: center; }
+  .chip { width: 22px; height: 22px; border: 1px solid var(--line-soft); }
+  .tok  { font-family: var(--mono); font-size: 12px; color: var(--fg); }
+  .val  { font-family: var(--mono); font-size: 11px; color: var(--fg-muted); text-align: right; }
+</style>
+</head>
+<body>
+  <div class="table">
+    <span class="chip" style="background: var(--bg);"></span><span class="tok">--bg</span><span class="val">cloud-white</span>
+    <span class="chip" style="background: var(--bg-elevated);"></span><span class="tok">--bg-elevated</span><span class="val">paper</span>
+    <span class="chip" style="background: var(--bg-dark);"></span><span class="tok">--bg-dark</span><span class="val">deep-ink</span>
+    <span class="chip" style="background: var(--accent);"></span><span class="tok">--accent</span><span class="val">deep-teal</span>
+    <span class="chip" style="background: var(--accent-wash);"></span><span class="tok">--accent-wash</span><span class="val">mist-blue 42%</span>
+    <span class="chip" style="background: var(--afka-deep-ink); border: 0;"></span><span class="tok">--fg</span><span class="val">deep-ink</span>
+    <span class="chip" style="background: var(--fg-muted); border: 0;"></span><span class="tok">--fg-muted</span><span class="val">ink @ 66%</span>
+    <span class="chip" style="background: var(--fg-quiet); border: 0;"></span><span class="tok">--fg-quiet</span><span class="val">ink @ 42%</span>
+    <span class="chip" style="background: transparent; border-color: var(--line);"></span><span class="tok">--line</span><span class="val">teal @ 18%</span>
+    <span class="chip" style="background: transparent; border-color: var(--line-soft);"></span><span class="tok">--line-soft</span><span class="val">ink @ 8%</span>
+  </div>
+</body>
+</html>

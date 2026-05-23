@@ -74,7 +74,7 @@ export function Contact() {
                   type="text"
                   autoComplete="name"
                   required
-                  className="focus-ring min-h-12 border border-[var(--line)] bg-transparent px-4 py-3 text-base font-normal normal-case text-[var(--deep-ink)]"
+                  className="focus-ring min-h-12 rounded-[var(--r-md)] border border-[var(--line-soft)] bg-transparent px-4 py-3 text-base font-normal normal-case text-[var(--deep-ink)]"
                 />
               </label>
               <label className="grid gap-2 text-xs font-semibold uppercase text-[var(--muted)]">
@@ -83,7 +83,7 @@ export function Contact() {
                   name="organization"
                   type="text"
                   autoComplete="organization"
-                  className="focus-ring min-h-12 border border-[var(--line)] bg-transparent px-4 py-3 text-base font-normal normal-case text-[var(--deep-ink)]"
+                  className="focus-ring min-h-12 rounded-[var(--r-md)] border border-[var(--line-soft)] bg-transparent px-4 py-3 text-base font-normal normal-case text-[var(--deep-ink)]"
                 />
               </label>
             </div>
@@ -96,7 +96,7 @@ export function Contact() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="focus-ring min-h-12 border border-[var(--line)] bg-transparent px-4 py-3 text-base font-normal normal-case text-[var(--deep-ink)]"
+                  className="focus-ring min-h-12 rounded-[var(--r-md)] border border-[var(--line-soft)] bg-transparent px-4 py-3 text-base font-normal normal-case text-[var(--deep-ink)]"
                 />
               </label>
               <label className="grid gap-2 text-xs font-semibold uppercase text-[var(--muted)]">
@@ -104,7 +104,7 @@ export function Contact() {
                 <select
                   name="reason"
                   required
-                  className="focus-ring min-h-12 border border-[var(--line)] bg-transparent px-4 py-3 text-base font-normal normal-case text-[var(--deep-ink)]"
+                  className="focus-ring min-h-12 rounded-[var(--r-md)] border border-[var(--line-soft)] bg-transparent px-4 py-3 text-base font-normal normal-case text-[var(--deep-ink)]"
                 >
                   <option value="">Select</option>
                   {inquiryReasons.map((reason) => (
@@ -122,13 +122,13 @@ export function Contact() {
                 name="message"
                 rows={5}
                 required
-                className="focus-ring min-h-36 resize-y border border-[var(--line)] bg-transparent px-4 py-3 text-base font-normal normal-case leading-7 text-[var(--deep-ink)]"
+                className="focus-ring min-h-36 resize-y rounded-[var(--r-md)] border border-[var(--line-soft)] bg-transparent px-4 py-3 text-base font-normal normal-case leading-7 text-[var(--deep-ink)]"
               />
             </label>
 
             <button
               type="submit"
-              className="focus-ring mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--deep-teal)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] transition-colors hover:bg-[var(--deep-ink)]"
+              className="focus-ring mt-5 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-[var(--afka-deep-teal)] px-6 py-3 text-sm font-semibold text-[var(--cloud-white)] transition-colors hover:bg-[var(--afka-deep-teal-hover)] active:bg-[var(--afka-deep-teal-press)]"
             >
               Email Afka
             </button>

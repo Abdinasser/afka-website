@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Wordmark variations</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); min-height: 360px; }
+  .cell { display: flex; align-items: center; justify-content: center; padding: 22px; position: relative; }
+  .light { background: var(--bg); }
+  .dark  { background: var(--bg-dark); }
+  .teal  { background: var(--afka-deep-teal); }
+  .wm { height: 56px; width: auto; display: block; }
+  .lbl { position: absolute; bottom: 10px; left: 14px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .light .lbl { color: var(--fg-quiet); }
+  .dark .lbl, .teal .lbl { color: rgba(244,248,249,0.55); }
+</style>
+</head>
+<body>
+  <div class="cell light">
+    <img class="wm" src="../assets/afka-wordmark-black.png" alt="Black wordmark on cloud white" />
+    <span class="lbl">Black · on cloud white</span>
+  </div>
+  <div class="cell dark">
+    <img class="wm" src="../assets/afka-wordmark-light.png" alt="White wordmark on deep ink" />
+    <span class="lbl">White · on deep ink</span>
+  </div>
+  <div class="cell teal">
+    <img class="wm" src="../assets/afka-wordmark-light.png" alt="White wordmark on deep teal" />
+    <span class="lbl">White · on deep teal</span>
+  </div>
+  <div class="cell light">
+    <img class="wm" src="../assets/afka-wordmark-teal.png" alt="Teal wordmark on cloud white" />
+    <span class="lbl">Teal · on cloud white</span>
+  </div>
+</body>
+</html>

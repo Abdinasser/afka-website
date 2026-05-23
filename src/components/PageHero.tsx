@@ -11,7 +11,7 @@ export function PageHero({
   eyebrow,
   title,
   body,
-  align = "center"
+  align = "left"
 }: PageHeroProps) {
   return (
     <section className="cinematic-field page-atmosphere-field min-h-[72vh] text-[var(--cloud-white)]">

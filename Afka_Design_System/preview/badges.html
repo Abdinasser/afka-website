@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Badges & tags</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 28px; background: var(--bg); font-family: var(--sans); }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .row + .row { margin-top: 16px; }
+  .label { font-family: var(--mono); font-size: 10.5px; color: var(--fg-quiet); letter-spacing: 0.04em; text-transform: uppercase; min-width: 110px; }
+  .pill { display: inline-flex; align-items: center; padding: 5px 12px; border-radius: 9999px; font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border: 1px solid var(--line); background: rgba(200,232,237,0.42); color: var(--accent); }
+  .pill.solid { background: var(--accent); color: var(--fg-inverse); border-color: transparent; }
+  .pill.ghost { background: transparent; color: var(--fg-muted); border-color: var(--line); }
+  .pill.signal { background: rgba(194,65,12,0.08); color: var(--afka-signal); border-color: rgba(194,65,12,0.32); }
+  .index { display:inline-flex; min-width: 2.6rem; align-items:center; justify-content:center; border-bottom: 1px solid var(--accent); padding-bottom: 6px; color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+</style>
+</head>
+<body>
+  <div class="row"><span class="label">Tag pill</span><span class="pill">Forthcoming</span><span class="pill">Brief</span><span class="pill">Notes</span><span class="pill">Resources</span></div>
+  <div class="row"><span class="label">Solid</span><span class="pill solid">Research</span></div>
+  <div class="row"><span class="label">Ghost</span><span class="pill ghost">Filed 2026‑03</span></div>
+  <div class="row"><span class="label">Signal</span><span class="pill signal">Urgent harm</span></div>
+  <div class="row"><span class="label">Surface index</span><span class="index">01</span><span class="index">02</span><span class="index">03</span></div>
+</body>
+</html>

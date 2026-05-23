@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Report cover</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; height: 100%; background: var(--afka-deep-ink); }
+  .page { position: relative; width: 100%; min-height: 100vh; aspect-ratio: 3/4; padding: 56px 56px 48px; box-sizing: border-box; color: var(--fg-inverse); display: flex; flex-direction: column; overflow: hidden; }
+  /* Atmospheric layers */
+  .page::before {
+    content: ""; position: absolute; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse at 96% 22%, rgba(10,92,107,0.55), transparent 30rem),
+      radial-gradient(ellipse at 12% 90%, rgba(200,232,237,0.06), transparent 26rem),
+      linear-gradient(160deg, rgba(13,31,34,0.98), rgba(10,92,107,0.85) 50%, rgba(13,31,34,0.96));
+  }
+  .page::after {
+    content: ""; position: absolute; inset: 0; z-index: 0;
+    background-image: radial-gradient(circle, rgba(244,248,249,0.16) 0 1px, transparent 1.45px);
+    background-size: 20px 20px;
+    -webkit-mask-image: linear-gradient(180deg, rgba(13,31,34,1) 0%, rgba(13,31,34,0.6) 50%, transparent 100%);
+            mask-image: linear-gradient(180deg, rgba(13,31,34,1) 0%, rgba(13,31,34,0.6) 50%, transparent 100%);
+    opacity: 0.55;
+  }
+  .page > * { position: relative; z-index: 1; }
+
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { height: 56px; width: auto; }
+  .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(244,248,249,0.6); }
+
+  .series {
+    margin-top: 42px;
+    display: inline-flex; gap: 10px; align-items: center;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--afka-mist-blue);
+  }
+  .series .dash { width: 32px; height: 1px; background: var(--afka-mist-blue); opacity: 0.7; }
+
+  .title { margin-top: 22px; font-family: var(--display); font-weight: 500; font-size: 64px; line-height: 0.98; letter-spacing: -0.038em; text-wrap: balance; max-width: 20ch; color: #FFFFFF; font-variation-settings: "opsz" 96; }
+  .sub   { margin-top: 24px; font-size: 17px; line-height: 1.55; color: rgba(244,248,249,0.84); max-width: 46ch; }
+
+  .spacer { flex: 1; }
+
+  /* Footer band */
+  .foot { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; padding-top: 22px; border-top: 1px solid rgba(244,248,249,0.18); font-size: 12px; line-height: 1.6; color: rgba(244,248,249,0.7); }
+  .foot .lbl { font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--afka-mist-blue); display: block; margin-bottom: 6px; }
+  .doi { font-family: var(--mono); }
+
+  /* Big issue number, faint, behind title */
+  .issue { position: absolute; right: 56px; top: 56px; z-index: 0; font-family: var(--serif); font-weight: 500; font-size: 160px; line-height: 1; color: rgba(244,248,249,0.06); user-select: none; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="issue">01</div>
+    <div class="top">
+      <img class="wordmark" src="../assets/afka-wordmark-light.png" alt="Afka Digital Institute" />
+      <span class="meta">Founding Brief · March 2026</span>
+    </div>
+
+    <div class="series">
+      <span class="dash"></span>
+      <span>Research Report 01</span>
+    </div>
+    <h1 class="title">Moderation in a language the system has not learned.</h1>
+    <p class="sub">Evidence on Somali‑language moderation, takedown patterns, appeals, and the people moved through them.</p>
+
+    <div class="spacer"></div>
+
+    <div class="foot">
+      <div><span class="lbl">Authors</span>Afka Research Collective</div>
+      <div><span class="lbl">Series</span>Platform Accountability · 01 of 04</div>
+      <div><span class="lbl">Identifier</span><span class="doi">afka.brief.2026.001</span></div>
+    </div>
+  </div>
+</body>
+</html>

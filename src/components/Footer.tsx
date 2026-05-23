@@ -9,8 +9,20 @@ export function Footer() {
   return (
     <MotionFooter
       id="site-footer"
-      className="footer-architecture relative overflow-hidden border-t border-[rgba(244,248,249,0.1)] bg-[var(--deep-ink)] text-[var(--cloud-white)]"
+      className="relative isolate overflow-hidden border-t border-[rgba(244,248,249,0.10)] bg-[var(--afka-deep-ink)] text-[var(--cloud-white)]"
     >
+      <span
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+          background:
+            "radial-gradient(ellipse at 82% 12%, rgba(10,92,107,0.16), transparent 30rem)",
+          opacity: 0.5
+        }}
+      />
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10 lg:py-16">
         <div className="grid gap-12 pb-12 lg:grid-cols-[1.22fr_0.55fr_1fr] lg:items-start lg:gap-16">
           <div className="max-w-xl">
@@ -27,10 +39,10 @@ export function Footer() {
                 className="h-auto w-36 sm:w-44"
               />
             </Link>
-            <p className="mt-8 max-w-md font-serif-display text-2xl leading-tight text-[rgba(244,248,249,0.9)] sm:text-[2rem]">
+            <p className="mt-8 max-w-md font-display text-[clamp(1.5rem,2.4vw,1.875rem)] font-medium leading-tight text-[rgba(244,248,249,0.9)]">
               Evidence for Somali digital futures.
             </p>
-            <p className="mt-5 max-w-md text-sm leading-7 text-[rgba(244,248,249,0.68)]">
+            <p className="mt-5 max-w-md text-[13.5px] leading-7 text-[rgba(244,248,249,0.68)]">
               Independent research on platform accountability, Somali-language
               digital rights, and public-interest technology policy.
             </p>
@@ -64,7 +76,7 @@ export function Footer() {
             </p>
             <a
               href={`mailto:${contactEmail}`}
-              className="focus-ring cta-text-light inline-flex min-h-11 items-center justify-center rounded-full border border-[rgba(244,248,249,0.34)] bg-[rgba(244,248,249,0.09)] px-5 py-3 text-sm font-semibold shadow-[0_16px_42px_rgba(0,0,0,0.2)] transition-colors hover:border-[rgba(200,232,237,0.68)] hover:bg-[rgba(200,232,237,0.12)]"
+              className="focus-ring inline-flex min-h-11 items-center justify-center rounded-full border border-[rgba(244,248,249,0.34)] bg-[rgba(244,248,249,0.08)] px-5 py-3 text-sm font-semibold text-[var(--fg-inverse)] shadow-[0_16px_42px_rgba(0,0,0,0.2)] transition-colors hover:border-[rgba(244,248,249,0.5)] hover:bg-[rgba(244,248,249,0.12)]"
             >
               {contactEmail}
             </a>

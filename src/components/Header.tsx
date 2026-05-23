@@ -92,7 +92,7 @@ export function Header() {
         {open ? (
           <motion.div
             animate="visible"
-            className="mx-auto mt-3 max-w-[19rem] rounded-[1.75rem] border border-[rgba(244,248,249,0.12)] bg-[rgba(13,31,34,0.9)] p-3 shadow-[0_22px_70px_rgba(13,31,34,0.28)] backdrop-blur-2xl md:hidden"
+            className="mx-auto mt-3 max-w-[19rem] rounded-[var(--r-pill)] border border-[rgba(244,248,249,0.12)] bg-[rgba(13,31,34,0.9)] p-3 shadow-[0_22px_70px_rgba(13,31,34,0.28)] backdrop-blur-2xl md:hidden"
             exit="exit"
             id="mobile-menu"
             initial={reducedMotion ? false : "hidden"}

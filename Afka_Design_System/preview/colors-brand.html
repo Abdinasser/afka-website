@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Brand color</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw { position: relative; aspect-ratio: 1.4 / 1; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--line); }
+  .sw .hex { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; }
+  .sw .name { font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: -0.005em; }
+  .sw .tok { font-family: var(--mono); font-size: 10px; color: inherit; opacity: 0.6; }
+  .light { color: var(--afka-deep-ink); }
+  .dark  { color: var(--afka-cloud-white); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw dark" style="background: var(--afka-deep-teal);">
+      <span class="tok">--afka-deep-teal</span>
+      <div>
+        <div class="name">Deep Teal</div>
+        <div class="hex">#0A5C6B</div>
+      </div>
+    </div>
+    <div class="sw light" style="background: var(--afka-mist-blue);">
+      <span class="tok">--afka-mist-blue</span>
+      <div>
+        <div class="name">Mist Blue</div>
+        <div class="hex">#C8E8ED</div>
+      </div>
+    </div>
+    <div class="sw light" style="background: var(--afka-cloud-white);">
+      <span class="tok">--afka-cloud-white</span>
+      <div>
+        <div class="name">Cloud White</div>
+        <div class="hex">#F4F8F9</div>
+      </div>
+    </div>
+    <div class="sw dark" style="background: var(--afka-deep-ink);">
+      <span class="tok">--afka-deep-ink</span>
+      <div>
+        <div class="name">Deep Ink</div>
+        <div class="hex">#0D1F22</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

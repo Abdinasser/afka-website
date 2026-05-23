@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka Onboarding Brief · 2026</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  /* ========================================================
+     A4 print layout. Each .page is 210 × 297 mm.
+     Display in browser at 1:1 — letterboxed on a dark stage.
+     ======================================================== */
+  html, body { margin: 0; padding: 0; background: #0d1417; color: var(--fg); }
+  body { font-family: var(--sans); font-size: 12pt; line-height: 1.5; }
+  .stage { display: flex; flex-direction: column; align-items: center; padding: 36px 0; gap: 28px; }
+  .page {
+    position: relative; width: 210mm; height: 297mm;
+    background: var(--afka-cloud-white); color: var(--afka-deep-ink);
+    box-shadow: 0 26px 78px rgba(0,0,0,0.42);
+    overflow: hidden; isolation: isolate;
+    box-sizing: border-box;
+  }
+  /* Editorial grid lines on light pages */
+  .page.light::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      repeating-linear-gradient(90deg, rgba(13,31,34,0.045) 0 1px, transparent 1px 28mm),
+      repeating-linear-gradient(0deg, rgba(13,31,34,0.035) 0 1px, transparent 1px 28mm);
+    opacity: 0.6;
+  }
+  .page.dark { background: var(--afka-deep-ink); color: var(--fg-inverse); }
+  .page.dark::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse at 82% 12%, rgba(10,92,107,0.46), transparent 38rem),
+      radial-gradient(ellipse at 8% 90%, rgba(200,232,237,0.05), transparent 26rem),
+      repeating-linear-gradient(90deg, rgba(244,248,249,0.035) 0 1px, transparent 1px 28mm),
+      repeating-linear-gradient(0deg, rgba(244,248,249,0.025) 0 1px, transparent 1px 28mm);
+    opacity: 0.85;
+  }
+  .page.dark::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background-image: radial-gradient(circle, rgba(10,92,107,0.5) 0 1.2px, transparent 1.55px);
+    background-size: 22px 22px;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), transparent 70%);
+            mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), transparent 70%);
+    opacity: 0.45;
+  }
+  .page > * { position: relative; z-index: 1; }
+
+  /* The 3mm teal stripe along the left edge */
+  .page .edge {
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 8mm; z-index: 1;
+    background: var(--afka-deep-teal);
+  }
+  .page.dark .edge { background: rgba(10,92,107,0.55); }
+
+  /* Running header */
+  .running-head {
+    position: absolute; top: 14mm; left: 24mm; right: 24mm; z-index: 2;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .running-head .label {
+    font-size: 9pt; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .running-head .rule {
+    flex: 1; height: 1px; background: var(--line-soft);
+  }
+  .page.dark .running-head .label { color: var(--afka-mist-blue); }
+  .page.dark .running-head .rule { background: rgba(244,248,249,0.18); }
+
+  /* Footer */
+  .page-foot {
+    position: absolute; bottom: 14mm; left: 24mm; right: 24mm; z-index: 2;
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 8px; border-top: 1px solid var(--line-soft);
+    font-size: 9pt; color: var(--fg-muted);
+  }
+  .page-foot .institute {
+    font-family: var(--sans); letter-spacing: 0.01em;
+  }
+  .page-foot .institute em { font-style: normal; color: var(--fg-quiet); margin: 0 8px; }
+  .page-foot .nav { display: flex; gap: 18px; align-items: baseline; }
+  .page-foot .nav .sec { font-size: 9pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-muted); }
+  .page-foot .nav .num { font-family: var(--mono); font-size: 11pt; font-weight: 600; color: var(--accent); }
+  .page.dark .page-foot { color: rgba(244,248,249,0.55); border-top-color: rgba(244,248,249,0.18); }
+  .page.dark .page-foot .institute em { color: rgba(244,248,249,0.42); }
+  .page.dark .page-foot .nav .num { color: var(--afka-mist-blue); }
+
+  /* Page body */
+  .body {
+    position: absolute; top: 28mm; bottom: 26mm; left: 24mm; right: 24mm; z-index: 2;
+    display: flex; flex-direction: column;
+  }
+
+  /* ----- Typography ----- */
+  .eyebrow {
+    font-size: 9pt; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); margin: 0;
+  }
+  .eyebrow + .accent-rule {
+    width: 36px; height: 3px; background: var(--accent);
+    margin: 10px 0 0; border-radius: 1.5px;
+  }
+  h1.section-title {
+    font-family: var(--display); font-weight: 500;
+    font-size: 32pt; line-height: 1.05; letter-spacing: -0.03em;
+    text-wrap: balance; margin: 24px 0 0; color: var(--afka-deep-ink);
+    font-variation-settings: "opsz" 96;
+  }
+  h2.section-title {
+    font-family: var(--display); font-weight: 500;
+    font-size: 22pt; line-height: 1.08; letter-spacing: -0.025em;
+    text-wrap: balance; margin: 36px 0 0; color: var(--afka-deep-ink);
+    font-variation-settings: "opsz" 72;
+  }
+  h3.subhead {
+    font-size: 10pt; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--afka-deep-ink); margin: 28px 0 0;
+  }
+  h3.subhead + .accent-rule {
+    width: 28px; height: 2px; background: var(--accent);
+    margin: 8px 0 14px;
+  }
+  p { margin: 16px 0 0; line-height: 1.65; color: var(--afka-deep-ink); }
+  p.lede { font-size: 12.5pt; line-height: 1.6; }
+  p + p { margin-top: 14px; }
+  .page.dark h1.section-title,
+  .page.dark h2.section-title,
+  .page.dark h3.subhead,
+  .page.dark p { color: var(--fg-inverse); }
+  .page.dark .eyebrow { color: var(--afka-mist-blue); }
+  .page.dark .accent-rule { background: var(--afka-mist-blue); }
+
+  /* Pull quote callout (filled, deep ink) */
+  .callout {
+    margin-top: 28px;
+    background: var(--afka-deep-ink); color: var(--fg-inverse);
+    padding: 18px 22px 18px 26px;
+    border-left: 6px solid var(--accent);
+    font-size: 11pt; line-height: 1.55;
+    box-shadow: 0 12px 28px rgba(13,31,34,0.18);
+  }
+  .callout strong { color: var(--afka-mist-blue); font-weight: 600; }
+  .page.dark .callout {
+    background: rgba(244,248,249,0.04); color: var(--fg-inverse);
+    border-left-color: var(--afka-mist-blue);
+    box-shadow: none;
+  }
+
+  /* Inline pull quote on a light page */
+  .pullquote {
+    margin-top: 24px;
+    border-left: 3px solid var(--accent);
+    padding: 6px 0 6px 18px;
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 15pt; line-height: 1.25;
+    color: var(--afka-deep-ink); max-width: 36ch;
+  }
+
+  /* Institutional landscape table */
+  table.landscape {
+    margin-top: 18px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    border: 1px solid var(--line-soft);
+  }
+  .landscape thead th {
+    background: var(--afka-deep-ink); color: var(--fg-inverse);
+    text-align: left; padding: 10px 14px;
+    font-size: 9pt; font-weight: 600; letter-spacing: 0.06em;
+  }
+  .landscape thead th.accent { background: var(--accent); }
+  .landscape tbody td {
+    padding: 10px 14px; vertical-align: top;
+    border-top: 1px solid var(--line-soft);
+    line-height: 1.5;
+  }
+  .landscape tbody tr:nth-child(even) td { background: rgba(200,232,237,0.18); }
+  .landscape tbody td.name { font-weight: 600; width: 32%; color: var(--afka-deep-ink); }
+
+  /* Big chapter index markers on cover */
+  .chapter-list { display: grid; gap: 10px; }
+  .chapter-item {
+    display: flex; align-items: center; gap: 14px;
+    border: 1px solid rgba(244,248,249,0.22);
+    padding: 10px 14px 10px 12px;
+  }
+  .chapter-item .num {
+    font-family: var(--mono); font-size: 9pt; font-weight: 600; color: var(--afka-deep-ink);
+    background: var(--afka-mist-blue);
+    padding: 4px 8px; min-width: 26px; text-align: center; letter-spacing: 0.04em;
+  }
+  .chapter-item .name {
+    font-size: 10pt; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--fg-inverse);
+  }
+
+  /* Stat row */
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+              border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);
+              margin-top: 22px; }
+  .stat { padding: 16px 18px; border-left: 1px solid var(--line-soft); }
+  .stat:first-child { border-left: 0; padding-left: 0; }
+  .stat .v { font-family: var(--display); font-weight: 500; font-size: 26pt; line-height: 1;
+             color: var(--afka-deep-ink); letter-spacing: -0.02em; font-variation-settings: "opsz" 72; }
+  .stat .u { display: inline-block; margin-left: 6px; font-family: var(--sans); font-size: 10pt;
+             font-weight: 500; color: var(--fg-quiet); }
+  .stat .l { margin-top: 10px; font-size: 8.5pt; font-weight: 600; letter-spacing: 0.10em;
+             text-transform: uppercase; color: var(--accent); }
+  .stat .n { margin-top: 4px; font-size: 9pt; line-height: 1.45; color: var(--fg-muted); }
+
+  /* Two-column body */
+  .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 18px; }
+
+  /* Numbered request list (board asks page) */
+  .asks { display: grid; gap: 14px; margin-top: 22px; }
+  .ask {
+    display: grid; grid-template-columns: 44px 1fr; gap: 16px;
+    padding: 16px 0; border-top: 1px solid var(--line-soft);
+  }
+  .ask:last-child { border-bottom: 1px solid var(--line-soft); }
+  .ask .n { font-family: var(--mono); font-size: 10pt; font-weight: 700;
+            color: var(--accent); letter-spacing: 0.06em;
+            border-bottom: 1px solid var(--accent); padding-bottom: 4px; height: fit-content; }
+  .ask h4 { margin: 0; font-family: var(--display); font-weight: 500;
+            font-size: 14pt; line-height: 1.2; letter-spacing: -0.02em;
+            color: var(--afka-deep-ink); font-variation-settings: "opsz" 24; }
+  .ask p { margin-top: 6px; font-size: 10pt; line-height: 1.55; color: var(--fg-muted); }
+
+  /* Cover */
+  .cover { position: relative; }
+  .cover .wordmark { height: 36px; width: auto; display: block; }
+  .cover .meta {
+    margin-top: 60mm;
+    font-size: 9pt; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--afka-mist-blue);
+  }
+  .cover .meta::after {
+    content: ""; display: block; width: 36px; height: 3px;
+    background: var(--afka-mist-blue); margin-top: 12px;
+  }
+  .cover h1 {
+    margin-top: 26px;
+    font-family: var(--display); font-weight: 500;
+    font-size: 56pt; line-height: 0.96; letter-spacing: -0.035em;
+    color: var(--fg-inverse); text-wrap: balance; max-width: 12ch;
+    font-variation-settings: "opsz" 96;
+  }
+  .cover .subtitle {
+    margin-top: 30px; font-size: 14pt; line-height: 1.45;
+    color: rgba(244,248,249,0.86); max-width: 36ch;
+  }
+  .cover .confidential {
+    position: absolute; left: 24mm; bottom: 50mm;
+    font-size: 10pt; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--afka-mist-blue);
+  }
+  .cover .place {
+    position: absolute; left: 24mm; bottom: 32mm;
+    font-size: 10pt; color: rgba(244,248,249,0.66); letter-spacing: 0.06em;
+  }
+  .cover .chapter-list-wrap {
+    position: absolute; right: 24mm; bottom: 32mm; width: 64mm;
+    display: grid; gap: 8px;
+  }
+
+  /* Closing page */
+  .closing-inv {
+    margin-top: 18px;
+    padding: 28px 30px;
+    border: 1px solid var(--line-soft);
+    background: linear-gradient(145deg, rgba(244,248,249,0.6), rgba(200,232,237,0.42));
+    box-shadow: 0 18px 42px rgba(13,31,34,0.08);
+  }
+  .closing-inv .eyebrow { color: var(--accent); }
+  .closing-inv h3 { margin-top: 14px;
+                    font-family: var(--display); font-weight: 500;
+                    font-size: 22pt; line-height: 1.1; letter-spacing: -0.025em;
+                    font-variation-settings: "opsz" 36; }
+  .closing-inv p { margin-top: 14px; font-size: 11pt; }
+  .signoff { margin-top: 28px; font-size: 10pt; }
+  .signoff strong { display: block; font-weight: 600; }
+  .signoff em { font-style: normal; color: var(--fg-muted); }
+
+  /* Page break for print */
+  @media print {
+    html, body { background: white; }
+    .stage { padding: 0; gap: 0; }
+    .page { box-shadow: none; page-break-after: always; }
+    .page:last-child { page-break-after: auto; }
+  }
+  @page { size: A4; margin: 0; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <!-- =================================================================
+       PAGE 1 — COVER
+       ================================================================= -->
+  <section class="page dark cover" data-screen-label="01 Cover">
+    <div class="edge"></div>
+    <div class="body">
+      <img class="wordmark" src="../assets/afka-wordmark-light.png" alt="Afka Digital Institute" />
+      <p class="meta">Afka Digital Institute · 2026</p>
+      <h1>Onboarding Brief</h1>
+      <p class="subtitle">The case for building the first digital harm research institution in the Somali‑speaking world.</p>
+    </div>
+    <p class="confidential">Confidential onboarding brief</p>
+    <p class="place">Mogadishu, Somalia · 2026</p>
+    <div class="chapter-list-wrap">
+      <div class="chapter-list">
+        <div class="chapter-item"><span class="num">01</span><span class="name">Read</span></div>
+        <div class="chapter-item"><span class="num">02</span><span class="name">Align</span></div>
+        <div class="chapter-item"><span class="num">03</span><span class="name">Govern</span></div>
+        <div class="chapter-item"><span class="num">04</span><span class="name">Build</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 2 — EXECUTIVE SUMMARY + LANDSCAPE
+       ================================================================= -->
+  <section class="page light" data-screen-label="02 Executive Summary">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">Institutional Orientation</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">Executive Summary</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">Why this institution, and why now.</h1>
+      <p class="lede">The Somali‑speaking world has over 25 million people spread across Somalia, Somaliland, Ethiopia, Kenya, and Djibouti, with a diaspora across Europe, North America, and the Gulf. In 2025 Somalia alone recorded 10.7 million internet users. The digital environment these people inhabit is growing fast. The research and policy infrastructure to understand what happens in it does not exist.</p>
+      <p>Every established Somali think tank and research institution focuses on humanitarian response, security, governance, or political economy. None of them have made digital harm their mandate. The global organisations that study disinformation, platform accountability, and online rights do not read Somali. They do not have the network access, the language capacity, or the institutional presence in the Horn to do this work.</p>
+      <p>That is the gap. Afka Digital Institute is built to occupy it.</p>
+
+      <h2 class="section-title">What every Somali institution does instead.</h2>
+      <div class="accent-rule"></div>
+      <p>Each of the institutions below produces serious, credible research. None of them has published a brief on platform content moderation, disinformation in Somali‑language media, image‑based abuse, digital financial harm, or creator monetisation exclusion.</p>
+      <table class="landscape">
+        <thead>
+          <tr><th>Institution</th><th class="accent">Primary research focus</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="name">Heritage Institute for Policy Studies (HIPS)</td><td>Governance, federalism, security, political economy, foreign policy.</td></tr>
+          <tr><td class="name">Hiraal Institute</td><td>Al‑Shabaab, counter‑terrorism, security sector, political violence.</td></tr>
+          <tr><td class="name">Somali Institute of Development Studies (SIDS)</td><td>Development, poverty, peacebuilding, environment, stabilisation.</td></tr>
+          <tr><td class="name">SIDRA Institute</td><td>Economic development, private sector, gender, governance.</td></tr>
+          <tr><td class="name">SORDI</td><td>Health systems, education, humanitarian response, disaster resilience.</td></tr>
+          <tr><td class="name">Somali Institute for Economic Policy Research (SIEPRA)</td><td>Economic policy, fiscal management, trade, private sector.</td></tr>
+          <tr><td class="name">Somali Public Agenda (SPA)</td><td>Public services, access to education, healthcare, housing, security and justice administration research.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout">
+        The Somali research landscape has no institution dedicated to digital harm, digital rights, or technology policy. <strong>That is not a criticism of what exists. It is a description of what does not.</strong>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> Institutional Orientation</span>
+      <span class="nav"><span class="sec">Opening</span><span class="num">02</span></span>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 3 — WHAT IS ACTUALLY HAPPENING
+       ================================================================= -->
+  <section class="page light" data-screen-label="03 What Is Actually Happening">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">Institutional Orientation</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">The Scale</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">What is actually happening in Somali digital spaces.</h1>
+
+      <h3 class="subhead">The influencer problem that is causing social decay</h3>
+      <div class="accent-rule"></div>
+      <p>Something has gone wrong in how the Somali public sphere operates online, and it has been going wrong slowly enough that many people have normalised it.</p>
+      <p>The loudest voices in Somali digital spaces right now are not scholars, journalists, or community leaders. They are influencers whose audiences were built almost entirely on clan content: mockery, insults, rallying cries for clan pride, and the deliberate amplification of historical grievances that most communities have spent decades trying to move past.</p>
+      <p>A 2025 peer‑reviewed study published in the <em>Journal of Social Media in Society</em>, drawing on surveys with 312 respondents and interviews with 32 journalists, influencers, and policymakers, found that diaspora‑based influencers are the primary sources of clan tensions online. One participant told the researchers: <em>“Some of these influencers are directly responsible for inciting violence.”</em></p>
+      <p>The financial logic is documented and deliberate. A well‑known Somali TikTok influencer in Italy explained it plainly: clan‑based content generates money in a way that general Somali content does not. The anger and pride that clan rivalry triggers drives more views, more coins, more income. TikTok’s algorithm does not moderate this. It rewards it.</p>
+
+      <div class="callout">
+        In May 2024, Somalia’s Attorney General referred 19 TikTok influencers to the Banadir Regional Court for inciting ethnic conflict, spreading hatred, and using social media for harmful practices. <strong>The arrests happened. The evidence base needed to address the system producing the harm does not exist.</strong>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> Institutional Orientation</span>
+      <span class="nav"><span class="sec">What Is Actually Happening</span><span class="num">03</span></span>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 4 — PLATFORM FAILURE
+       ================================================================= -->
+  <section class="page light" data-screen-label="04 Platform Failure">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">The Gap</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">Platform Failure</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">Moderation that does not read the language it is moderating.</h1>
+      <p class="lede">Global platforms operate on enforcement systems that were not built for Somali speech. The result is a two‑sided failure: harm in Somali stays online, and ordinary Somali speech gets removed for reasons no one explains.</p>
+      <p>Detection models trained on English, Arabic, and a small number of well‑resourced languages do not capture Somali dialect, code‑switching, or political idiom. Coded speech moves freely. Genuine threats are missed. At the same time, normal cultural and political expression triggers removals that have no clear appeal route in the user’s own language.</p>
+      <p>Verification and monetisation systems compound the problem. Somali‑language creators face payment and identity barriers that creators in larger language markets do not. Civil society pages report visibility suppression with no recourse. Independent journalists describe takedowns that arrive in English on accounts that operate in Somali.</p>
+      <p>None of this is anecdotal at scale yet. There is no Somali‑language dataset of takedowns, appeals, monetisation denials, or recommendation suppression. There is no longitudinal evidence base. Platforms do not publish data on Somali‑language enforcement. No institution requests it on a routine basis.</p>
+
+      <div class="stat-row">
+        <div class="stat">
+          <div class="v">10.7<span class="u">million</span></div>
+          <div class="l">Somali users online</div>
+          <div class="n">Internal Somalia, 2025 estimate. Diaspora not included.</div>
+        </div>
+        <div class="stat">
+          <div class="v">0<span class="u">briefs</span></div>
+          <div class="l">on Somali moderation</div>
+          <div class="n">Across the seven leading Somali research institutions.</div>
+        </div>
+        <div class="stat">
+          <div class="v">19<span class="u">referrals</span></div>
+          <div class="l">to Banadir court</div>
+          <div class="n">Influencers referred for incitement, May 2024.</div>
+        </div>
+      </div>
+
+      <p>This is the entry point for Afka. Documenting cases, reading platform behaviour in Somali, and turning observation into a record that civil society, policymakers, and platforms can be asked to engage.</p>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> The Gap</span>
+      <span class="nav"><span class="sec">Platform Failure</span><span class="num">04</span></span>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 5 — AI GOVERNANCE GAP
+       ================================================================= -->
+  <section class="page light" data-screen-label="05 AI Governance Gap">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">The Gap</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">AI Governance &amp; Language Justice</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">The Somali language is being decided about, not decided with.</h1>
+      <p class="lede">AI safety, AI policy, and AI evaluation are being designed for languages that already have research infrastructure. Somali does not.</p>
+      <p>Frontier model training data sets contain only thin Somali coverage. Evaluation benchmarks do not test Somali. Safety classifiers are not audited in Somali. Voice systems mistransliterate Somali names. Translation systems flatten dialect and political nuance into general statements that no Somali speaker would recognise as their own.</p>
+      <p>This matters beyond convenience. The way platforms will allow, suppress, or surface Somali speech for the next decade is being decided in rooms where Somali‑language evidence is not on the table. International AI governance frameworks are being drafted now. Somalia has no permanent seat at any of them.</p>
+
+      <h3 class="subhead">What language justice would look like</h3>
+      <div class="accent-rule"></div>
+      <div class="cols-2">
+        <div>
+          <p style="margin-top:0;">Documented Somali‑language test sets that platforms can be asked to honour. A clear public record of Somali‑language safety failures. Routine inclusion of Somali in evaluation pipelines run by independent researchers.</p>
+        </div>
+        <div>
+          <p style="margin-top:0;">A standing Somali‑language seat at the policy table. Civil society partners who can be asked the right questions in the right language. A reference institution that platforms can call when a Somali‑language case escalates.</p>
+        </div>
+      </div>
+
+      <blockquote class="pullquote">
+        Languages without institutions do not get auditing. Languages without auditing do not get safety.
+      </blockquote>
+
+      <p>Afka’s role is not to build the AI. It is to make sure Somali‑language harm is documented carefully enough that policy can refer to evidence, not impression.</p>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> The Gap</span>
+      <span class="nav"><span class="sec">AI &amp; Language</span><span class="num">05</span></span>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 6 — TIMING & FIRST MOVER
+       ================================================================= -->
+  <section class="page dark" data-screen-label="06 Timing">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">Timing</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">Why Now</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">The first‑mover advantage that will not stay open.</h1>
+      <p class="lede">Three windows are open at the same time. None of them stay open for long.</p>
+
+      <h3 class="subhead">Policy attention</h3>
+      <div class="accent-rule"></div>
+      <p>Somalia is in active conversation with platforms, regional regulators, and international partners about online speech, electoral integrity, and digital safety. The Banadir referrals signalled state interest. Civil society is asking the questions. The research base to support either has not yet been built.</p>
+
+      <h3 class="subhead">Platform openness</h3>
+      <div class="accent-rule"></div>
+      <p>Major platforms are, for institutional reasons of their own, more willing to engage on language‑specific harm than they were five years ago. Researchers with a real evidence base and an institutional address are being heard. Without an institution, this access does not arrive in the Somali context.</p>
+
+      <h3 class="subhead">AI standard setting</h3>
+      <div class="accent-rule"></div>
+      <p>Global AI governance frameworks are being drafted right now. Languages that arrive late will be governed by frameworks they had no part in shaping. The opportunity to be a documented Somali‑language voice in this conversation closes as the standards close.</p>
+
+      <div class="callout">
+        First‑mover advantage in this space is not a marketing claim. It is the difference between defining the field and inheriting decisions made elsewhere. Afka is built to do the first while there is still time.
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> Timing</span>
+      <span class="nav"><span class="sec">First Mover</span><span class="num">06</span></span>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 7 — FUNDER ALIGNMENT
+       ================================================================= -->
+  <section class="page light" data-screen-label="07 Funder Alignment">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">Alignment</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">Funder &amp; Partner Alignment</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">Who Afka is built to work with, and who it is not.</h1>
+      <p class="lede">Afka is independent, non‑partisan, and not directed by platforms, state actors, political groups, or commercial interests. Its work is designed to be cited, contested, and built on. That places it inside a recognisable set of donor relationships, and outside others.</p>
+
+      <h3 class="subhead">Natural alignment</h3>
+      <div class="accent-rule"></div>
+      <ul style="margin: 14px 0 0 18px; padding: 0;">
+        <li style="margin-top: 8px;">Public‑interest technology and digital rights funders working on platform accountability, content moderation, and AI governance.</li>
+        <li style="margin-top: 8px;">Media development and journalism safety funders concerned with Somali‑speaking publics.</li>
+        <li style="margin-top: 8px;">Foundations supporting language justice, regional research capacity, and Global Majority institutions.</li>
+        <li style="margin-top: 8px;">Multilaterals working on information integrity, elections, and digital civic space.</li>
+      </ul>
+
+      <h3 class="subhead">Outside the mandate</h3>
+      <div class="accent-rule"></div>
+      <ul style="margin: 14px 0 0 18px; padding: 0;">
+        <li style="margin-top: 8px;">Humanitarian response, livelihoods programming, and traditional development assistance. These are covered by other Somali institutions.</li>
+        <li style="margin-top: 8px;">Counter‑terrorism, security, and political violence research. Hiraal and others already do this credibly.</li>
+        <li style="margin-top: 8px;">Funding that requires editorial input from a platform, a political party, or a state actor.</li>
+      </ul>
+
+      <h3 class="subhead">What partners get</h3>
+      <div class="accent-rule"></div>
+      <p>A research and policy institution with Somali‑language capacity, regional presence, and international research standards. Publications that can be cited. Briefings that can be commissioned. A reference contact when a Somali‑language case crosses a desk somewhere else.</p>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> Alignment</span>
+      <span class="nav"><span class="sec">Funder Alignment</span><span class="num">07</span></span>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 8 — FOUNDING TEAM (uses user-supplied corrected paragraph)
+       ================================================================= -->
+  <section class="page light" data-screen-label="08 Founding Team">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">Capacity</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">The Founding Team</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">Built by people who know both the language and the system.</h1>
+      <p class="lede">Afka Digital Institute is being built by a founding team with experience across investigative journalism, multimedia production, technology, institutional media, research, communications, and Somali civil society.</p>
+      <p>The team combines regional knowledge with international professional standards shaped inside globally recognised media and technology environments, including the BBC and major digital media platforms.</p>
+
+      <h3 class="subhead">Working principles</h3>
+      <div class="accent-rule"></div>
+      <div class="cols-2">
+        <div>
+          <p style="margin-top:0;"><strong>Independent.</strong> Non‑partisan. Not directed by platforms, state actors, political groups, or commercial interests.</p>
+          <p><strong>Evidence‑led.</strong> Built from documented cases, community context, platform behaviour, and publicly reasoned analysis.</p>
+        </div>
+        <div>
+          <p style="margin-top:0;"><strong>Somali‑language as evidence.</strong> Somali language, dialect, slang, coded speech, and cultural context are central data, not background detail.</p>
+          <p><strong>Public‑interest only.</strong> Outputs are written for communities, journalists, civil society, policymakers, researchers, and institutions.</p>
+        </div>
+      </div>
+
+      <blockquote class="pullquote">
+        Discretion is part of the institutional posture. Afka is being built carefully, and named carefully, on purpose.
+      </blockquote>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> Capacity</span>
+      <span class="nav"><span class="sec">Founding Team</span><span class="num">08</span></span>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 9 — BOARD / ADVISORY ASKS
+       ================================================================= -->
+  <section class="page light" data-screen-label="09 Board Asks">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">Governance</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">What Afka Asks of Its Board</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">A small, considered group. Five specific contributions.</h1>
+      <p class="lede">Board and advisory members are invited because of a specific contribution. The work below is what Afka asks across a year. The time commitment is real but bounded.</p>
+
+      <div class="asks">
+        <div class="ask">
+          <span class="n">01</span>
+          <div>
+            <h4>Institutional credibility</h4>
+            <p>Public association with Afka. Willingness to be named, in time, in materials that go to funders, partners, and platforms.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="n">02</span>
+          <div>
+            <h4>Editorial review</h4>
+            <p>Read forthcoming research outputs before publication. Test arguments. Flag risks, factual gaps, or framing that the founding team has missed.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="n">03</span>
+          <div>
+            <h4>Strategic introductions</h4>
+            <p>Targeted introductions to funders, platform contacts, fellow researchers, and policy interlocutors. Quality, not volume.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="n">04</span>
+          <div>
+            <h4>Governance discipline</h4>
+            <p>Hold the institution to its public‑interest, non‑partisan posture. Push back when the line is at risk.</p>
+          </div>
+        </div>
+        <div class="ask">
+          <span class="n">05</span>
+          <div>
+            <h4>Time</h4>
+            <p>Two convenings per year. Reasonable email and review responsiveness in between. No fundraising calls expected.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> Governance</span>
+      <span class="nav"><span class="sec">Board Asks</span><span class="num">09</span></span>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       PAGE 10 — CLOSING / INVITATION
+       ================================================================= -->
+  <section class="page dark" data-screen-label="10 Invitation">
+    <div class="edge"></div>
+    <div class="running-head">
+      <span class="label">Invitation</span>
+      <span class="rule"></span>
+    </div>
+    <div class="body">
+      <p class="eyebrow">Closing</p>
+      <div class="accent-rule"></div>
+      <h1 class="section-title">A serious invitation, made in private, to help build something that will eventually need to be public.</h1>
+      <p class="lede">Afka Digital Institute is not asking for endorsement of a vision. It is asking for a small group of considered people to help build a research institution that the Somali‑speaking world does not yet have.</p>
+      <p>The argument in this brief is the institutional case. The conversations that follow are where it gets refined. Reading the brief carefully and writing back, even with disagreement, is itself the start of the work.</p>
+
+      <div class="closing-inv">
+        <p class="eyebrow">If this is the kind of work you would consider</p>
+        <h3>Write back to the founding team and we will arrange a private conversation.</h3>
+        <p>Any feedback that improves the institution before it goes public is exactly the kind of contribution we are asking for.</p>
+      </div>
+
+      <div class="signoff">
+        <strong>Afka Digital Institute</strong>
+        <em>Founding team · 2026 · Mogadishu · Confidential</em>
+      </div>
+    </div>
+    <div class="page-foot">
+      <span class="institute">Afka Digital Institute <em>|</em> Invitation</span>
+      <span class="nav"><span class="sec">Closing</span><span class="num">10</span></span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

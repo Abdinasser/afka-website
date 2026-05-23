@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Card (dark)</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-dark); font-family: var(--sans); position: relative; overflow: hidden; }
+  body::before { content:""; position:absolute; inset:0; background-image: radial-gradient(circle, rgba(10,92,107,0.42) 0 1.2px, transparent 1.55px); background-size: 22px 22px; opacity: .35; pointer-events:none; }
+  .grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .surface {
+    position: relative; isolation: isolate; overflow: hidden;
+    border: 1px solid rgba(244,248,249,0.16);
+    background:
+      linear-gradient(150deg, rgba(244,248,249,0.10), rgba(13,31,34,0.55) 70%),
+      radial-gradient(circle at 82% 16%, rgba(10,92,107,0.22), transparent 18rem),
+      rgba(20, 36, 40, 0.85);
+    box-shadow: 0 24px 82px rgba(13,31,34,0.32), inset 0 1px 0 rgba(244,248,249,0.10);
+    padding: 24px; min-height: 180px; color: var(--fg-inverse);
+  }
+  .surface::before {
+    content:""; position:absolute; inset:0; z-index:-1;
+    background:
+      repeating-linear-gradient(90deg, rgba(244,248,249,0.05) 0 1px, transparent 1px 26px),
+      repeating-linear-gradient(0deg, rgba(244,248,249,0.035) 0 1px, transparent 1px 32px);
+    opacity:.72;
+    -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%);
+            mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 100%);
+  }
+  .index { display:inline-flex; min-width: 2.6rem; align-items:center; justify-content:center; border-bottom: 1px solid var(--afka-mist-blue); padding-bottom: 6px; color: var(--afka-mist-blue); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  h3 { font-family: var(--display); font-weight: 500; font-size: 22px; line-height: 1.1; letter-spacing: -0.022em; margin: 22px 0 0; color: #FFFFFF; font-variation-settings: "opsz" 36; }
+  p { font-size: 13.5px; line-height: 1.65; color: rgba(244,248,249,0.86); margin: 12px 0 0; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="surface">
+      <span class="index">03</span>
+      <h3>Information Integrity</h3>
+      <p>Studies how false claims and political narratives move across Somali digital spaces.</p>
+    </div>
+    <div class="surface">
+      <span class="index">04</span>
+      <h3>Online Gendered Harm</h3>
+      <p>Documents abuse, harassment, and silencing patterns affecting Somali women online.</p>
+    </div>
+  </div>
+</body>
+</html>

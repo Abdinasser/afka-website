@@ -18,10 +18,28 @@ export function ResearchAreas({ showIntroLink = true }: ResearchAreasProps) {
   return (
     <MotionSection
       id="research"
-      className="section-reveal research-framework-section bg-[var(--deep-ink)] text-[var(--cloud-white)]"
+      className="section-reveal research-framework-section bg-[var(--afka-deep-ink)] text-[var(--cloud-white)]"
       aria-labelledby="research-heading"
     >
-      <div className="halftone-panel mx-auto max-w-7xl px-5 pb-24 pt-36 sm:px-8 lg:px-10 lg:pb-28 lg:pt-40">
+      <span
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 0,
+          pointerEvents: "none",
+          backgroundImage:
+            "radial-gradient(circle, rgba(10,92,107,0.62) 0 1.35px, transparent 1.65px), radial-gradient(circle, rgba(244,248,249,0.28) 0 1px, transparent 1.4px)",
+          backgroundPosition: "0 0, 9px 9px",
+          backgroundSize: "18px 18px, 18px 18px",
+          opacity: 0.42,
+          WebkitMaskImage:
+            "linear-gradient(180deg, rgba(13,31,34,1) 0%, rgba(13,31,34,0.84) 36%, transparent 82%)",
+          maskImage:
+            "linear-gradient(180deg, rgba(13,31,34,1) 0%, rgba(13,31,34,0.84) 36%, transparent 82%)"
+        }}
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-5 pb-24 pt-36 sm:px-8 lg:px-10 lg:pb-28 lg:pt-40">
         <div className="grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
           <ScrollDepth distance={32} fade>
             <SectionHeading
@@ -51,7 +69,7 @@ export function ResearchAreas({ showIntroLink = true }: ResearchAreasProps) {
                   <p className="surface-index shrink-0">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-7 font-serif-display text-[1.45rem] leading-tight text-[var(--cloud-white)]">
+                  <h3 className="mt-7 font-display text-[1.45rem] leading-tight text-[var(--cloud-white)]">
                     {area.title}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-[rgba(244,248,249,0.6)]">

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Newsletter header</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; background: var(--bg); font-family: var(--sans); }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .header {
+    position: relative; padding: 36px 36px 28px; color: var(--fg-inverse); overflow: hidden;
+    background:
+      radial-gradient(ellipse at 90% 20%, rgba(10,92,107,0.55), transparent 18rem),
+      linear-gradient(150deg, rgba(13,31,34,0.98), rgba(10,92,107,0.85) 60%, rgba(13,31,34,0.98));
+  }
+  .header::before {
+    content:""; position:absolute; inset:0;
+    background-image: radial-gradient(circle, rgba(244,248,249,0.18) 0 1px, transparent 1.4px);
+    background-size: 18px 18px;
+    -webkit-mask-image: linear-gradient(180deg, rgba(13,31,34,1) 0%, transparent 80%);
+            mask-image: linear-gradient(180deg, rgba(13,31,34,1) 0%, transparent 80%);
+    opacity: 0.5;
+  }
+  .header > * { position: relative; z-index: 1; }
+
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .wordmark { height: 34px; width: auto; }
+  .meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(244,248,249,0.6); }
+
+  .issue { margin-top: 26px; display: inline-flex; gap: 8px; align-items: center; font-size: 10.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--afka-mist-blue); }
+  .issue .dash { width: 26px; height: 1px; background: var(--afka-mist-blue); }
+  .title { margin-top: 12px; font-family: var(--display); font-weight: 500; font-size: 36px; line-height: 1.0; letter-spacing: -0.032em; text-wrap: balance; max-width: 22ch; color: #FFFFFF; font-variation-settings: "opsz" 72; }
+  .sub   { margin-top: 16px; font-size: 14px; line-height: 1.55; color: rgba(244,248,249,0.86); max-width: 50ch; }
+
+  .body { padding: 28px 36px 36px; color: var(--fg); }
+  .body h3 { font-family: var(--serif); font-weight: 500; font-size: 20px; line-height: 1.2; margin: 0 0 8px; }
+  .body p { font-size: 14px; line-height: 1.65; color: var(--fg-muted); margin: 0 0 22px; }
+  .body .rule { height: 1px; background: var(--line-soft); margin: 22px 0; border: 0; }
+  .eyebrow { font-size: 10.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .read { display: inline-block; margin-top: 4px; font-size: 13px; font-weight: 600; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+  .foot { padding: 20px 36px; border-top: 1px solid var(--line-soft); font-size: 11.5px; color: var(--fg-quiet); display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header">
+      <div class="top">
+        <img class="wordmark" src="../assets/afka-wordmark-light.png" alt="Afka Digital Institute" />
+        <span class="meta">Newsletter · March 2026</span>
+      </div>
+      <div class="issue"><span class="dash"></span><span>Issue 03</span></div>
+      <h1 class="title">Notes from the Somali‑speaking platform layer.</h1>
+      <p class="sub">A short monthly read on platform decisions, Somali‑language moderation, and the cases that have crossed Afka’s desk.</p>
+    </header>
+
+    <section class="body">
+      <span class="eyebrow">This issue</span>
+      <h3 style="margin-top:10px;">Appeals in a language the platform skips</h3>
+      <p>What happens when an automated takedown is delivered in English and appealed in Somali. A look at four documented cases, and what they say about appeals at scale.</p>
+      <a href="#" class="read">Read the brief</a>
+
+      <hr class="rule" />
+
+      <span class="eyebrow">Field note</span>
+      <h3 style="margin-top:10px;">Coded speech, missed signals</h3>
+      <p>How dialect, slang, and political idiom slip past detection systems, and what that means for who gets surfaced and who gets silenced.</p>
+      <a href="#" class="read">Read the note</a>
+    </section>
+
+    <footer class="foot">
+      <span>You receive this because you contacted Afka.</span>
+      <span>Unsubscribe</span>
+    </footer>
+  </div>
+</body>
+</html>

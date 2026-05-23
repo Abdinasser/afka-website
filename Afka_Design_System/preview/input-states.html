@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Form input states</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 22px 28px; background: var(--bg); font-family: var(--sans); }
+  .row { display: grid; grid-template-columns: 90px 1fr; align-items: center; gap: 16px; padding: 8px 0; }
+  .lbl { font-family: var(--mono); font-size: 10.5px; color: var(--fg-quiet); letter-spacing: 0.04em; text-transform: uppercase; }
+  .input { min-height: 40px; padding: 9px 14px; font-family: var(--sans); font-size: 14px; border: 1px solid var(--line); background: transparent; color: var(--fg); outline: none; }
+  .focus  { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(10,92,107,0.08); }
+  .filled { background: var(--afka-paper); }
+  .error  { border-color: var(--afka-signal); }
+  .disabled { background: var(--afka-fog); color: var(--fg-quiet); }
+</style>
+</head>
+<body>
+  <div class="row"><span class="lbl">Default</span><input class="input" placeholder="your@org.org" /></div>
+  <div class="row"><span class="lbl">Filled</span><input class="input filled" value="abdi@afkadigital.org" /></div>
+  <div class="row"><span class="lbl">Focus</span><input class="input focus" value="Focused field" /></div>
+  <div class="row"><span class="lbl">Error</span><input class="input error" value="not an email" /></div>
+  <div class="row"><span class="lbl">Disabled</span><input class="input disabled" value="—" disabled /></div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px 28px; background: var(--bg); font-family: var(--sans); }
+  .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .row + .row { margin-top: 14px; }
+  .label { font-family: var(--mono); font-size: 10.5px; color: var(--fg-quiet); letter-spacing: 0.04em; text-transform: uppercase; min-width: 90px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 22px; font-size: 13px; font-weight: 600; letter-spacing: 0.005em; border-radius: 9999px; cursor: pointer; border: 1px solid transparent; transition: background-color 220ms cubic-bezier(.22,1,.36,1), color 220ms, border-color 220ms; }
+  .primary { background: var(--accent); color: var(--fg-inverse); }
+  .primary:hover { background: #084A57; }
+  .outline { background: transparent; color: var(--fg); border-color: var(--fg); }
+  .outline:hover { color: var(--accent); border-color: var(--accent); }
+  .ghost { background: transparent; color: var(--fg-muted); }
+  .ghost:hover { color: var(--fg); background: rgba(13,31,34,0.04); }
+  .small { min-height: 36px; padding: 6px 16px; font-size: 12px; }
+</style>
+</head>
+<body>
+  <div class="row"><span class="label">Primary</span><button class="btn primary">Explore Research</button><button class="btn primary small">Read Brief</button></div>
+  <div class="row"><span class="label">Outline</span><button class="btn outline">Contact Afka</button><button class="btn outline small">Download PDF</button></div>
+  <div class="row"><span class="label">Ghost</span><button class="btn ghost">Cancel</button><button class="btn ghost small">Skip</button></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Iconography</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 26px 28px; background: var(--bg); font-family: var(--sans); }
+  .row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+  .icon { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 6px; border: 1px solid var(--line-soft); background: var(--afka-paper); }
+  svg { color: var(--accent); display: block; }
+  .label { font-family: var(--mono); font-size: 10px; color: var(--fg-muted); }
+  .meta { margin-top: 14px; font-family: var(--mono); font-size: 10px; color: var(--fg-quiet); letter-spacing: 0.04em; text-transform: uppercase; }
+  .platforms { margin-top: 14px; display: flex; gap: 10px; align-items: center; }
+  .plat { width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 9999px; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span class="label">document</span></div>
+    <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg><span class="label">search</span></div>
+    <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg><span class="label">signal</span></div>
+    <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg><span class="label">safety</span></div>
+    <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H4z"/><path d="M8 20h8M12 16v4"/></svg><span class="label">platform</span></div>
+    <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8h10M7 12h6M7 16h10"/><path d="M4 5h16v14H4z"/></svg><span class="label">brief</span></div>
+  </div>
+  <div class="meta">Outline · 1.8px stroke · round caps · 24px viewBox · currentColor</div>
+
+  <div class="platforms">
+    <span class="plat" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16.7" cy="7.3" r="1" fill="currentColor"/></svg></span>
+    <span class="plat" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M5.2 9.4h3.1v9.4H5.2zM6.8 5.2a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6ZM11 9.4h3v1.3c.5-.8 1.5-1.6 3.1-1.6 2.2 0 3.7 1.4 3.7 4.3v5.4h-3.1v-5c0-1.4-.5-2.2-1.7-2.2-1.1 0-1.8.8-1.8 2.2v5H11z"/></svg></span>
+    <span class="plat" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m5 5 10.8 14h3.2L8.2 5zm0 14 6.2-6.2M13.1 11 19 5"/></svg></span>
+    <span class="plat" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8.2h2.3V5.4A14.5 14.5 0 0 0 13.5 5c-2.8 0-4.7 1.7-4.7 4.8v2.4H6v3.1h2.8V20h3.4v-4.7h3l.5-3.1h-3.5V10c0-1 .3-1.8 1.8-1.8Z"/></svg></span>
+    <span class="meta" style="margin-left: 8px;">Platform glyphs · filled only · inherit currentColor</span>
+  </div>
+</body>
+</html>

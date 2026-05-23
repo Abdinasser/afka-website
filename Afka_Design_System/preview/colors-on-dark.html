@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Palette on dark</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 24px; background: var(--bg-dark); position: relative; min-height: 220px; overflow: hidden; }
+  body::before { content:""; position:absolute; inset:0; background-image: radial-gradient(circle, rgba(10,92,107,0.62) 0 1.35px, transparent 1.65px), radial-gradient(circle, rgba(244,248,249,0.18) 0 1px, transparent 1.4px); background-position: 0 0, 9px 9px; background-size: 18px 18px; opacity: .5; pointer-events:none; }
+  .row { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw { aspect-ratio: 1.4 / 1; padding: 14px; display:flex; flex-direction: column; justify-content:space-between; border: 1px solid var(--line-dark); color: var(--fg-inverse); }
+  .name { font-family: var(--sans); font-size: 13px; font-weight: 600; }
+  .hex  { font-family: var(--mono); font-size: 11px; opacity: 0.78; }
+  .tok  { font-family: var(--mono); font-size: 10px; opacity: 0.55; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw" style="background: rgba(244,248,249,0.06);"><span class="tok">subtle wash</span><div><div class="name">Surface wash</div><div class="hex">cloud 6%</div></div></div>
+    <div class="sw" style="background: rgba(10,92,107,0.42);"><span class="tok">accent veil</span><div><div class="name">Teal veil</div><div class="hex">teal 42%</div></div></div>
+    <div class="sw" style="background: rgba(200,232,237,0.16);"><span class="tok">mist haze</span><div><div class="name">Mist haze</div><div class="hex">mist 16%</div></div></div>
+    <div class="sw" style="background: var(--afka-deep-teal);"><span class="tok">--afka-deep-teal</span><div><div class="name">Deep Teal</div><div class="hex">#0A5C6B</div></div></div>
+  </div>
+</body>
+</html>

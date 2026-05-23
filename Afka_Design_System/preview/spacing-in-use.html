@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka — Spacing in use</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  body { margin: 0; padding: 22px 28px; background: var(--bg); font-family: var(--sans); }
+  .layout { position: relative; display: grid; grid-template-columns: 60px 1fr 60px; gap: 16px; }
+
+  /* The center editorial column */
+  .col { position: relative; padding: 18px 0; }
+  .col::before, .col::after { content:""; position:absolute; left:0; right:0; height:1px; background: var(--line-soft); }
+  .col::before { top: 0; }
+  .col::after  { bottom: 0; }
+
+  /* Annotations on the left */
+  .left, .right { position: relative; font-family: var(--mono); font-size: 10px; color: var(--fg-quiet); letter-spacing: 0.04em; }
+  .arrow { position: absolute; left: 0; right: 4px; display: flex; align-items: center; justify-content: space-between; }
+  .arrow .line { flex: 1; height: 1px; background: var(--accent); opacity: 0.55; }
+  .arrow .tip { width: 5px; height: 5px; border-right: 1px solid var(--accent); border-bottom: 1px solid var(--accent); transform: rotate(45deg); opacity: 0.8; }
+  .lbl { position: absolute; right: 0; padding-left: 6px; padding-right: 4px; background: var(--bg); color: var(--accent); font-weight: 600; font-family: var(--mono); font-size: 10px; }
+
+  .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0; }
+  h3 { font-family: var(--display); font-weight: 500; font-size: 26px; line-height: 1.08; letter-spacing: -0.022em; color: var(--fg); margin: 32px 0 0; font-variation-settings: "opsz" 36; }
+  p  { font-size: 14px; line-height: 1.7; color: var(--fg-muted); margin: 16px 0 0; max-width: 46ch; }
+  .rule { height: 1px; background: var(--line-soft); margin: 28px 0 0; border: 0; }
+  .meta { font-family: var(--mono); font-size: 10px; color: var(--fg-quiet); letter-spacing: 0.04em; margin: 14px 0 0; }
+
+  /* Horizontal measurement bars on the right */
+  .rule-pad { position: absolute; top: 18px; bottom: 18px; right: -32px; width: 22px; border: 1px solid var(--accent); border-left: 0; opacity: 0.45; }
+  .rule-pad::before, .rule-pad::after { content: attr(data-lbl); position: absolute; left: 4px; font-family: var(--mono); font-size: 9.5px; color: var(--accent); letter-spacing: 0.04em; }
+  .rule-pad::before { top: 2px; }
+  .rule-pad::after  { bottom: 2px; }
+</style>
+</head>
+<body>
+  <div class="layout">
+    <!-- Left: vertical rhythm callouts -->
+    <div class="left">
+      <span class="arrow" style="top: 26px;"><span class="line"></span><span class="tip"></span></span>
+      <span class="lbl"  style="top: 30px;">32</span>
+
+      <span class="arrow" style="top: 84px;"><span class="line"></span><span class="tip"></span></span>
+      <span class="lbl"  style="top: 88px;">16</span>
+
+      <span class="arrow" style="top: 168px;"><span class="line"></span><span class="tip"></span></span>
+      <span class="lbl"  style="top: 172px;">28</span>
+
+      <span class="arrow" style="top: 218px;"><span class="line"></span><span class="tip"></span></span>
+      <span class="lbl"  style="top: 222px;">14</span>
+    </div>
+
+    <!-- Center: actual editorial card -->
+    <div class="col">
+      <p class="eyebrow">Research focus</p>
+      <h3>Somali‑language moderation</h3>
+      <p>Tracks how Somali dialect, slang, and political speech are handled by automated systems — and what gets surfaced versus silenced.</p>
+      <hr class="rule" />
+      <p class="meta">eyebrow → title <strong style="color: var(--accent);">32</strong> · title → body <strong style="color: var(--accent);">16</strong> · body → rule <strong style="color: var(--accent);">28</strong> · rule → meta <strong style="color: var(--accent);">14</strong></p>
+      <div class="rule-pad" data-lbl="--s-3 · 12"></div>
+    </div>
+
+    <!-- Right: just spacer + bracket -->
+    <div class="right"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Afka Digital Institute — UI Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: var(--afka-deep-ink); }
+  /* Page section reveal scaffold */
+  .page-atmosphere {
+    background: radial-gradient(ellipse at 50% 42%, rgba(13,31,34,0.74), transparent 48%), radial-gradient(ellipse at 96% 22%, rgba(10,92,107,0.34), transparent 36%), linear-gradient(180deg, rgba(13,31,34,0.98), rgba(13,31,34,0.92));
+  }
+  /* Page hero (non-home) */
+  .page-hero { padding: 192px 40px 64px; position: relative; overflow: hidden; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="data.js"></script>
+<script type="text/babel" data-presets="env,react" src="Components.jsx"></script>
+<script type="text/babel" data-presets="env,react" src="Header.jsx"></script>
+<script type="text/babel" data-presets="env,react" src="Hero.jsx"></script>
+<script type="text/babel" data-presets="env,react" src="Pathways.jsx"></script>
+<script type="text/babel" data-presets="env,react" src="ResearchAreas.jsx"></script>
+<script type="text/babel" data-presets="env,react" src="Outputs.jsx"></script>
+<script type="text/babel" data-presets="env,react" src="AboutContext.jsx"></script>
+<script type="text/babel" data-presets="env,react" src="Contact.jsx"></script>
+<script type="text/babel" data-presets="env,react" src="Footer.jsx"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-presets="env,react">
+const { useState, useEffect } = React;
+
+function PageHero({ eyebrow, title, body }) {
+  return (
+    <section className="page-atmosphere page-hero" data-screen-label="Page hero" style={{ color: "var(--fg-inverse)" }}>
+      <span aria-hidden="true" style={{
+        position: "absolute", inset: 0,
+        backgroundImage: "radial-gradient(circle, rgba(10,92,107,0.62) 0 1.35px, transparent 1.65px), radial-gradient(circle, rgba(244,248,249,0.28) 0 1px, transparent 1.4px)",
+        backgroundPosition: "0 0, 9px 9px",
+        backgroundSize: "18px 18px, 18px 18px",
+        opacity: 0.42, pointerEvents: "none",
+        WebkitMaskImage: "linear-gradient(180deg, rgba(13,31,34,1) 0%, transparent 88%)",
+        maskImage: "linear-gradient(180deg, rgba(13,31,34,1) 0%, transparent 88%)"
+      }} />
+      <div style={{ position: "relative", maxWidth: "80rem", margin: "0 auto" }}>
+        <Eyebrow tone="mist">{eyebrow}</Eyebrow>
+        <h1 style={{
+          marginTop: 20, fontFamily: "var(--display)", fontWeight: 500,
+          fontSize: "clamp(2.4rem, 4.6vw, 4.2rem)", lineHeight: 1.0,
+          letterSpacing: "-0.035em",
+          color: "var(--fg-inverse)", maxWidth: "26ch", textWrap: "balance",
+          fontVariationSettings: '"opsz" 96'
+        }}>{title}</h1>
+        <p style={{
+          marginTop: 32, maxWidth: "48rem", fontSize: 18, lineHeight: 1.65,
+          color: "rgba(244,248,249,0.7)"
+        }}>{body}</p>
+      </div>
+    </section>
+  );
+}
+
+function InsightsEmpty() {
+  return (
+    <section style={{ background: "var(--bg)" }}>
+      <div style={{ maxWidth: "80rem", margin: "0 auto", padding: "144px 40px 112px" }}>
+        <Eyebrow>Insights</Eyebrow>
+        <h2 style={{
+          marginTop: 20, fontFamily: "var(--display)", fontWeight: 500,
+          fontSize: "clamp(2rem, 3vw, 3rem)", lineHeight: 1.05,
+          letterSpacing: "-0.028em", color: "var(--fg)", maxWidth: "26ch",
+          fontVariationSettings: '"opsz" 72'
+        }}>This is where Afka’s work will appear.</h2>
+        <p style={{ marginTop: 28, maxWidth: "48rem", fontSize: 16, lineHeight: 1.7, color: "var(--fg-muted)" }}>
+          As Afka publishes research notes, briefs, and resources, they will be listed here. The Founding Brief is the first publication, currently a work in progress.
+        </p>
+
+        <div style={{ marginTop: 56, display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 20 }}>
+          <ResearchSurface accent style={{ minHeight: 220, padding: 32 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+              <Eyebrow>Founding Brief</Eyebrow>
+              <span style={{
+                padding: "4px 10px", borderRadius: 9999,
+                border: "1px solid var(--line)",
+                fontSize: 10, fontWeight: 600, letterSpacing: "0.06em",
+                textTransform: "uppercase", color: "var(--fg-muted)",
+                background: "transparent"
+              }}>Work in progress</span>
+            </div>
+            <h3 style={{
+              marginTop: 28, fontFamily: "var(--display)", fontWeight: 500,
+              fontSize: 28, lineHeight: 1.1, color: "var(--fg)",
+              letterSpacing: "-0.024em", maxWidth: "22ch",
+              fontVariationSettings: '"opsz" 48'
+            }}>What Afka studies, and why now.</h3>
+            <p style={{ marginTop: 18, fontSize: 13.5, lineHeight: 1.7, color: "var(--fg-muted)", maxWidth: "42ch" }}>
+              A short framing of the research agenda for Somali‑speaking digital spaces. Currently in drafting; an excerpt will be published when ready.
+            </p>
+          </ResearchSurface>
+          <ResearchSurface style={{ minHeight: 220, padding: 32, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <Eyebrow>How to follow</Eyebrow>
+            <div>
+              <p style={{
+                marginTop: 20,
+                fontFamily: "var(--display)", fontWeight: 500,
+                fontSize: 22, lineHeight: 1.18, color: "var(--fg)",
+                letterSpacing: "-0.022em",
+                fontVariationSettings: '"opsz" 36'
+              }}>Quiet by design. Substantive when we publish.</p>
+              <p style={{ marginTop: 14, fontSize: 13, lineHeight: 1.7, color: "var(--fg-muted)" }}>
+                Write to Afka if you would like to be notified when new work is released.
+              </p>
+            </div>
+          </ResearchSurface>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function App() {
+  const [route, setRoute] = useState("home");
+
+  // Scroll to top on route change (mimics page transitions)
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" }); }, [route]);
+
+  return (
+    <div data-screen-label={"Website · " + route}>
+      <Header route={route} setRoute={setRoute} />
+      {route === "home" && (<>
+        <Hero setRoute={setRoute} />
+        <Pathways setRoute={setRoute} />
+        <ResearchAreas setRoute={setRoute} />
+        <Outputs />
+      </>)}
+      {route === "about" && (<>
+        <PageHero eyebrow="About" title="An institute for Somali‑language digital evidence."
+                  body="Afka exists to study, document, and publish on how digital platforms shape Somali‑speaking public life." />
+        <AboutContext />
+      </>)}
+      {route === "research" && (<>
+        <PageHero eyebrow="Research" title="What Afka studies, and how."
+                  body="Six research areas organised around platform systems, Somali‑language context, public harm, AI governance, and access." />
+        <ResearchAreas showIntroLink={false} />
+        <Outputs />
+      </>)}
+      {route === "insights" && (<>
+        <PageHero eyebrow="Insights" title="Notes and outputs as Afka publishes." body="A restrained log of research outputs. The first item is the Founding Brief." />
+        <InsightsEmpty />
+      </>)}
+      {route === "contact" && (<>
+        <PageHero eyebrow="Contact" title="Research inquiries and institutional contact." body="For collaboration, case referrals, media inquiries, and policy conversations." />
+        <Contact />
+      </>)}
+      <Footer setRoute={setRoute} />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
