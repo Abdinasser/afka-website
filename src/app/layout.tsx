@@ -16,7 +16,7 @@ import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  axes: ["opsz"],
   variable: "--font-display",
   display: "swap"
 });
@@ -31,7 +31,7 @@ const instrumentSerif = Instrument_Serif({
 
 const newsreader = Newsreader({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  axes: ["opsz"],
   style: ["normal", "italic"],
   variable: "--font-serif-reading",
   display: "swap"
@@ -39,7 +39,7 @@ const newsreader = Newsreader({
 
 const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-sans",
   display: "swap"
 });

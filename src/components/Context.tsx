@@ -13,7 +13,7 @@ export function Context() {
   return (
     <MotionSection
       id="approach"
-      className="section-reveal scroll-cinema-section grain-layer bg-[var(--cloud-white)]"
+      className="section-reveal relative overflow-clip bg-[var(--afka-cloud-white)]"
       aria-labelledby="approach-heading"
     >
       <div className="mx-auto max-w-7xl px-5 pb-24 pt-36 sm:px-8 lg:px-10 lg:pb-28 lg:pt-40">
@@ -21,7 +21,7 @@ export function Context() {
           <div>
             <SectionHeading
               id="approach-heading"
-              eyebrow="APPROACH"
+              eyebrow="Approach"
               title="Independent public-interest research."
               body="Afka documents digital harm through Somali-language context, careful evidence, and public reasoning."
             />
@@ -50,7 +50,10 @@ export function Context() {
                   <p className="surface-index">
                     0{index + 1}
                   </p>
-                  <h3 className="mt-6 font-serif-display text-[1.45rem] leading-tight text-[var(--deep-ink)]">
+                  <h3
+                    className="mt-6 font-display font-medium text-[22px] leading-[1.12] tracking-[-0.022em] text-[var(--fg)]"
+                    style={{ fontVariationSettings: '"opsz" 36' }}
+                  >
                     {principle.title}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-[var(--muted)]">

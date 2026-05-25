@@ -52,14 +52,13 @@
   --accent-wash: rgba(200, 232, 237, 0.42);
 
   /* ---------- Type families ----------
-     next/font/google declares --font-* on <html>; we layer
-     system fallbacks here so the cascade still works if a
-     family fails to load. */
-  --display: var(--font-display), "Bricolage Grotesque", "Outfit", "IBM Plex Sans", "Inter", system-ui, sans-serif;
-  --serif: var(--font-serif), "Instrument Serif", "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --serif-reading: var(--font-serif-reading), "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --sans: var(--font-sans), "IBM Plex Sans", "Avenir Next", "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: var(--font-mono), "IBM Plex Mono", "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+     next/font/google declares --font-* on <html>; canonical stacks
+     match colors_and_type.css. */
+  --display: var(--font-display), "Outfit", "IBM Plex Sans", system-ui, sans-serif;
+  --serif: var(--font-serif), "Newsreader", Georgia, serif;
+  --serif-reading: var(--font-serif-reading), "Newsreader", Georgia, serif;
+  --sans: var(--font-sans), "Inter", "Segoe UI", ui-sans-serif, sans-serif;
+  --mono: var(--font-mono), ui-monospace, monospace;
 
   /* ---------- Type scale ---------- */
   --t-display-xl: clamp(2.6rem, 4.6vw + 1rem, 4.4rem);
@@ -147,6 +146,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
@@ -566,28 +566,20 @@ textarea {
     radial-gradient(ellipse at 86% 10%, rgba(10, 92, 107, 0.12), transparent 24rem);
 }
 
-.pathway-transition::before,
-.scroll-cinema-section::before,
-.research-framework-section::before,
-.outputs-section::before {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  inset-inline: 0;
-  top: 0;
-  height: 10rem;
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(10, 92, 107, 0.1), transparent 58%),
-    linear-gradient(180deg, rgba(13, 31, 34, 0.12), transparent);
-  opacity: 0.68;
-}
-
 .scroll-cinema-section,
 .research-framework-section,
 .outputs-section {
   position: relative;
   isolation: isolate;
   overflow: clip;
+}
+
+/* Canonical page-hero atmospheric backdrop. Mirrors index.html in the UI kit. */
+.page-atmosphere {
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(13, 31, 34, 0.74), transparent 48%),
+    radial-gradient(ellipse at 96% 22%, rgba(10, 92, 107, 0.34), transparent 36%),
+    linear-gradient(180deg, rgba(13, 31, 34, 0.98), rgba(13, 31, 34, 0.92));
 }
 
 .scroll-cinema-section::after,

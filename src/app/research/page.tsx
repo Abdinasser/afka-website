@@ -18,14 +18,14 @@ export default function ResearchPage() {
       <main>
         <PageHero
           eyebrow="Research"
-          title="Platform systems, language, and public harm."
-          body="Afka studies digital harm through Somali-language context, platform behaviour, information integrity, and public accountability."
+          title="What Afka studies, and how."
+          body="Six research areas organised around platform systems, Somali-language context, public harm, AI governance, and access."
         />
         <ResearchAreas showIntroLink={false} />
 
         <MotionSection
           id="method"
-          className="section-reveal grain-layer bg-[var(--cloud-white)]"
+          className="section-reveal bg-[var(--afka-cloud-white)]"
           aria-labelledby="method-heading"
         >
           <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 pt-36 sm:px-8 lg:grid-cols-[0.66fr_0.72fr_0.62fr] lg:gap-6 lg:px-10 lg:pb-28 lg:pt-40">
@@ -35,7 +35,8 @@ export default function ResearchPage() {
               </p>
               <h2
                 id="method-heading"
-                className="mt-5 font-serif-display text-3xl leading-tight text-[var(--deep-ink)] sm:text-4xl"
+                className="mt-5 font-display font-medium text-[clamp(2rem,3vw,3rem)] leading-[1.05] tracking-[-0.028em] text-[var(--deep-ink)]"
+                style={{ fontVariationSettings: '"opsz" 72' }}
               >
                 From incident to public record.
               </h2>
@@ -53,7 +54,10 @@ export default function ResearchPage() {
                     <p className="surface-index">
                       {step.step}
                     </p>
-                    <h3 className="mt-5 font-serif-display text-[1.45rem] leading-tight text-[var(--deep-ink)]">
+                    <h3
+                      className="mt-5 font-display font-medium text-[22px] leading-[1.12] tracking-[-0.022em] text-[var(--deep-ink)]"
+                      style={{ fontVariationSettings: '"opsz" 36' }}
+                    >
                       {step.title}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
@@ -68,7 +72,10 @@ export default function ResearchPage() {
               <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
                 METHOD LAYER
               </p>
-              <p className="mt-6 font-serif-display text-2xl leading-tight text-[var(--deep-ink)]">
+              <p
+                className="mt-6 font-display font-medium text-[24px] leading-[1.15] tracking-[-0.022em] text-[var(--deep-ink)]"
+                style={{ fontVariationSettings: '"opsz" 36' }}
+              >
                 The method connects observation, case evidence, platform
                 behaviour, and institutional interpretation.
               </p>
@@ -93,7 +100,10 @@ export default function ResearchPage() {
         <MotionSection className="bg-[var(--cloud-white)]">
           <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
             <div className="grid gap-8 border-t border-[var(--line)] pt-10 md:grid-cols-[1fr_auto] md:items-center">
-              <p className="max-w-2xl font-serif-display text-2xl leading-tight text-[var(--deep-ink)] sm:text-3xl">
+              <p
+                className="max-w-2xl font-display font-medium text-[clamp(1.5rem,2.4vw,2rem)] leading-[1.15] tracking-[-0.022em] text-[var(--deep-ink)]"
+                style={{ fontVariationSettings: '"opsz" 36' }}
+              >
                 Research questions and institutional inquiries can be directed
                 to Afka.
               </p>

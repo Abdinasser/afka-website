@@ -10,7 +10,10 @@ export function DataCards() {
           tone="dark"
           className="p-5 text-[var(--cloud-white)]"
         >
-          <p className="font-serif-display text-[1.55rem] text-[var(--cloud-white)]">
+          <p
+            className="font-display font-medium text-[24px] leading-[1.12] tracking-[-0.022em] text-[var(--fg-inverse)]"
+            style={{ fontVariationSettings: '"opsz" 36' }}
+          >
             {stat.value}
           </p>
           <p className="mt-3 text-sm leading-6 text-[rgba(244,248,249,0.58)]">{stat.label}</p>

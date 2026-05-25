@@ -30,12 +30,16 @@ export function Independence() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
           <div>
-            <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+            <p
+              className="text-[11.5px] font-semibold uppercase"
+              style={{ letterSpacing: "0.08em", color: "var(--afka-mist-blue)" }}
+            >
               Independence
             </p>
             <h2
               id="independence-heading"
-              className="mt-5 font-serif-display text-3xl leading-tight text-[var(--cloud-white)] sm:text-4xl"
+              className="mt-5 font-display font-medium text-[clamp(2rem,3vw,3rem)] leading-[1.05] tracking-[-0.028em] text-[var(--fg-inverse)]"
+              style={{ fontVariationSettings: '"opsz" 72' }}
             >
               Built for public trust.
             </h2>
@@ -48,7 +52,10 @@ export function Independence() {
                   tone="dark"
                   className={`p-5 ${index === 1 ? "sm:mt-8" : ""}`}
                 >
-                  <h3 className="font-serif-display text-[1.5rem] leading-tight text-[var(--cloud-white)]">
+                  <h3
+                    className="font-display font-medium text-[22px] leading-[1.12] tracking-[-0.022em] text-[var(--fg-inverse)]"
+                    style={{ fontVariationSettings: '"opsz" 36' }}
+                  >
                     {principle.title}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-[rgba(244,248,249,0.58)]">

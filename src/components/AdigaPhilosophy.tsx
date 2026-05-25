@@ -10,12 +10,16 @@ export function AdigaPhilosophy() {
     >
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.78fr_1.22fr] lg:px-10 lg:py-32">
         <div>
-          <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+          <p
+            className="text-[11.5px] font-semibold uppercase text-[var(--accent)]"
+            style={{ letterSpacing: "0.08em" }}
+          >
             {adigaPhilosophy.label}
           </p>
           <h2
             id="adiga-heading"
-            className="mt-5 font-serif-display text-3xl leading-tight text-[var(--deep-ink)] sm:text-4xl"
+            className="mt-5 font-display font-medium text-[clamp(2rem,3vw,3rem)] leading-[1.05] tracking-[-0.028em] text-[var(--fg)]"
+            style={{ fontVariationSettings: '"opsz" 72' }}
           >
             {adigaPhilosophy.heading}
           </h2>
@@ -30,7 +34,10 @@ export function AdigaPhilosophy() {
             {adigaPhilosophy.meanings.map((meaning) => (
               <StaggerItem key={meaning.title}>
                 <ResearchSurface className="p-6">
-                  <h3 className="font-serif-display text-[1.55rem] leading-tight text-[var(--deep-ink)]">
+                  <h3
+                    className="font-display font-medium text-[24px] leading-[1.12] tracking-[-0.022em] text-[var(--fg)]"
+                    style={{ fontVariationSettings: '"opsz" 36' }}
+                  >
                     {meaning.title}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-[var(--muted)]">

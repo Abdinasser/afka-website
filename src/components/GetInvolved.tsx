@@ -28,12 +28,16 @@ export function GetInvolved() {
       />
       <div className="relative z-10 mx-auto grid max-w-7xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[1fr_auto] md:items-center lg:px-10">
         <div>
-          <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+          <p
+            className="text-[11.5px] font-semibold uppercase"
+            style={{ letterSpacing: "0.08em", color: "var(--afka-mist-blue)" }}
+          >
             Get involved
           </p>
           <h2
             id="get-involved-heading"
-            className="mt-5 max-w-3xl font-serif-display text-3xl leading-tight text-[var(--cloud-white)] sm:text-4xl"
+            className="mt-5 max-w-3xl font-display font-medium text-[clamp(2rem,3vw,3rem)] leading-[1.05] tracking-[-0.028em] text-[var(--fg-inverse)]"
+            style={{ fontVariationSettings: '"opsz" 72' }}
           >
             Work with Afka on public evidence.
           </h2>

@@ -29,12 +29,19 @@ export function AboutStandard() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
         <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
-            <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+            <p
+              className="text-[11.5px] font-semibold uppercase"
+              style={{
+                letterSpacing: "0.08em",
+                color: "var(--afka-mist-blue)"
+              }}
+            >
               Approach
             </p>
             <h2
               id="about-standard-heading"
-              className="mt-5 font-serif-display text-3xl leading-tight text-[var(--cloud-white)] sm:text-4xl"
+              className="mt-5 font-display font-medium text-[clamp(2rem,3vw,3rem)] leading-[1.05] tracking-[-0.028em] text-[var(--fg-inverse)]"
+              style={{ fontVariationSettings: '"opsz" 72' }}
             >
               Careful documentation, public reasoning.
             </h2>
@@ -47,7 +54,10 @@ export function AboutStandard() {
                   tone="dark"
                   className={`p-5 ${index === 1 ? "sm:mt-8" : ""}`}
                 >
-                  <h3 className="font-serif-display text-[1.5rem] leading-tight text-[var(--cloud-white)]">
+                  <h3
+                    className="font-display font-medium text-[22px] leading-[1.12] tracking-[-0.022em] text-[var(--fg-inverse)]"
+                    style={{ fontVariationSettings: '"opsz" 36' }}
+                  >
                     {principle.title}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-[rgba(244,248,249,0.58)]">

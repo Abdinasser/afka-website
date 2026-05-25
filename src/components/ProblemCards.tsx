@@ -29,7 +29,10 @@ export function ProblemCards() {
                   0{index + 1}
                 </p>
                 <div>
-                  <h3 className="font-serif-display text-[1.65rem] leading-tight text-[var(--deep-ink)]">
+                  <h3
+                    className="font-display font-medium text-[24px] leading-[1.12] tracking-[-0.022em] text-[var(--fg)]"
+                    style={{ fontVariationSettings: '"opsz" 36' }}
+                  >
                     {card.title}
                   </h3>
                   <p className="mt-3 max-w-2xl text-base leading-8 text-[var(--muted)]">

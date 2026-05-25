@@ -10,12 +10,16 @@ export function HomeWhyAfka() {
     >
       <div className="mx-auto grid max-w-7xl gap-8 px-5 py-20 sm:px-8 md:grid-cols-[1fr_auto] md:items-center lg:px-10">
         <div>
-          <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+          <p
+            className="text-[11.5px] font-semibold uppercase text-[var(--accent)]"
+            style={{ letterSpacing: "0.08em" }}
+          >
             Why Afka
           </p>
           <h2
             id="home-why-afka-heading"
-            className="mt-5 max-w-3xl font-serif-display text-3xl leading-tight text-[var(--deep-ink)] sm:text-4xl"
+            className="mt-5 max-w-3xl font-display font-medium text-[clamp(2rem,3vw,3rem)] leading-[1.05] tracking-[-0.028em] text-[var(--fg)]"
+            style={{ fontVariationSettings: '"opsz" 72' }}
           >
             Afka begins with language.
           </h2>

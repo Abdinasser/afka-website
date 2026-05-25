@@ -7,7 +7,7 @@ export function Approach() {
   return (
     <MotionSection
       id="approach"
-      className="section-reveal grain-layer bg-[var(--cloud-white)]"
+      className="section-reveal bg-[var(--afka-cloud-white)]"
       aria-labelledby="approach-heading"
     >
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-10 lg:py-32">
@@ -27,7 +27,10 @@ export function Approach() {
                 <p className="surface-index">
                   {step.step}
                 </p>
-                <h3 className="mt-10 font-serif-display text-[1.55rem] leading-tight text-[var(--deep-ink)]">
+                <h3
+                  className="mt-10 font-display font-medium text-[24px] leading-[1.12] tracking-[-0.022em] text-[var(--fg)]"
+                  style={{ fontVariationSettings: '"opsz" 36' }}
+                >
                   {step.title}
                 </h3>
                 <p className="mt-5 text-base leading-8 text-[var(--muted)]">

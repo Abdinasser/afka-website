@@ -15,8 +15,8 @@ export default function ContactPage() {
       <main>
         <PageHero
           eyebrow="Contact"
-          title="Contact Afka."
-          body="Research partnerships, media requests, platform engagement, and institutional inquiries."
+          title="Research inquiries and institutional contact."
+          body="For collaboration, case referrals, media inquiries, and policy conversations."
         />
         <Contact />
       </main>

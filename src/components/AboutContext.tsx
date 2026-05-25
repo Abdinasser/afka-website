@@ -24,33 +24,37 @@ export function AboutContext() {
   return (
     <MotionSection
       id="why-afka-exists"
-      className="section-reveal grain-layer bg-[var(--cloud-white)]"
+      className="section-reveal relative overflow-clip bg-[var(--afka-cloud-white)]"
       aria-labelledby="about-context-heading"
     >
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 pb-24 pt-36 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:pb-28 lg:pt-40">
+      <div className="mx-auto grid max-w-[80rem] gap-12 px-5 pb-28 pt-36 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10">
         <Reveal kind="text">
-          <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+          <p
+            className="text-[11.5px] font-semibold uppercase text-[var(--accent)]"
+            style={{ letterSpacing: "0.08em" }}
+          >
             Institution
           </p>
           <h2
             id="about-context-heading"
-            className="mt-5 max-w-2xl font-serif-display text-4xl leading-[1.05] text-[var(--deep-ink)] sm:text-5xl"
+            className="mt-5 max-w-[26rem] text-balance font-display font-medium text-[clamp(2.2rem,3.4vw,3.4rem)] leading-[1.04] tracking-[-0.03em] text-[var(--fg)]"
+            style={{ fontVariationSettings: '"opsz" 96' }}
           >
             Why Afka exists
           </h2>
-          <div className="mt-8 max-w-2xl space-y-5 text-[var(--t-body-sm)] leading-8 text-[var(--muted)]">
-            <p className="text-lg leading-8 text-[var(--deep-ink)]">
+          <div className="mt-8 flex max-w-[34rem] flex-col gap-5">
+            <p className="text-[18px] leading-[1.65] text-[var(--fg)]">
               Afka Digital Institute exists because Somali-speaking communities
-              are deeply shaped by digital platforms, but rarely studied on their
-              own terms.
+              are deeply shaped by digital platforms, but rarely studied on
+              their own terms.
             </p>
-            <p>
+            <p className="text-[15px] leading-[1.75] text-[var(--fg-muted)]">
               Moderation systems, monetisation rules, recommendation feeds and
               AI tools affect visibility, income, safety, trust and speech.
               Global systems often misread language, dialect, diaspora context
               and political meaning in Somali spaces.
             </p>
-            <p>
+            <p className="text-[15px] leading-[1.75] text-[var(--fg-muted)]">
               Afka turns that gap into a research agenda: documenting cases,
               analysing platform behaviour and translating lived digital
               realities into public-interest knowledge.
@@ -59,11 +63,17 @@ export function AboutContext() {
         </Reveal>
 
         <div className="grid gap-5">
-          <ResearchSurface className="about-pull-panel p-6 sm:p-7">
-            <p className="text-xs font-semibold uppercase text-[var(--deep-teal)]">
+          <ResearchSurface className="about-pull-panel min-h-[220px] p-7">
+            <p
+              className="text-[11.5px] font-semibold uppercase text-[var(--accent)]"
+              style={{ letterSpacing: "0.08em" }}
+            >
               Public-interest frame
             </p>
-            <p className="mt-7 font-serif-display text-[1.75rem] leading-tight text-[var(--deep-ink)]">
+            <p
+              className="mt-7 font-display font-medium text-[26px] leading-[1.15] tracking-[-0.022em] text-[var(--fg)]"
+              style={{ fontVariationSettings: '"opsz" 36' }}
+            >
               Digital harm is not only a technology issue. It is a question of
               language, trust, safety, livelihoods, and public knowledge.
             </p>
@@ -72,14 +82,23 @@ export function AboutContext() {
           <Stagger className="grid gap-4 sm:grid-cols-2">
             {insightCards.map((card, index) => (
               <StaggerItem key={card.title} className="h-full">
-                <ResearchSurface className="about-logic-card flex h-full flex-col p-5">
-                  <p className="surface-index">
-                    0{index + 1}
-                  </p>
-                  <h3 className="mt-5 font-serif-display text-xl leading-tight text-[var(--deep-ink)]">
+                <ResearchSurface className="about-logic-card flex h-full min-h-[200px] flex-col p-5">
+                  <span
+                    className="inline-flex min-w-[2.6rem] items-center justify-center pb-[6px] text-[11px] font-bold uppercase text-[var(--accent)]"
+                    style={{
+                      letterSpacing: "0.06em",
+                      borderBottom: "1px solid var(--accent)"
+                    }}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3
+                    className="mt-5 font-display font-medium text-[19px] leading-[1.18] tracking-[-0.022em] text-[var(--fg)]"
+                    style={{ fontVariationSettings: '"opsz" 24' }}
+                  >
                     {card.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-7 text-[var(--muted)]">
+                  <p className="mt-4 text-[13px] leading-[1.7] text-[var(--fg-muted)]">
                     {card.body}
                   </p>
                 </ResearchSurface>
