@@ -87,18 +87,50 @@ export function Hero() {
             Somali-language moderation, information integrity, AI governance,
             digital exclusion, and digital rights across Somali online spaces.
           </p>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+          <div
+            style={{
+              display: "flex",
+              gap: 12,
+              justifyContent: "center",
+              flexWrap: "wrap",
+              marginTop: 48,
+            }}
+          >
             <Link
               href="/research"
-              className="focus-ring inline-flex min-h-[44px] items-center justify-center rounded-full border border-[rgba(244,248,249,0.94)] bg-[var(--fg-inverse)] px-[22px] py-[10px] text-[13px] font-semibold text-[var(--fg)] shadow-[0_20px_62px_rgba(0,0,0,0.34)] transition-colors hover:border-[var(--afka-mist-blue)] hover:bg-[var(--afka-mist-blue)]"
-              style={{ letterSpacing: "0.005em" }}
+              className="focus-ring inline-flex items-center justify-center transition-opacity hover:opacity-90"
+              style={{
+                background: "var(--fg-inverse)",
+                color: "var(--fg)",
+                border: "1px solid rgba(244,248,249,0.94)",
+                boxShadow: "0 20px 62px rgba(0,0,0,0.34)",
+                borderRadius: 9999,
+                minHeight: 44,
+                padding: "10px 22px",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: "var(--sans)",
+                letterSpacing: "0.005em",
+              }}
             >
               Explore Research
             </Link>
             <Link
               href="/contact"
-              className="focus-ring inline-flex min-h-[44px] items-center justify-center rounded-full border border-[rgba(244,248,249,0.34)] bg-[rgba(13,31,34,0.5)] px-[22px] py-[10px] text-[13px] font-semibold text-[var(--fg-inverse)] backdrop-blur-xl transition-colors hover:border-[rgba(200,232,237,0.72)] hover:bg-[rgba(10,92,107,0.28)]"
-              style={{ letterSpacing: "0.005em" }}
+              className="focus-ring inline-flex items-center justify-center transition-opacity hover:opacity-80"
+              style={{
+                background: "rgba(13,31,34,0.5)",
+                color: "var(--fg-inverse)",
+                border: "1px solid rgba(244,248,249,0.34)",
+                backdropFilter: "blur(20px)",
+                borderRadius: 9999,
+                minHeight: 44,
+                padding: "10px 22px",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: "var(--sans)",
+                letterSpacing: "0.005em",
+              }}
             >
               Contact Afka
             </Link>
