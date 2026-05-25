@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import Header from "@/components/Header";
 import { MotionSection, Reveal } from "@/components/Motion";
 import { PageHero } from "@/components/PageHero";
 import { ResearchSurface } from "@/components/ResearchSurface";

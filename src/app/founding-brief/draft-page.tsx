@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { FoundingBriefProgress } from "@/components/FoundingBriefProgress";
 import { FoundingBriefShare } from "@/components/FoundingBriefShare";
-import { Header } from "@/components/Header";
+import Header from "@/components/Header";
 import { MotionSection, Reveal, Stagger, StaggerItem } from "@/components/Motion";
 import { ResearchSurface } from "@/components/ResearchSurface";
 import { SocialLinks } from "@/components/SocialLinks";

@@ -1,126 +1,94 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
-import { navLinks } from "@/data/site";
-import { linkHover, mobileMenuReveal, navReveal } from "@/lib/motion";
+const NAV_LINKS = [
+  { label: "About",    href: "/about" },
+  { label: "Research", href: "/research" },
+  { label: "Insights", href: "/insights" },
+  { label: "Contact",  href: "/contact" },
+];
 
-function Wordmark() {
-  return (
-    <Link
-      href="/"
-      className="focus-ring inline-flex shrink-0 items-center rounded-full"
-      aria-label="Afka Digital Institute home"
-    >
-      <Image
-        src="/images/afka-wordmark-light.png"
-        alt="Afka Digital Institute"
-        width={816}
-        height={324}
-        priority
-        className="h-7 w-auto sm:h-8"
-      />
-    </Link>
-  );
-}
+const PILL: React.CSSProperties = {
+  minHeight: 56,
+  display: "flex",
+  alignItems: "center",
+  gap: 14,
+  padding: "8px 16px 8px 14px",
+  borderRadius: 9999,
+  border: "1px solid rgba(244,248,249,0.12)",
+  background: "rgba(13,31,34,0.72)",
+  boxShadow: "0 22px 70px rgba(13,31,34,0.22)",
+  backdropFilter: "blur(20px)",
+  WebkitBackdropFilter: "blur(20px)",
+};
 
-export function Header() {
+export default function Header() {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-  const reducedMotion = useReducedMotion();
 
   return (
-    <motion.header
-      animate="visible"
-      className="fixed inset-x-0 top-4 z-[80] px-4 text-[var(--cloud-white)] sm:top-5"
-      initial={reducedMotion ? false : "hidden"}
-      variants={navReveal}
-    >
+    <header style={{
+      position: "fixed",
+      insetInline: 0,
+      top: 20,
+      zIndex: 80,
+      padding: "0 16px",
+      color: "var(--fg-inverse)",
+      display: "flex",
+      justifyContent: "center",
+    }}>
       <nav
         aria-label="Primary navigation"
-        className="mx-auto flex w-full max-w-fit items-center justify-center"
+        style={{
+          display: "flex",
+          width: "max-content",
+          maxWidth: "calc(100vw - 32px)",
+        }}
       >
-        <div className="flex min-h-14 items-center gap-2 rounded-full border border-[rgba(244,248,249,0.12)] bg-[rgba(13,31,34,0.72)] px-3 py-2 shadow-[0_22px_70px_rgba(13,31,34,0.22)] backdrop-blur-2xl sm:gap-4 sm:px-4">
-          <Wordmark />
+        <div style={PILL}>
+          <Link
+            href="/"
+            aria-label="Afka Digital Institute home"
+            style={{ display: "inline-flex", alignItems: "center", textDecoration: "none", flexShrink: 0 }}
+          >
+            <Image
+              src="/images/afka-wordmark-light.png"
+              alt="Afka Digital Institute"
+              width={176}
+              height={28}
+              style={{ height: 28, width: "auto" }}
+              priority
+            />
+          </Link>
 
-          <div className="hidden items-center gap-1 md:flex">
-            {navLinks.map((link) => {
+          <div style={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+            {NAV_LINKS.map((link) => {
               const active = pathname === link.href;
-
               return (
-                <motion.div
+                <Link
                   key={link.href}
-                  whileHover={reducedMotion ? undefined : linkHover}
+                  href={link.href}
+                  style={{
+                    padding: "8px 14px",
+                    fontSize: 13,
+                    fontWeight: 500,
+                    borderRadius: 9999,
+                    textDecoration: "none",
+                    color: active ? "rgba(244,248,249,1)" : "rgba(244,248,249,0.7)",
+                    background: active ? "rgba(244,248,249,0.10)" : "transparent",
+                    transition: "background-color 220ms, color 220ms",
+                    whiteSpace: "nowrap",
+                  }}
                 >
-                  <Link
-                    href={link.href}
-                    className={`focus-ring block rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                      active
-                        ? "bg-[rgba(244,248,249,0.1)] text-[var(--cloud-white)]"
-                        : "text-[rgba(244,248,249,0.68)] hover:bg-[rgba(244,248,249,0.08)] hover:text-[var(--cloud-white)]"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
+                  {link.label}
+                </Link>
               );
             })}
           </div>
-
-          <button
-            type="button"
-            className="focus-ring inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(244,248,249,0.12)] bg-[rgba(244,248,249,0.06)] text-[var(--cloud-white)] md:hidden"
-            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen((value) => !value)}
-          >
-            <span className="flex w-4 flex-col gap-1.5" aria-hidden="true">
-              <span className="h-px w-full bg-current" />
-              <span className="h-px w-full bg-current" />
-              <span className="h-px w-full bg-current" />
-            </span>
-          </button>
         </div>
       </nav>
-
-      <AnimatePresence>
-        {open ? (
-          <motion.div
-            animate="visible"
-            className="mx-auto mt-3 max-w-[19rem] rounded-[var(--r-pill)] border border-[rgba(244,248,249,0.12)] bg-[rgba(13,31,34,0.9)] p-3 shadow-[0_22px_70px_rgba(13,31,34,0.28)] backdrop-blur-2xl md:hidden"
-            exit="exit"
-            id="mobile-menu"
-            initial={reducedMotion ? false : "hidden"}
-            variants={mobileMenuReveal}
-          >
-            <div className="grid gap-1">
-              {navLinks.map((link) => {
-                const active = pathname === link.href;
-
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className={`focus-ring rounded-full px-4 py-3 text-sm font-medium ${
-                      active
-                        ? "bg-[rgba(244,248,249,0.1)] text-[var(--cloud-white)]"
-                        : "text-[rgba(244,248,249,0.7)] hover:bg-[rgba(244,248,249,0.08)] hover:text-[var(--cloud-white)]"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
