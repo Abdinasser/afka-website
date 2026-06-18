@@ -93,7 +93,7 @@ export default function Header() {
 
             {/* Hamburger — visible on mobile only */}
             <button
-              className="flex md:hidden"
+              className="flex flex-col items-center justify-center md:hidden"
               onClick={() => setOpen(true)}
               aria-label="Open menu"
               style={{
@@ -101,11 +101,7 @@ export default function Header() {
                 border: "none",
                 cursor: "pointer",
                 padding: "6px 4px",
-                display: "flex",
-                flexDirection: "column",
                 gap: 5,
-                alignItems: "center",
-                justifyContent: "center",
               }}
             >
               <span style={{ display: "block", width: 20, height: 1.5, background: "rgba(244,248,249,0.85)", borderRadius: 1 }} />

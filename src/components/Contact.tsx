@@ -1,6 +1,7 @@
 "use client";
 
 import type { FormEvent } from "react";
+import { useState } from "react";
 
 import { MotionSection, Reveal } from "@/components/Motion";
 import { ResearchSurface } from "@/components/ResearchSurface";
@@ -8,6 +9,8 @@ import { SocialLinks } from "@/components/SocialLinks";
 import { contactEmail, inquiryReasons } from "@/data/site";
 
 export function Contact() {
+  const [sent, setSent] = useState(false);
+
   function handleInquirySubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -29,6 +32,8 @@ export function Contact() {
     window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(
       "Afka Digital Institute Inquiry"
     )}&body=${encodeURIComponent(body)}`;
+
+    setSent(true);
   }
 
   const inputClass =
@@ -74,6 +79,30 @@ export function Contact() {
 
         <Reveal className="lg:mt-10" kind="card">
           <ResearchSurface className="p-7">
+            {sent ? (
+              <div
+                role="status"
+                aria-live="polite"
+                className="flex min-h-[420px] flex-col items-center justify-center text-center"
+              >
+                <p
+                  className="text-[11.5px] font-semibold uppercase text-[var(--accent)]"
+                  style={{ letterSpacing: "0.08em" }}
+                >
+                  Sent
+                </p>
+                <h3
+                  className="mt-5 max-w-[22ch] font-display font-medium text-[28px] leading-[1.1] tracking-[-0.024em] text-[var(--fg)]"
+                  style={{ fontVariationSettings: '"opsz" 48' }}
+                >
+                  Your inquiry is queued.
+                </h3>
+                <p className="mt-5 max-w-[36ch] text-[13.5px] leading-[1.7] text-[var(--fg-muted)]">
+                  Afka will respond to afkadigital.org contacts within five
+                  working days.
+                </p>
+              </div>
+            ) : (
             <form onSubmit={handleInquirySubmit}>
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className={labelClass} style={{ letterSpacing: "0.08em" }}>
@@ -145,6 +174,7 @@ export function Contact() {
                 Email Afka
               </button>
             </form>
+            )}
           </ResearchSurface>
         </Reveal>
       </div>
